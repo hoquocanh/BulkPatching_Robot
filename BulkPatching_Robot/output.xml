@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.8.0 on win32)" generated="20191109 15:46:56.421" rpa="false">
+<suite id="s1" name="BulkPatching Robot" source="D:\RobotFW_program\BulkPatching_Robot\BulkPatching_Robot">
+<suite id="s1-s1" name="TestCucumber Example Table" source="D:\RobotFW_program\BulkPatching_Robot\BulkPatching_Robot\TestCucumber_Example Table.robot">
+<test id="s1-s1-t1" name="1">
+<kw name="Add three numbers">
+<arguments>
+<arg>${command_Plugin_Copper}</arg>
+</arguments>
+<kw name="Given Open SSH Connection and Login" library="SSH definitions">
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<arguments>
+<arg>${HOST}</arg>
+</arguments>
+<status status="PASS" starttime="20191109 15:46:56.611" endtime="20191109 15:46:56.611"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20191109 15:46:56.612" level="INFO">Logging into '192.168.171.201:22' as 'root'.</msg>
+<msg timestamp="20191109 15:46:58.032" level="INFO">Read output: #</msg>
+<status status="PASS" starttime="20191109 15:46:56.611" endtime="20191109 15:46:58.032"></status>
+</kw>
+<status status="PASS" starttime="20191109 15:46:56.610" endtime="20191109 15:46:58.033"></status>
+</kw>
+<kw name="When Enter Virtual Command ${command}" library="SSH definitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20191109 15:46:58.046" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 1</msg>
+<status status="PASS" starttime="20191109 15:46:58.034" endtime="20191109 15:46:58.046"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20191109 15:47:00.050" level="INFO">${stdout} = result=success
+command=plugin
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191109 15:46:58.048" endtime="20191109 15:47:00.050"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20191109 15:47:00.052" level="INFO">result=success
+command=plugin
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191109 15:47:00.051" endtime="20191109 15:47:00.053"></status>
+</kw>
+<status status="PASS" starttime="20191109 15:46:58.033" endtime="20191109 15:47:00.053"></status>
+</kw>
+<status status="PASS" starttime="20191109 15:46:56.610" endtime="20191109 15:47:00.054"></status>
+</kw>
+<status status="PASS" starttime="20191109 15:46:56.609" endtime="20191109 15:47:00.054" critical="yes"></status>
+</test>
+<test id="s1-s1-t2" name="2">
+<kw name="Add three numbers">
+<arguments>
+<arg>${command_Plugout_Copper}</arg>
+</arguments>
+<kw name="Given Open SSH Connection and Login" library="SSH definitions">
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<arguments>
+<arg>${HOST}</arg>
+</arguments>
+<status status="PASS" starttime="20191109 15:47:00.058" endtime="20191109 15:47:00.059"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20191109 15:47:00.060" level="INFO">Logging into '192.168.171.201:22' as 'root'.</msg>
+<msg timestamp="20191109 15:47:01.474" level="INFO">Read output: #</msg>
+<status status="PASS" starttime="20191109 15:47:00.060" endtime="20191109 15:47:01.475"></status>
+</kw>
+<status status="PASS" starttime="20191109 15:47:00.058" endtime="20191109 15:47:01.476"></status>
+</kw>
+<kw name="When Enter Virtual Command ${command}" library="SSH definitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20191109 15:47:01.497" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 1</msg>
+<status status="PASS" starttime="20191109 15:47:01.479" endtime="20191109 15:47:01.498"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20191109 15:47:03.502" level="INFO">${stdout} = result=success
+command=plugout
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191109 15:47:01.499" endtime="20191109 15:47:03.503"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20191109 15:47:03.506" level="INFO">result=success
+command=plugout
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191109 15:47:03.504" endtime="20191109 15:47:03.507"></status>
+</kw>
+<status status="PASS" starttime="20191109 15:47:01.478" endtime="20191109 15:47:03.508"></status>
+</kw>
+<status status="PASS" starttime="20191109 15:47:00.056" endtime="20191109 15:47:03.509"></status>
+</kw>
+<status status="PASS" starttime="20191109 15:47:00.055" endtime="20191109 15:47:03.510" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20191109 15:46:56.471" endtime="20191109 15:47:03.513"></status>
+</suite>
+<status status="PASS" starttime="20191109 15:46:56.448" endtime="20191109 15:47:03.520"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" id="s1" name="BulkPatching Robot">BulkPatching Robot</stat>
+<stat pass="2" fail="0" id="s1-s1" name="TestCucumber Example Table">BulkPatching Robot.TestCucumber Example Table</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

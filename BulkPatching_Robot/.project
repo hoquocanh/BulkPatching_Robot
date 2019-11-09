@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.robotframework.ide.eclipse.main.plugin.robotNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>libspecs/Process.py</name>
-			<type>1</type>
-			<location>D:/Program/lib/site-packages/robot/libraries/Process.py</location>
-		</link>
-	</linkedResources>
 </projectDescription>
