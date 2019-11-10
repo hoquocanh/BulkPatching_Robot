@@ -1,143 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.8.0 on win32)" generated="20191109 17:54:02.192" rpa="false">
+<robot generator="Robot 3.1.2 (Python 3.8.0 on win32)" generated="20191110 16:15:29.042" rpa="false">
 <suite id="s1" name="BulkPatching Robot" source="D:\RobotFW_program\BulkPatching_Robot\BulkPatching_Robot">
-<suite id="s1-s1" name="TestCucumber Simple" source="D:\RobotFW_program\BulkPatching_Robot\BulkPatching_Robot\TestCucumber_Simple.robot">
-<test id="s1-s1-t1" name="TC01">
-<kw name="Given Open SSH Connection and Login" library="SSH definitions">
-<kw name="Open Connection" library="SSHLibrary">
-<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<suite id="s1-s1" name="TestSuit1" source="D:\RobotFW_program\BulkPatching_Robot\BulkPatching_Robot\TestSuit1.robot">
+<test id="s1-s1-t1" name="Check Bulk Patching Button">
+<kw name="Open WebUI Screen" library="Bulk Patching definitions">
 <arguments>
 <arg>${HOST}</arg>
 </arguments>
-<status status="PASS" starttime="20191109 17:54:02.774" endtime="20191109 17:54:02.774"></status>
-</kw>
-<kw name="Login" library="SSHLibrary">
-<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
 <arguments>
-<arg>${USERNAME}</arg>
-<arg>${PASSWORD}</arg>
-</arguments>
-<msg timestamp="20191109 17:54:02.775" level="INFO">Logging into '192.168.171.201:22' as 'root'.</msg>
-<msg timestamp="20191109 17:54:04.180" level="INFO">Read output: #</msg>
-<status status="PASS" starttime="20191109 17:54:02.774" endtime="20191109 17:54:04.181"></status>
-</kw>
-<status status="PASS" starttime="20191109 17:54:02.773" endtime="20191109 17:54:04.203"></status>
-</kw>
-<kw name="When Enter Virtual Command ${command_Plugin_Copper}" library="SSH definitions">
-<kw name="Write" library="SSHLibrary">
-<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
-<arguments>
-<arg>${command}</arg>
-</arguments>
-<msg timestamp="20191109 17:54:04.231" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 1</msg>
-<status status="PASS" starttime="20191109 17:54:04.206" endtime="20191109 17:54:04.231"></status>
-</kw>
-<kw name="Read" library="SSHLibrary">
-<doc>Consumes and returns everything available on the server output.</doc>
-<arguments>
-<arg>loglevel=Trace</arg>
-<arg>delay=1s</arg>
+<arg>SEPARATOR=</arg>
+<arg>http://</arg>
+<arg>${Host Name}</arg>
+<arg>:8888</arg>
 </arguments>
 <assign>
-<var>${stdout}</var>
+<var>${WebUI url}</var>
 </assign>
-<msg timestamp="20191109 17:54:06.234" level="INFO">${stdout} = result=success
-command=plugin
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191109 17:54:04.232" endtime="20191109 17:54:06.235"></status>
+<msg timestamp="20191110 16:15:29.261" level="INFO">${WebUI url} = http://192.168.171.201:8888</msg>
+<status status="PASS" starttime="20191110 16:15:29.261" endtime="20191110 16:15:29.261"></status>
 </kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
 <arguments>
-<arg>${stdout}</arg>
+<arg>${WebUI url}</arg>
+<arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20191109 17:54:06.238" level="INFO">result=success
-command=plugin
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191109 17:54:06.236" endtime="20191109 17:54:06.239"></status>
+<msg timestamp="20191110 16:15:29.261" level="INFO">Opening browser 'Chrome' to base url 'http://192.168.171.201:8888'.</msg>
+<status status="PASS" starttime="20191110 16:15:29.261" endtime="20191110 16:15:37.542"></status>
 </kw>
-<status status="PASS" starttime="20191109 17:54:04.204" endtime="20191109 17:54:06.240"></status>
+<status status="PASS" starttime="20191110 16:15:29.261" endtime="20191110 16:15:37.544"></status>
 </kw>
-<kw name="When Enter Virtual Command ${command_Plugout_Copper}" library="SSH definitions">
-<kw name="Write" library="SSHLibrary">
-<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
-<arguments>
-<arg>${command}</arg>
-</arguments>
-<msg timestamp="20191109 17:54:06.261" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 1</msg>
-<status status="PASS" starttime="20191109 17:54:06.243" endtime="20191109 17:54:06.262"></status>
-</kw>
-<kw name="Read" library="SSHLibrary">
-<doc>Consumes and returns everything available on the server output.</doc>
-<arguments>
-<arg>loglevel=Trace</arg>
-<arg>delay=1s</arg>
-</arguments>
-<assign>
-<var>${stdout}</var>
-</assign>
-<msg timestamp="20191109 17:54:08.266" level="INFO">${stdout} = result=success
-command=plugout
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191109 17:54:06.263" endtime="20191109 17:54:08.267"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${stdout}</arg>
-</arguments>
-<msg timestamp="20191109 17:54:08.270" level="INFO">result=success
-command=plugout
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191109 17:54:08.268" endtime="20191109 17:54:08.271"></status>
-</kw>
-<status status="PASS" starttime="20191109 17:54:06.241" endtime="20191109 17:54:08.272"></status>
-</kw>
-<status status="PASS" starttime="20191109 17:54:02.773" endtime="20191109 17:54:08.273" critical="yes"></status>
+<status status="PASS" starttime="20191110 16:15:29.261" endtime="20191110 16:15:37.545" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20191109 17:54:02.284" endtime="20191109 17:54:08.276"></status>
+<status status="PASS" starttime="20191110 16:15:29.092" endtime="20191110 16:15:37.547"></status>
 </suite>
-<status status="PASS" starttime="20191109 17:54:02.258" endtime="20191109 17:54:08.282"></status>
+<status status="PASS" starttime="20191110 16:15:29.062" endtime="20191110 16:15:37.553"></status>
 </suite>
 <statistics>
 <total>
@@ -148,7 +47,7 @@ count=11
 </tag>
 <suite>
 <stat pass="1" fail="0" id="s1" name="BulkPatching Robot">BulkPatching Robot</stat>
-<stat pass="1" fail="0" id="s1-s1" name="TestCucumber Simple">BulkPatching Robot.TestCucumber Simple</stat>
+<stat pass="1" fail="0" id="s1-s1" name="TestSuit1">BulkPatching Robot.TestSuit1</stat>
 </suite>
 </statistics>
 <errors>
