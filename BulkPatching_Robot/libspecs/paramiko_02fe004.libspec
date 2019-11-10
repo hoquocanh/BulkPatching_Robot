@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keywordspec name="paramiko" type="library" format="ROBOT" generated="20191107 16:24:25">
+<version>2.6.0</version>
+<scope>global</scope>
+<namedargs>yes</namedargs>
+<doc>Documentation for library ``paramiko``.</doc>
+</keywordspec>
