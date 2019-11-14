@@ -16,6 +16,8 @@ Open SSH Connection and Login
     Open Connection  ${HOST}
     Login  ${USERNAME}  ${PASSWORD}
 
+  
+    
 Enter Virtual Command ${command}
     Write    ${command}    
              
