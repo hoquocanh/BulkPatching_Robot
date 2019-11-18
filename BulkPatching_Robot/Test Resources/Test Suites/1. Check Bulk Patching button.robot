@@ -18,6 +18,8 @@ ${inactive}    inactive
 INSERT_END_A_01_01_Verify that imVision X shows correctly after selecting Bulk Patching button on the home page if observing all ImVisionX Displays
     Given Go To Bulk Patching Screen
     Then Bulk Patching Screen Should Be Opened
+    When Exit Screen
+    Then Home Screen Should Be Opened
 
 INSERT_END_A_01_02_Verify that imVision X shows correctly after selecting Bulk Patching button on the home page if observing the header of End A
     Given Go To Bulk Patching Screen
