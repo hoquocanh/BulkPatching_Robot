@@ -1,174 +1,367 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.8.0 on win32)" generated="20191118 14:37:40.715" rpa="false">
+<robot generator="Robot 3.1.2 (Python 3.8.0 on win32)" generated="20191118 16:25:34.637" rpa="false">
 <suite id="s1" name="BulkPatching Robot" source="D:\RobotFW_program\BulkPatching_Robot\BulkPatching_Robot">
-<suite id="s1-s1" name="TestCucumber Invoke VP index" source="D:\RobotFW_program\BulkPatching_Robot\BulkPatching_Robot\TestCucumber_Invoke VP index.robot">
-<kw name="Initial Panels Table Variable" type="setup">
-<kw name="Get Panel Table_Index">
-<assign>
-<var>${panel table index}</var>
-</assign>
-<kw name="Get Index From List" library="Collections">
-<doc>Returns the index of the first occurrence of the ``value`` on the list.</doc>
+<suite id="s1-s1" name="Test Resources" source="D:\RobotFW_program\BulkPatching_Robot\BulkPatching_Robot\Test Resources">
+<suite id="s1-s1-s1" name="Test Suites" source="D:\RobotFW_program\BulkPatching_Robot\BulkPatching_Robot\Test Resources\Test Suites">
+<suite id="s1-s1-s1-s1" name="1. Check Bulk Patching button" source="D:\RobotFW_program\BulkPatching_Robot\BulkPatching_Robot\Test Resources\Test Suites\1. Check Bulk Patching button.robot">
+<kw name="Open WebUI And Go To Home Screen" library="General definitions" type="setup">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
 <arguments>
-<arg>${menu}</arg>
-<arg>${index}</arg>
+<arg>SEPARATOR=</arg>
+<arg>http://</arg>
+<arg>${HOST}</arg>
+<arg>:8888</arg>
 </arguments>
 <assign>
-<var>${x}</var>
+<var>${WebUI url}</var>
 </assign>
-<msg timestamp="20191118 14:37:40.780" level="INFO">${x} = 0</msg>
-<status status="PASS" starttime="20191118 14:37:40.779" endtime="20191118 14:37:40.780"></status>
+<msg timestamp="20191118 16:25:35.036" level="INFO">${WebUI url} = http://192.168.171.201:8888</msg>
+<status status="PASS" starttime="20191118 16:25:35.035" endtime="20191118 16:25:35.036"></status>
 </kw>
-<msg timestamp="20191118 14:37:40.780" level="INFO">${panel table index} = 0</msg>
-<status status="PASS" starttime="20191118 14:37:40.779" endtime="20191118 14:37:40.780"></status>
-</kw>
-<kw name="Get Panel Table_Panel Type">
-<assign>
-<var>${panel type index}</var>
-</assign>
-<kw name="Get Index From List" library="Collections">
-<doc>Returns the index of the first occurrence of the ``value`` on the list.</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
 <arguments>
-<arg>${menu}</arg>
-<arg>${panel type}</arg>
+<arg>${WebUI url}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20191118 16:25:35.037" level="INFO">Opening browser 'Chrome' to base url 'http://192.168.171.201:8888'.</msg>
+<status status="PASS" starttime="20191118 16:25:35.036" endtime="20191118 16:25:39.068"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20191118 16:25:39.069" endtime="20191118 16:25:40.205"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${PAGE LOAD TIMEOUT}</arg>
+</arguments>
+<msg timestamp="20191118 16:25:40.707" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20191118 16:25:40.206" endtime="20191118 16:25:40.707"></status>
+</kw>
+<kw name="Set Web UI to Stand By State" library="General definitions">
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${btnExit}</arg>
 </arguments>
 <assign>
-<var>${x}</var>
+<var>${count Exit button}</var>
 </assign>
-<msg timestamp="20191118 14:37:40.781" level="INFO">${x} = 1</msg>
-<status status="PASS" starttime="20191118 14:37:40.781" endtime="20191118 14:37:40.782"></status>
+<msg timestamp="20191118 16:25:40.722" level="INFO">${count Exit button} = 0</msg>
+<status status="PASS" starttime="20191118 16:25:40.708" endtime="20191118 16:25:40.722"></status>
 </kw>
-<msg timestamp="20191118 14:37:40.782" level="INFO">${panel type index} = 1</msg>
-<status status="PASS" starttime="20191118 14:37:40.781" endtime="20191118 14:37:40.782"></status>
-</kw>
-<kw name="Get Panel Table_Rack ID">
-<assign>
-<var>${rackID index}</var>
-</assign>
-<kw name="Get Index From List" library="Collections">
-<doc>Returns the index of the first occurrence of the ``value`` on the list.</doc>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>${menu}</arg>
-<arg>${rack id}</arg>
+<arg>${count Exit button} &gt; 0</arg>
+<arg>Exit Screen</arg>
+</arguments>
+<status status="PASS" starttime="20191118 16:25:40.722" endtime="20191118 16:25:40.723"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${btnCancel}</arg>
 </arguments>
 <assign>
-<var>${x}</var>
+<var>${count Cancel button}</var>
 </assign>
-<msg timestamp="20191118 14:37:40.783" level="INFO">${x} = 2</msg>
-<status status="PASS" starttime="20191118 14:37:40.783" endtime="20191118 14:37:40.783"></status>
+<msg timestamp="20191118 16:25:40.735" level="INFO">${count Cancel button} = 0</msg>
+<status status="PASS" starttime="20191118 16:25:40.723" endtime="20191118 16:25:40.735"></status>
 </kw>
-<msg timestamp="20191118 14:37:40.783" level="INFO">${rackID index} = 2</msg>
-<status status="PASS" starttime="20191118 14:37:40.782" endtime="20191118 14:37:40.784"></status>
-</kw>
-<kw name="Get Panel Table_Panel ID">
-<assign>
-<var>${panelID index}</var>
-</assign>
-<kw name="Get Index From List" library="Collections">
-<doc>Returns the index of the first occurrence of the ``value`` on the list.</doc>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>${menu}</arg>
-<arg>${panel id}</arg>
+<arg>${count Cancel button} &gt; 0</arg>
+<arg>Exit Screen</arg>
+</arguments>
+<status status="PASS" starttime="20191118 16:25:40.735" endtime="20191118 16:25:40.736"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${lblimVisionX}</arg>
 </arguments>
 <assign>
-<var>${x}</var>
+<var>${count Home screen}</var>
 </assign>
-<msg timestamp="20191118 14:37:40.785" level="INFO">${x} = 3</msg>
-<status status="PASS" starttime="20191118 14:37:40.784" endtime="20191118 14:37:40.785"></status>
+<msg timestamp="20191118 16:25:40.747" level="INFO">${count Home screen} = 0</msg>
+<status status="PASS" starttime="20191118 16:25:40.736" endtime="20191118 16:25:40.747"></status>
 </kw>
-<msg timestamp="20191118 14:37:40.785" level="INFO">${panelID index} = 3</msg>
-<status status="PASS" starttime="20191118 14:37:40.784" endtime="20191118 14:37:40.785"></status>
-</kw>
-<kw name="Get Panel Table_Row">
-<assign>
-<var>${row index}</var>
-</assign>
-<kw name="Get Index From List" library="Collections">
-<doc>Returns the index of the first occurrence of the ``value`` on the list.</doc>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>${menu}</arg>
-<arg>${row}</arg>
+<arg>${count Home screen} &gt; 0</arg>
+<arg>Run Keywords</arg>
+<arg>Click Web Button</arg>
+<arg>${btnHome}</arg>
+<arg>AND</arg>
+<arg>Wait For Page Load</arg>
 </arguments>
-<assign>
-<var>${x}</var>
-</assign>
-<msg timestamp="20191118 14:37:40.786" level="INFO">${x} = 4</msg>
-<status status="PASS" starttime="20191118 14:37:40.786" endtime="20191118 14:37:40.786"></status>
+<status status="PASS" starttime="20191118 16:25:40.748" endtime="20191118 16:25:40.748"></status>
 </kw>
-<msg timestamp="20191118 14:37:40.787" level="INFO">${row index} = 4</msg>
-<status status="PASS" starttime="20191118 14:37:40.785" endtime="20191118 14:37:40.787"></status>
+<status status="PASS" starttime="20191118 16:25:40.707" endtime="20191118 16:25:40.748"></status>
 </kw>
-<status status="PASS" starttime="20191118 14:37:40.779" endtime="20191118 14:37:40.787"></status>
-</kw>
-<test id="s1-s1-t1" name="2-Dimensional List">
-<kw name="Set Variable" library="BuiltIn">
-<doc>Returns the given values which can then be assigned to a variables.</doc>
+<kw name="Go To Home Screen" library="General definitions">
+<kw name="Click Web Button" library="General definitions">
 <arguments>
-<arg>1100ps</arg>
+<arg>${btnHome}</arg>
 </arguments>
-<assign>
-<var>${input panel type}</var>
-</assign>
-<msg timestamp="20191118 14:37:40.789" level="INFO">${input panel type} = 1100ps</msg>
-<status status="PASS" starttime="20191118 14:37:40.788" endtime="20191118 14:37:40.789"></status>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<doc>Returns the given values which can then be assigned to a variables.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
 <arguments>
-<arg>1</arg>
+<arg>${btnName}</arg>
 </arguments>
-<assign>
-<var>${input rackID}</var>
-</assign>
-<msg timestamp="20191118 14:37:40.790" level="INFO">${input rackID} = 1</msg>
-<status status="PASS" starttime="20191118 14:37:40.790" endtime="20191118 14:37:40.790"></status>
+<msg timestamp="20191118 16:25:40.750" level="INFO">Clicking element '//div[@id='home-lang']'.</msg>
+<status status="PASS" starttime="20191118 16:25:40.749" endtime="20191118 16:25:40.829"></status>
 </kw>
-<kw name="Set Variable" library="BuiltIn">
-<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" starttime="20191118 16:25:40.749" endtime="20191118 16:25:40.830"></status>
+</kw>
+<kw name="Wait For Page Load" library="General definitions">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
 <arguments>
-<arg>2</arg>
+<arg>${PAGE LOAD TIMEOUT}</arg>
 </arguments>
-<assign>
-<var>${input panelID}</var>
-</assign>
-<msg timestamp="20191118 14:37:40.791" level="INFO">${input panelID} = 2</msg>
-<status status="PASS" starttime="20191118 14:37:40.790" endtime="20191118 14:37:40.791"></status>
+<msg timestamp="20191118 16:25:41.332" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20191118 16:25:40.831" endtime="20191118 16:25:41.332"></status>
 </kw>
-<kw name="Set Variable" library="BuiltIn">
-<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" starttime="20191118 16:25:40.830" endtime="20191118 16:25:41.333"></status>
+</kw>
+<status status="PASS" starttime="20191118 16:25:40.749" endtime="20191118 16:25:41.333"></status>
+</kw>
+<status status="PASS" starttime="20191118 16:25:35.035" endtime="20191118 16:25:41.333"></status>
+</kw>
+<test id="s1-s1-s1-s1-t1" name="INSERT_END_A_01_01_Verify that imVision X shows correctly after selecting Bulk Patching button on the home page if observing all ImVisionX Displays">
+<kw name="Given Go To Bulk Patching Screen" library="Home definitions">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
 <arguments>
-<arg>2</arg>
+<arg>${btnBulk Patching}</arg>
 </arguments>
-<assign>
-<var>${input row}</var>
-</assign>
-<msg timestamp="20191118 14:37:40.791" level="INFO">${input row} = 2</msg>
-<status status="PASS" starttime="20191118 14:37:40.791" endtime="20191118 14:37:40.791"></status>
+<msg timestamp="20191118 16:25:41.337" level="INFO">Clicking element '//input[@id='bulk-patch-btn']'.</msg>
+<status status="PASS" starttime="20191118 16:25:41.336" endtime="20191118 16:25:41.394"></status>
 </kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
+<kw name="Wait For Page Load" library="General definitions">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
 <arguments>
-<arg>${dictionary panels table}[panel type]</arg>
+<arg>${PAGE LOAD TIMEOUT}</arg>
 </arguments>
-<msg timestamp="20191118 14:37:40.792" level="FAIL">Dictionary '${dictionary panels table}' has no key 'panel type'.</msg>
-<status status="FAIL" starttime="20191118 14:37:40.792" endtime="20191118 14:37:40.792"></status>
+<msg timestamp="20191118 16:25:41.897" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20191118 16:25:41.395" endtime="20191118 16:25:41.898"></status>
 </kw>
-<status status="FAIL" starttime="20191118 14:37:40.787" endtime="20191118 14:37:40.792" critical="yes">Dictionary '${dictionary panels table}' has no key 'panel type'.</status>
+<status status="PASS" starttime="20191118 16:25:41.395" endtime="20191118 16:25:41.899"></status>
+</kw>
+<status status="PASS" starttime="20191118 16:25:41.335" endtime="20191118 16:25:41.900"></status>
+</kw>
+<kw name="Then Bulk Patching Screen Should Be Opened" library="Bulk Patching definitions">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${lblBulk Patching Title}</arg>
+</arguments>
+<msg timestamp="20191118 16:25:41.941" level="INFO">Current page contains element '//div[@id='bulk-patch-title' and @style='display: block;']'.</msg>
+<status status="PASS" starttime="20191118 16:25:41.903" endtime="20191118 16:25:41.941"></status>
+</kw>
+<status status="PASS" starttime="20191118 16:25:41.901" endtime="20191118 16:25:41.942"></status>
+</kw>
+<status status="PASS" starttime="20191118 16:25:41.334" endtime="20191118 16:25:41.942" critical="yes"></status>
 </test>
-<status status="FAIL" starttime="20191118 14:37:40.765" endtime="20191118 14:37:40.793"></status>
+<test id="s1-s1-s1-s1-t2" name="INSERT_END_A_01_02_Verify that imVision X shows correctly after selecting Bulk Patching button on the home page if observing the header of End A">
+<kw name="Given Go To Bulk Patching Screen" library="Home definitions">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btnBulk Patching}</arg>
+</arguments>
+<msg timestamp="20191118 16:25:41.947" level="INFO">Clicking element '//input[@id='bulk-patch-btn']'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20191118 16:25:42.366" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20191118 16:25:41.961" endtime="20191118 16:25:42.366"></status>
+</kw>
+<msg timestamp="20191118 16:25:42.709" level="FAIL">Element with locator '//input[@id='bulk-patch-btn']' not found.</msg>
+<status status="FAIL" starttime="20191118 16:25:41.946" endtime="20191118 16:25:42.710"></status>
+</kw>
+<status status="FAIL" starttime="20191118 16:25:41.945" endtime="20191118 16:25:42.712"></status>
+</kw>
+<status status="FAIL" starttime="20191118 16:25:41.943" endtime="20191118 16:25:42.712" critical="yes">Element with locator '//input[@id='bulk-patch-btn']' not found.</status>
+</test>
+<test id="s1-s1-s1-s1-t3" name="INSERT_END_A_01_03_Verify that imVision X shows correctly after selecting Bulk Patching button on the home page if observing the header of End B">
+<kw name="Given Go To Bulk Patching Screen" library="Home definitions">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btnBulk Patching}</arg>
+</arguments>
+<msg timestamp="20191118 16:25:42.717" level="INFO">Clicking element '//input[@id='bulk-patch-btn']'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20191118 16:25:43.046" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20191118 16:25:42.730" endtime="20191118 16:25:43.046"></status>
+</kw>
+<msg timestamp="20191118 16:25:43.047" level="FAIL">Element with locator '//input[@id='bulk-patch-btn']' not found.</msg>
+<status status="FAIL" starttime="20191118 16:25:42.716" endtime="20191118 16:25:43.047"></status>
+</kw>
+<status status="FAIL" starttime="20191118 16:25:42.715" endtime="20191118 16:25:43.047"></status>
+</kw>
+<status status="FAIL" starttime="20191118 16:25:42.713" endtime="20191118 16:25:43.048" critical="yes">Element with locator '//input[@id='bulk-patch-btn']' not found.</status>
+</test>
+<test id="s1-s1-s1-s1-t4" name="INSERT_END_A_01_04_Verify that imVision X shows correctly after selecting Bulk Patching button on the home page if observing the help text on Display of ImVisionX">
+<kw name="Given Go To Bulk Patching Screen" library="Home definitions">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btnBulk Patching}</arg>
+</arguments>
+<msg timestamp="20191118 16:25:43.050" level="INFO">Clicking element '//input[@id='bulk-patch-btn']'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20191118 16:25:43.408" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20191118 16:25:43.063" endtime="20191118 16:25:43.408"></status>
+</kw>
+<msg timestamp="20191118 16:25:43.409" level="FAIL">Element with locator '//input[@id='bulk-patch-btn']' not found.</msg>
+<status status="FAIL" starttime="20191118 16:25:43.050" endtime="20191118 16:25:43.409"></status>
+</kw>
+<status status="FAIL" starttime="20191118 16:25:43.049" endtime="20191118 16:25:43.409"></status>
+</kw>
+<status status="FAIL" starttime="20191118 16:25:43.048" endtime="20191118 16:25:43.410" critical="yes">Element with locator '//input[@id='bulk-patch-btn']' not found.</status>
+</test>
+<kw name="Set Web UI to Stand By State and Close Current Browser" library="General definitions" type="teardown">
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${btnExit}</arg>
+</arguments>
+<assign>
+<var>${count Exit button}</var>
+</assign>
+<msg timestamp="20191118 16:25:43.419" level="INFO">${count Exit button} = 1</msg>
+<status status="PASS" starttime="20191118 16:25:43.411" endtime="20191118 16:25:43.419"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${count Exit button} &gt; 0</arg>
+<arg>Exit Screen</arg>
+</arguments>
+<kw name="Exit Screen" library="General definitions">
+<kw name="Click Web Button" library="General definitions">
+<arguments>
+<arg>${btnExit}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btnName}</arg>
+</arguments>
+<msg timestamp="20191118 16:25:43.431" level="INFO">Clicking element '//div[@id='exit-footer' and @style='display: block;']/div[@id='exit-button']'.</msg>
+<status status="PASS" starttime="20191118 16:25:43.421" endtime="20191118 16:25:43.470"></status>
+</kw>
+<status status="PASS" starttime="20191118 16:25:43.421" endtime="20191118 16:25:43.470"></status>
+</kw>
+<kw name="Wait For Page Load" library="General definitions">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${PAGE LOAD TIMEOUT}</arg>
+</arguments>
+<msg timestamp="20191118 16:25:43.973" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20191118 16:25:43.471" endtime="20191118 16:25:43.973"></status>
+</kw>
+<status status="PASS" starttime="20191118 16:25:43.470" endtime="20191118 16:25:43.973"></status>
+</kw>
+<status status="PASS" starttime="20191118 16:25:43.420" endtime="20191118 16:25:43.974"></status>
+</kw>
+<status status="PASS" starttime="20191118 16:25:43.420" endtime="20191118 16:25:43.974"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${lblimVisionX}</arg>
+</arguments>
+<assign>
+<var>${count Home screen}</var>
+</assign>
+<msg timestamp="20191118 16:25:43.991" level="INFO">${count Home screen} = 1</msg>
+<status status="PASS" starttime="20191118 16:25:43.974" endtime="20191118 16:25:43.991"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${count Home screen} &gt; 0</arg>
+<arg>Run Keywords</arg>
+<arg>Click Web Button</arg>
+<arg>${btnHome}</arg>
+<arg>AND</arg>
+<arg>Wait For Page Load</arg>
+</arguments>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Click Web Button</arg>
+<arg>${btnHome}</arg>
+<arg>AND</arg>
+<arg>Wait For Page Load</arg>
+</arguments>
+<kw name="Click Web Button" library="General definitions">
+<arguments>
+<arg>${btnHome}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btnName}</arg>
+</arguments>
+<msg timestamp="20191118 16:25:43.993" level="INFO">Clicking element '//div[@id='home-lang']'.</msg>
+<status status="PASS" starttime="20191118 16:25:43.993" endtime="20191118 16:25:44.022"></status>
+</kw>
+<status status="PASS" starttime="20191118 16:25:43.993" endtime="20191118 16:25:44.023"></status>
+</kw>
+<kw name="Wait For Page Load" library="General definitions">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${PAGE LOAD TIMEOUT}</arg>
+</arguments>
+<msg timestamp="20191118 16:25:44.525" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20191118 16:25:44.024" endtime="20191118 16:25:44.525"></status>
+</kw>
+<status status="PASS" starttime="20191118 16:25:44.023" endtime="20191118 16:25:44.526"></status>
+</kw>
+<status status="PASS" starttime="20191118 16:25:43.992" endtime="20191118 16:25:44.527"></status>
+</kw>
+<status status="PASS" starttime="20191118 16:25:43.992" endtime="20191118 16:25:44.528"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20191118 16:25:44.529" endtime="20191118 16:25:46.714"></status>
+</kw>
+<status status="PASS" starttime="20191118 16:25:43.411" endtime="20191118 16:25:46.716"></status>
+</kw>
+<status status="FAIL" starttime="20191118 16:25:34.697" endtime="20191118 16:25:46.717"></status>
 </suite>
-<status status="FAIL" starttime="20191118 14:37:40.741" endtime="20191118 14:37:40.794"></status>
+<status status="FAIL" starttime="20191118 16:25:34.695" endtime="20191118 16:25:46.729"></status>
+</suite>
+<status status="FAIL" starttime="20191118 16:25:34.691" endtime="20191118 16:25:46.736"></status>
+</suite>
+<status status="FAIL" starttime="20191118 16:25:34.667" endtime="20191118 16:25:46.742"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1">Critical Tests</stat>
-<stat pass="0" fail="1">All Tests</stat>
+<stat pass="1" fail="3">Critical Tests</stat>
+<stat pass="1" fail="3">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" id="s1" name="BulkPatching Robot">BulkPatching Robot</stat>
-<stat pass="0" fail="1" id="s1-s1" name="TestCucumber Invoke VP index">BulkPatching Robot.TestCucumber Invoke VP index</stat>
+<stat pass="1" fail="3" id="s1" name="BulkPatching Robot">BulkPatching Robot</stat>
+<stat pass="1" fail="3" id="s1-s1" name="Test Resources">BulkPatching Robot.Test Resources</stat>
+<stat pass="1" fail="3" id="s1-s1-s1" name="Test Suites">BulkPatching Robot.Test Resources.Test Suites</stat>
+<stat pass="1" fail="3" id="s1-s1-s1-s1" name="1. Check Bulk Patching button">BulkPatching Robot.Test Resources.Test Suites.1. Check Bulk Patching button</stat>
 </suite>
 </statistics>
 <errors>

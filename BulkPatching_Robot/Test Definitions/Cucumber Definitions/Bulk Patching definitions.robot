@@ -2,9 +2,12 @@
 Library    SeleniumLibrary    
 Library    String    
 
-Resource    SSH definitions.robot
-
+#Definition files
 Resource    ../../Test Resources/Profiles/Constant.robot
+Resource    SSH definitions.robot
+Resource    Virtual Panel definitions.robot
+
+#Interface
 Resource    ../Test Pages/Bulk Patching Page.robot
 *** Variables ***
 
@@ -55,20 +58,26 @@ The Help Text Is "${helptext}"
 ##########################################################################################################################
 #####------------ Virtual panels keywork ------------#####
 
-Plugin Copper Tip to Rack "${rackID}" Panel "${panelID}" Port "${portID}"
-    #Step 1: Compose a completed plug tip to Copper port     
-    ${completed command}=        Catenate    vp_cmd_helper --plugin --rack     ${rackID}    --panel    ${panelID}     --port     ${portID} 
+Plugin Copper Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Port "${portID}"
+    #Step 1: Get virtual panel index from virtual panels table
+    ${panel index}=    Get Copper Panel Index    ${rackID}    ${panelID}    ${row}
+    Log    ${panel index}    
+    #Step 2: Compose a completed plug tip to Copper port     
+    ${completed command}=        Catenate    vp_cmd_helper --plugin --rack     ${rackID}    --panel    ${panel index}     --port     ${portID} 
     Log    ${completed command}  
     
-    #Step 2: Send virtual command via SSH connection
+    #Step 3: Send virtual command via SSH connection
     Enter Virtual Command ${completed command} 
 
-Plugout Copper Tip to Rack "${rackID}" Panel "${panelID}" Port "${portID}"
-    #Step 1: Compose a completed plug tip to Copper port     
-    ${completed command}=        Catenate    vp_cmd_helper --plugout --rack     ${rackID}    --panel    ${panelID}     --port     ${portID} 
+Plugout Copper Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Port "${portID}"
+    #Step 1: Get virtual panel index from virtual panels table
+    ${panel index}=    Get Copper Panel Index    ${rackID}    ${panelID}    ${row}
+    Log    ${panel index}    
+    #Step 2: Compose a completed plug tip to Copper port     
+    ${completed command}=        Catenate    vp_cmd_helper --plugout --rack     ${rackID}    --panel    ${panel index}     --port     ${portID} 
     Log    ${completed command}  
     
-    #Step 2: Send virtual command via SSH connection
+    #Step 3: Send virtual command via SSH connection
     Enter Virtual Command ${completed command} 
 
 Check to see if Rack "${rackID}" Panel "${panelID}" Port "${portID}" existed in End "${end position}"
