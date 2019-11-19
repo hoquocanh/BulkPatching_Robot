@@ -1,6 +1,7 @@
 *** Settings ***
 Library    Collections    
 Resource    ../../Test Resources/Profiles/Constant.robot
+Resource    SSH definitions.robot
 
 *** Variables ***
        
@@ -119,4 +120,96 @@ Get 24F Panel Index
     END
     
     #Return the value at column "index" and at the row which all of input value matched
-    [Return]    ${VPpanels[${panel index+1}][&{dic panels table}[index]]}       
+    [Return]    ${VPpanels[${panel index+1}][&{dic panels table}[index]]}   
+    
+
+Plugin Copper Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Port "${portID}"
+    #Step 1: Get virtual panel index from virtual panels table
+    ${panel index}=    Get Copper Panel Index    ${rackID}    ${panelID}    ${row}
+    Log    ${panel index}    
+    #Step 2: Compose a completed plug tip to panel port     
+    ${completed command}=        Catenate    vp_cmd_helper --plugin --rack     ${rackID}    --panel    ${panel index}     --port     ${portID} 
+    Log    ${completed command}  
+    
+    #Step 3: Send virtual command via SSH connection
+    Enter Virtual Command ${completed command} 
+
+Plugout Copper Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Port "${portID}"
+    #Step 1: Get virtual panel index from virtual panels table
+    ${panel index}=    Get Copper Panel Index    ${rackID}    ${panelID}    ${row}
+    Log    ${panel index}    
+    #Step 2: Compose a completed plugout tip to panel port     
+    ${completed command}=        Catenate    vp_cmd_helper --plugout --rack     ${rackID}    --panel    ${panel index}     --port     ${portID} 
+    Log    ${completed command}  
+    
+    #Step 3: Send virtual command via SSH connection
+    Enter Virtual Command ${completed command} 
+
+Plugin LC Tip to Rack "${rackID}" Panel "${panelID}" Port "${portID}"
+    #Step 1: Get virtual panel index from virtual panels table
+    ${panel index}=    Get LC Panel Index    ${rackID}    ${panelID}
+    Log    ${panel index}    
+    #Step 2: Compose a completed plug tip to panel port     
+    ${completed command}=        Catenate    vp_cmd_helper --plugin --rack     ${rackID}    --panel    ${panel index}     --port     ${portID} 
+    Log    ${completed command}  
+    
+    #Step 3: Send virtual command via SSH connection
+    Enter Virtual Command ${completed command} 
+
+Plugout LC Tip to Rack "${rackID}" Panel "${panelID}" Port "${portID}"
+    #Step 1: Get virtual panel index from virtual panels table
+    ${panel index}=    Get LC Panel Index    ${rackID}    ${panelID}
+    Log    ${panel index}    
+    #Step 2: Compose a completed plugout tip to panel port     
+    ${completed command}=        Catenate    vp_cmd_helper --plugout --rack     ${rackID}    --panel    ${panel index}     --port     ${portID} 
+    Log    ${completed command}  
+    
+    #Step 3: Send virtual command via SSH connection
+    Enter Virtual Command ${completed command} 
+
+Plugin HDF Tip to Rack "${rackID}" Panel "${panelID}" ModuleHD "${moduleHD}" Port "${portID}"
+    #Step 1: Get virtual panel index from virtual panels table
+    ${panel index}=    Get HDF Panel Index    ${rackID}    ${panelID}    ${moduleHD}
+    
+    Log    ${panel index}    
+    #Step 2: Compose a completed plug tip to panel port     
+    ${completed command}=        Catenate    vp_cmd_helper --plugin --rack     ${rackID}    --panel    ${panel index}     --port     ${portID} 
+    Log    ${completed command}  
+    
+    #Step 3: Send virtual command via SSH connection
+    Enter Virtual Command ${completed command} 
+ 
+Plugout HDF Tip to Rack "${rackID}" Panel "${panelID}" ModuleHD "${moduleHD}" Port "${portID}"
+    #Step 1: Get virtual panel index from virtual panels table
+    ${panel index}=    Get HDF Panel Index    ${rackID}    ${panelID}    ${moduleHD}
+    
+    Log    ${panel index}    
+    #Step 2: Compose a completed plug tip to panel port     
+    ${completed command}=        Catenate    vp_cmd_helper --plugout --rack     ${rackID}    --panel    ${panel index}     --port     ${portID} 
+    Log    ${completed command}  
+    
+    #Step 3: Send virtual command via SSH connection
+    Enter Virtual Command ${completed command} 
+
+Plugin 24F Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Module "${module}" Port "${portID}"
+    #Step 1: Get virtual panel index from virtual panels table
+    ${panel index}=    Get 24F Panel Index    ${rackID}    ${panelID}    ${row}    ${module}
+    
+    Log    ${panel index}    
+    #Step 2: Compose a completed plug tip to panel port     
+    ${completed command}=        Catenate    vp_cmd_helper --plugin --rack     ${rackID}    --panel    ${panel index}    --module    ${module}     --port     ${portID} 
+    Log    ${completed command}  
+    
+    #Step 3: Send virtual command via SSH connection
+    Enter Virtual Command ${completed command} 
+Plugout 24F Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Module "${module}" Port "${portID}"
+    #Step 1: Get virtual panel index from virtual panels table
+    ${panel index}=    Get 24F Panel Index    ${rackID}    ${panelID}    ${row}    ${module}
+    
+    Log    ${panel index}    
+    #Step 2: Compose a completed plugout tip to panel port     
+    ${completed command}=        Catenate    vp_cmd_helper --plugout --rack     ${rackID}    --panel    ${panel index}    --module    ${module}     --port     ${portID} 
+    Log    ${completed command}  
+    
+    #Step 3: Send virtual command via SSH connection
+    Enter Virtual Command ${completed command}     

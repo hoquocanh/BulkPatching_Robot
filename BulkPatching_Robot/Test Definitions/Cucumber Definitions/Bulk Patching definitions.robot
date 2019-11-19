@@ -14,21 +14,7 @@ Resource    ../Test Pages/Bulk Patching Page.robot
 
 
 *** Keywords ***
-Bulk Patching Screen Should Be Opened
-    Page Should Contain Element    ${lblBulk Patching Title}    
-
-    
-Get Status of Tab End A
-    #Step 1: Get value of attribute "style" from element "tabEndA"
-    ${output status}=    Get Element Attribute    ${tabEndA}    style
-    
-    #Step 2: Return value "active" if the output attribute's value is "background: black;" else if that value is "background: gray;", return "inactive"
-    
-    ${status}=    Run Keyword If    '${output status}' == '${attribute tab active}'    Set Variable    "active"
-    ...    ELSE IF    '${output status}' == '${attribute tab inactive}'    Set Variable    "inactive"           
-     
-    #Step 3: Return the correct status
-    [Return]    ${status}     
+#Key work for Behavior Data Driven used in Test Cases
 
 The Header of End A Is "${status}"
     ${get status}=    Get Status of Tab End A 
@@ -54,100 +40,6 @@ The Help Text Is "${helptext}"
     
     ${get helptext}=    Get Text    ${lblHelpText} 
     Should Be Equal    ${helptext}    ${get helptext}    msg="The helptext is not matched the checked value!!!"
-    
-##########################################################################################################################
-#####------------ Virtual panels keywork ------------#####
-
-Plugin Copper Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Port "${portID}"
-    #Step 1: Get virtual panel index from virtual panels table
-    ${panel index}=    Get Copper Panel Index    ${rackID}    ${panelID}    ${row}
-    Log    ${panel index}    
-    #Step 2: Compose a completed plug tip to panel port     
-    ${completed command}=        Catenate    vp_cmd_helper --plugin --rack     ${rackID}    --panel    ${panel index}     --port     ${portID} 
-    Log    ${completed command}  
-    
-    #Step 3: Send virtual command via SSH connection
-    Enter Virtual Command ${completed command} 
-
-Plugout Copper Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Port "${portID}"
-    #Step 1: Get virtual panel index from virtual panels table
-    ${panel index}=    Get Copper Panel Index    ${rackID}    ${panelID}    ${row}
-    Log    ${panel index}    
-    #Step 2: Compose a completed plugout tip to panel port     
-    ${completed command}=        Catenate    vp_cmd_helper --plugout --rack     ${rackID}    --panel    ${panel index}     --port     ${portID} 
-    Log    ${completed command}  
-    
-    #Step 3: Send virtual command via SSH connection
-    Enter Virtual Command ${completed command} 
-
-Plugin LC Tip to Rack "${rackID}" Panel "${panelID}" Port "${portID}"
-    #Step 1: Get virtual panel index from virtual panels table
-    ${panel index}=    Get LC Panel Index    ${rackID}    ${panelID}
-    Log    ${panel index}    
-    #Step 2: Compose a completed plug tip to panel port     
-    ${completed command}=        Catenate    vp_cmd_helper --plugin --rack     ${rackID}    --panel    ${panel index}     --port     ${portID} 
-    Log    ${completed command}  
-    
-    #Step 3: Send virtual command via SSH connection
-    Enter Virtual Command ${completed command} 
-
-Plugout LC Tip to Rack "${rackID}" Panel "${panelID}" Port "${portID}"
-    #Step 1: Get virtual panel index from virtual panels table
-    ${panel index}=    Get LC Panel Index    ${rackID}    ${panelID}
-    Log    ${panel index}    
-    #Step 2: Compose a completed plugout tip to panel port     
-    ${completed command}=        Catenate    vp_cmd_helper --plugout --rack     ${rackID}    --panel    ${panel index}     --port     ${portID} 
-    Log    ${completed command}  
-    
-    #Step 3: Send virtual command via SSH connection
-    Enter Virtual Command ${completed command} 
-
-Plugin HDF Tip to Rack "${rackID}" Panel "${panelID}" ModuleHD "${moduleHD}" Port "${portID}"
-    #Step 1: Get virtual panel index from virtual panels table
-    ${panel index}=    Get HDF Panel Index    ${rackID}    ${panelID}    ${moduleHD}
-    
-    Log    ${panel index}    
-    #Step 2: Compose a completed plug tip to panel port     
-    ${completed command}=        Catenate    vp_cmd_helper --plugin --rack     ${rackID}    --panel    ${panel index}     --port     ${portID} 
-    Log    ${completed command}  
-    
-    #Step 3: Send virtual command via SSH connection
-    Enter Virtual Command ${completed command} 
- 
-Plugout HDF Tip to Rack "${rackID}" Panel "${panelID}" ModuleHD "${moduleHD}" Port "${portID}"
-    #Step 1: Get virtual panel index from virtual panels table
-    ${panel index}=    Get HDF Panel Index    ${rackID}    ${panelID}    ${moduleHD}
-    
-    Log    ${panel index}    
-    #Step 2: Compose a completed plug tip to panel port     
-    ${completed command}=        Catenate    vp_cmd_helper --plugout --rack     ${rackID}    --panel    ${panel index}     --port     ${portID} 
-    Log    ${completed command}  
-    
-    #Step 3: Send virtual command via SSH connection
-    Enter Virtual Command ${completed command} 
-
-Plugin 24F Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Module "${module}" Port "${portID}"
-    #Step 1: Get virtual panel index from virtual panels table
-    ${panel index}=    Get 24F Panel Index    ${rackID}    ${panelID}    ${row}    ${module}
-    
-    Log    ${panel index}    
-    #Step 2: Compose a completed plug tip to panel port     
-    ${completed command}=        Catenate    vp_cmd_helper --plugin --rack     ${rackID}    --panel    ${panel index}    --module    ${module}     --port     ${portID} 
-    Log    ${completed command}  
-    
-    #Step 3: Send virtual command via SSH connection
-    Enter Virtual Command ${completed command} 
-Plugout 24F Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Module "${module}" Port "${portID}"
-    #Step 1: Get virtual panel index from virtual panels table
-    ${panel index}=    Get 24F Panel Index    ${rackID}    ${panelID}    ${row}    ${module}
-    
-    Log    ${panel index}    
-    #Step 2: Compose a completed plugout tip to panel port     
-    ${completed command}=        Catenate    vp_cmd_helper --plugout --rack     ${rackID}    --panel    ${panel index}    --module    ${module}     --port     ${portID} 
-    Log    ${completed command}  
-    
-    #Step 3: Send virtual command via SSH connection
-    Enter Virtual Command ${completed command} 
        
 Check to see if Rack "${rackID}" Panel "${panelID}" Port "${portID}" existed in End "${end position}"
     

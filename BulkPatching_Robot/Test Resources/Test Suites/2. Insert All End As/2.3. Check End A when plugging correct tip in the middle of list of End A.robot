@@ -6,7 +6,7 @@ Resource    ../../../Test Definitions/Cucumber Definitions/Bulk Patching definit
 Test Setup    Run Keywords    
 ...    Open SSH Connection and Login
 ...    Open WebUI And Go To Home Screen
-#Test Teardown    Set Web UI to Stand By State and Close Current Browser
+Test Teardown    Set Web UI to Stand By State and Close Current Browser
 
 
 *** Test Cases ***
