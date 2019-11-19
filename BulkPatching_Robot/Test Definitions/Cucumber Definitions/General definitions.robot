@@ -64,9 +64,6 @@ Set Web UI to Stand By State
     ...    Run Keywords    
     ...    Click Web Button    ${btnHome}
     ...    AND    Wait For Page Load    
-            
- 
-
 
 Set Web UI to Stand By State and Close Current Browser
     #Step 1: If the Web UI is being a specific screen with "Exit" button, press that button

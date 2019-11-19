@@ -2,9 +2,8 @@
 Resource    ../../../Test Definitions/Cucumber Definitions/General definitions.robot
 Resource    ../../../Test Definitions/Cucumber Definitions/Home definitions.robot
 Resource    ../../../Test Definitions/Cucumber Definitions/Bulk Patching definitions.robot
-
-                         
-
+                       
+#Help text.py is to store help text for checking
 Variables    ../../Test Data/Help text.py
 
 Test Setup    Run Keywords    
@@ -17,9 +16,18 @@ ${active}=    "active"
 ${inactive}=    "inactive"
 
 *** Test Cases ***
-INSERT_END_A_02_02_09_Verify that all ImVisionXs in the zone show the bulk patching list correctly after plugging a connector into the End A list if there is a 96LC fiber type            
+INSERT_END_A_01_01_Verify that imVision X shows correctly after selecting Bulk Patching button on the home page if observing all ImVisionX Displays
     Given Go To Bulk Patching Screen
-    When Plugin 24F Tip to Rack "1" Panel "6" Row "1" Module "A" Port "1"    
-    Then Check then see if Rack "1" Panel "6" Row "1" Module "A" Port "1" existed in End "A"
-    Then Plugout 24F Tip to Rack "1" Panel "6" Row "1" Module "A" Port "1"
+    Then Bulk Patching Screen Should Be Opened
+
+INSERT_END_A_01_02_Verify that imVision X shows correctly after selecting Bulk Patching button on the home page if observing the header of End A
+    Given Go To Bulk Patching Screen
+    Then The Header of End A Is "${active}"
+
+INSERT_END_A_01_03_Verify that imVision X shows correctly after selecting Bulk Patching button on the home page if observing the header of End B
+    Given Go To Bulk Patching Screen
+    Then The Header of End B Is "${inactive}"
     
+INSERT_END_A_01_04_Verify that imVision X shows correctly after selecting Bulk Patching button on the home page if observing the help text on Display of ImVisionX
+    Given Go To Bulk Patching Screen
+    Then The Help Text Is "${txtInsertAllEndAPlugs}"

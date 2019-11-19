@@ -7,6 +7,7 @@ ${lblHelpText}    //ul[@id='text-line']/li/p
 
 ${number of lines}    //ul[@id='bulkPatchList']/li
 ${dynamic port position}    //ul[@id='bulkPatchList']/li[Line Position]/div[End Position]/p[contains(text(),'Port Information')]
+${dynamic port position with color}    //ul[@id='bulkPatchList']/li[Line Position]/div[End Position][@style='Color']/p[contains(text(),'Port Information')]
 
 ${attribute tab active}    background: black;
 ${attribute tab inactive}    background: gray;

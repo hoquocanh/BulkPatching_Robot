@@ -288,8 +288,61 @@ Check then see if Rack "${rackID}" Panel "${panelID}" Row "${row}" Module "${mod
     #Step 5: Check if found the desired element
         
     Should Be Equal As Strings    ${count}    1    
-              
+
+Get Color Code of Port Information 
+    [Arguments]    ${color}
     
+    ${color}=    Convert To Lowercase    ${color}
+    ${color code}=    Run Keyword If    '${color}' == 'red'    Set Variable    color:#F00;
+    ...    ELSE IF            '${color}' == 'black'    Set Variable    color:#000;
+    
+    [Return]    ${color code}
+                  
+Check to see if Rack "${rackID}" Panel "${panelID}" Row "${row} Port "${portID}" in End "${end position}" color "${color}"
+    
+    [Documentation]    This keyword is used to check the color of port information of Coper or LC panel displaying in either End A or End B on Bulk Patching screen
+    ...      
+    ...                Argument: rackID, panelID, portID, end position [A/B], color [red/black]  
+    #Element format: //ul[@id='bulkPatchList']/li[Line Position]/div[End Position][@style='Color']/p[contains(text(),'Port Information')]
+    
+    #Step 1: Convert the input "end position" to the position on xPath syntax. 
+    #Currently, the div[2] will be End A, and the div[4] will be End B   
+    ${input end position}=    Run Keyword If    '${end position}'=='a' or '${end position}'=='A'    Set Variable    2   
+    ...    ELSE IF         '${end position}'=='b' or '${end position}'=='B'    Set Variable    4
+      
+    #Step 2: Join the input port information to be a text in form of "Rack 1-Panel 1-Port 3", to use to add to xPatch node "p[contains(text(),'Port Information')]" for comparision purpose
+    
+    ${input rack}=    Catenate    Rack    ${rackID}
+    ${input panel}=    Catenate    -Panel    ${panelID}
+    ${input port}=    Catenate    -Port    ${portID}
+            
+    ${input port information}=    Catenate    SEPARATOR=    ${input rack}    ${input panel}    ${input port}
+    ${input color}=    Get Color Code of Port Information    ${color}        
+    
+    #Step 3: On the xPath syntax of Port position on "Bulk Patching" screen, replace the "End Position" by value of ${input end position} and "Port Information" by value of ${input port information}, "Color" by value of ${input color} 
+    ${xPath syntax1}=    Replace String    ${dynamic port position with color}    End Position    ${input end position}                
+    ${xPath syntax2}=    Replace String    ${xPath syntax1}    Port Information    ${input port information}
+    ${xPath syntax2.1}=    Replace String    ${xPath syntax2}    Color    ${input color}
+    
+    #Step 4: Find the desired element in the list of lines in Bulk Patching screen
+    ${number of lines}=    Number of Lines in Bulk Patching Screen    
+    
+    ${count}=    Set Variable    0
+    FOR    ${index}    IN RANGE    ${number of lines+1}
+            
+        ${index temp}=    Evaluate        ${index} + 1
+             
+
+        #${index string}=    Convert To String    ${index temp}
+        ${index string}=    Convert To String    ${index+1}
+        ${xPath syntax3}=    Replace String    ${xPath syntax2.1}    Line Position    ${index string}
+        Log    ${xPath syntax3}    
+        ${count}=    Get Element Count    ${xPath syntax3}
+        Exit For Loop If    ${count} == 1
+    END
+    
+    #Step 5: Check if found the desired element
+    Should Be Equal As Strings    ${count}    1        
 
 
 ##########################################################################################################################
