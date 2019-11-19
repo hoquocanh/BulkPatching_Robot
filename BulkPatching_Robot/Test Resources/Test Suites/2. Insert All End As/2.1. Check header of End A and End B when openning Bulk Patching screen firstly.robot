@@ -20,5 +20,6 @@ ${inactive}=    "inactive"
 INSERT_END_A_02_02_09_Verify that all ImVisionXs in the zone show the bulk patching list correctly after plugging a connector into the End A list if there is a 96LC fiber type            
     Given Go To Bulk Patching Screen
     When Plugin 24F Tip to Rack "1" Panel "6" Row "1" Module "A" Port "1"    
-    #Then Check and see if Rack "1" Panel "4" Module "3" Port "1" existed in End "A"
-    #Then Plugout 24F Tip to Rack "1" Panel "6" Row "1" Module "A" Port "1"
+    Then Check then see if Rack "1" Panel "6" Row "1" Module "A" Port "1" existed in End "A"
+    Then Plugout 24F Tip to Rack "1" Panel "6" Row "1" Module "A" Port "1"
+    

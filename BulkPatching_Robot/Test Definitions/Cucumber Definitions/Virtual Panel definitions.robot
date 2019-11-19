@@ -93,7 +93,7 @@ Get MPO Panel Index
         #This will begin from index = panel index+1 since we need to skip the row of "menu"
        Run Keyword If    '${VPpanels[${panel index+1}][&{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[MPO]' and '${VPpanels[${panel index+1}][&{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&{dic panels table}[row]]}' == '${input row}' and '${VPpanels[${panel index+1}][&{dic panels table}[module]]}' == '${input module}'    
         ...    Exit For Loop        
-                    
+                  
     END
     
     #Return the value at column "index" and at the row which all of input value matched
@@ -105,11 +105,15 @@ Get 24F Panel Index
     #Step 1: Get the total number of panels in Panel List
     ${panels number}=    Get Length    ${VPpanels}
     
-    #Step 2: Check in every row of @{VPpanels} to get the panel index depends on the input values
+    #Step 2: Change the value of ${input module} to format as "AB" or "CD"
+    ${temp module}=    Run Keyword If    '${input module}' == 'A' or '${input module}' == 'a' or '${input module}' == 'B' or '${input module}' == 'b'    Set Variable    AB
+                       ...  ELSE IF          '${input module}' == 'C' or '${input module}' == 'c' or '${input module}' == 'D' or '${input module}' == 'd'    Set Variable    CD
+    
+    #Step 3: Check in every row of @{VPpanels} to get the panel index depends on the input values
     FOR    ${panel index}    IN RANGE    ${panels number-1}
         #Now, we will check each of row in panels table
         #This will begin from index = panel index+1 since we need to skip the row of "menu"
-       Run Keyword If    '${VPpanels[${panel index+1}][&{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[24F]' and '${VPpanels[${panel index+1}][&{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&{dic panels table}[row]]}' == '${input row}' and '${VPpanels[${panel index+1}][&{dic panels table}[module]]}' == '${input module}'    
+       Run Keyword If    '${VPpanels[${panel index+1}][&{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[24F]' and '${VPpanels[${panel index+1}][&{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&{dic panels table}[row]]}' == '${input row}' and '${VPpanels[${panel index+1}][&{dic panels table}[module]]}' == '${temp module}'    
         ...    Exit For Loop        
                     
     END
