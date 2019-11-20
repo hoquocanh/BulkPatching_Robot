@@ -46,14 +46,19 @@ Close Current Screen
 Click Web Button
     [Arguments]    ${btnName}
     Click Element    ${btnName}
-
+    
+    
+    
 Click Delete Button
-    Click Button    ${btnDelete}            
-
-
+    Click Web Button    ${btnDelete}            
+    #This waiting is necessary to make sure the elements are up to date
+    Wait For Page Update
 
 Wait For Page Load
     Sleep    ${PAGE LOAD TIMEOUT}
+    
+Wait For Page Update
+    Sleep    ${PAGE UPDATE TIMEOUT}
 
 Exit Screen
     Click Web Button    ${btnExit}

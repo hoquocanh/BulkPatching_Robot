@@ -18,7 +18,7 @@ Resource    ../Test Pages/Bulk Patching Page.robot
 
 The Header of End A Is "${status}"
     ${get status}=    Get Status of Tab End A 
-    Should Be Equal    ${status}    ${get status}    msg="Status of End A is not matched the checked value!!!"
+    Run Keyword And Continue On Failure    Should Be Equal    ${status}    ${get status}    msg="Status of End A is not matched the checked value!!!"
     
 Get Status of Tab End B
     #Step 1: Get value of attribute "style" from element "tabEndB"
@@ -34,18 +34,18 @@ Get Status of Tab End B
 
 The Header of End B Is "${status}"
     ${get status}=    Get Status of Tab End B 
-    Should Be Equal    ${status}    ${get status}    msg="Status of End B is not matched the checked value!!!"      
+    Run Keyword And Continue On Failure    Should Be Equal    ${status}    ${get status}    msg="Status of End B is not matched the checked value!!!"      
 
 The Help Text Is "${helptext}"
     
     ${get helptext}=    Get Text    ${lblHelpText} 
-    Should Be Equal    ${helptext}    ${get helptext}    msg="The helptext is not matched the checked value!!!"
+    Run Keyword And Continue On Failure    Should Be Equal    ${helptext}    ${get helptext}    msg="The helptext is not matched the checked value!!!"
 
-Check to see if Rack "${rackID}" Panel "${panelID}" Port "${portID}" existed in End "${end position}"
+Check to see if Rack "${rackID}" Panel "${panelID}" Port "${portID}" "${status}" in End "${end position}"
     
     [Documentation]    This keyword is used to check the information of LC panel displaying in either End A or End B on Bulk Patching screen
     ...      
-    ...                Argument: rackID, panelID, portID, end position[A/B]  
+    ...                Argument: rackID, panelID, portID, status[appeared/disappeared], end position[A/B]  
     #//ul[@id='bulkPatchList']/li[Line Position]/div[End Position]/p[contains(text(),'Port Information')]
     
     #Step 1: Convert the input "end position" to the position on xPath syntax. 
@@ -67,6 +67,7 @@ Check to see if Rack "${rackID}" Panel "${panelID}" Port "${portID}" existed in 
     ${xPath syntax2}=    Replace String    ${xPath syntax1}    Port Information    ${input port information}
     
     #Step 4: Find the desired element in the list of lines in Bulk Patching screen
+    # ${count}= 0 [not found], 1 [found]
     ${number of lines}=    Number of Lines in Bulk Patching Screen    
     
     ${count}=    Set Variable    0
@@ -83,14 +84,20 @@ Check to see if Rack "${rackID}" Panel "${panelID}" Port "${portID}" existed in 
         Exit For Loop If    ${count} == 1
     END
     
-    #Step 5: Check if found the desired element
-    Should Be Equal As Strings    ${count}    1    
+    #Step 5: Check if the element appeared/ disappeared
+    #Step 5.1: Change the input status to 1 [if appeared] or 0 [if disappeared]
+    ${temp status}=    Convert To Lowercase    ${status}
+    ${expected value}=    Run Keyword If    '${temp status}' == 'appeared'    Set Variable    1
+    ...    ELSE IF        '${temp status}' == 'disappeared'    Set Variable    0
+    
+    #Step 5.2: compare the status to the value checking from list of lines in Bulk Patching screen         
+    Run Keyword And Continue On Failure    Should Be Equal    '${count}'    '${expected value}'
        
-Check if Rack "${rackID}" Panel "${panelID}" Row "${row} Port "${portID}" existed in End "${end position}"
+Check if Rack "${rackID}" Panel "${panelID}" Row "${row} Port "${portID}" "${status}" in End "${end position}"
     
     [Documentation]    This keyword is used to check the information of Coper panel displaying in either End A or End B on Bulk Patching screen
     ...      
-    ...                Argument: rackID, panelID, row, portID, end position[A/B]  
+    ...                Argument: rackID, panelID, row, portID, status[appeared/disappeared], end position[A/B]  
     #//ul[@id='bulkPatchList']/li[Line Position]/div[End Position]/p[contains(text(),'Port Information')]
     
     #Step 1: Convert the input "end position" to the position on xPath syntax. 
@@ -112,6 +119,7 @@ Check if Rack "${rackID}" Panel "${panelID}" Row "${row} Port "${portID}" existe
     ${xPath syntax2}=    Replace String    ${xPath syntax1}    Port Information    ${input port information}
     
     #Step 4: Find the desired element in the list of lines in Bulk Patching screen
+    # ${count}= 0 [not found], 1 [found]
     ${number of lines}=    Number of Lines in Bulk Patching Screen    
     
     ${count}=    Set Variable    0
@@ -128,14 +136,20 @@ Check if Rack "${rackID}" Panel "${panelID}" Row "${row} Port "${portID}" existe
         Exit For Loop If    ${count} == 1
     END
     
-    #Step 5: Check if found the desired element
-    Should Be Equal As Strings    ${count}    1    
+    #Step 5: Check if the element appeared/ disappeared
+    #Step 5.1: Change the input status to 1 [if appeared] or 0 [if disappeared]
+    ${temp status}=    Convert To Lowercase    ${status}
+    ${expected value}=    Run Keyword If    '${temp status}' == 'appeared'    Set Variable    1
+    ...    ELSE IF        '${temp status}' == 'disappeared'    Set Variable    0
+    
+    #Step 5.2: compare the status to the value checking from list of lines in Bulk Patching screen         
+    Run Keyword And Continue On Failure    Should Be Equal    '${count}'    '${expected value}'    
         
-Check and see if Rack "${rackID}" Panel "${panelID}" ModuleHD "${module}" Port "${portID}" existed in End "${end position}"
+Check and see if Rack "${rackID}" Panel "${panelID}" ModuleHD "${module}" Port "${portID}" "${status}" in End "${end position}"
         
     [Documentation]    This keyword is used to check the information of HDF panel displaying in either End A or End B on Bulk Patching screen
     ...      
-    ...                Argument: rackID, panelID, module, portID, end position    
+    ...                Argument: rackID, panelID, module, portID, status[appeared/disappeared], end position[A/B]     
     #//ul[@id='bulkPatchList']/li[Line Position]/div[End Position]/p[contains(text(),'Port Information')]
     
     #Step 1: Convert the input "end position" to the position on xPath syntax. 
@@ -158,6 +172,7 @@ Check and see if Rack "${rackID}" Panel "${panelID}" ModuleHD "${module}" Port "
     ${xPath syntax2}=    Replace String    ${xPath syntax1}    Port Information    ${input port information}
     
     #Step 4: Find the desired element in the list of lines in Bulk Patching screen
+    # ${count}= 0 [not found], 1 [found]
     ${number of lines}=    Number of Lines in Bulk Patching Screen    
     
     ${count}=    Set Variable    0
@@ -174,15 +189,20 @@ Check and see if Rack "${rackID}" Panel "${panelID}" ModuleHD "${module}" Port "
         Exit For Loop If    ${count} == 1
     END
     
-    #Step 5: Check if found the desired element
-        
-    Should Be Equal As Strings    ${count}    1    
+    #Step 5: Check if the element appeared/ disappeared
+    #Step 5.1: Change the input status to 1 [if appeared] or 0 [if disappeared]
+    ${temp status}=    Convert To Lowercase    ${status}
+    ${expected value}=    Run Keyword If    '${temp status}' == 'appeared'    Set Variable    1
+    ...    ELSE IF        '${temp status}' == 'disappeared'    Set Variable    0
+    
+    #Step 5.2: compare the status to the value checking from list of lines in Bulk Patching screen         
+    Run Keyword And Continue On Failure    Should Be Equal    '${count}'    '${expected value}' 
 
-Check then see if Rack "${rackID}" Panel "${panelID}" Row "${row}" Module "${module}" Port "${portID}" existed in End "${end position}"
+Check then see if Rack "${rackID}" Panel "${panelID}" Row "${row}" Module "${module}" Port "${portID}" "${status}" in End "${end position}"
     
     [Documentation]    This keyword is used to check the information of 24F panel displaying in either End A or End B on Bulk Patching screen
     ...      
-    ...                Argument: rackID, panelID, row, module, portID, end position   
+    ...                Argument: rackID, panelID, row, module, portID, status[appeared/disappeared], end position[A/B]  
     #//ul[@id='bulkPatchList']/li[Line Position]/div[End Position]/p[contains(text(),'Port Information')]
     
     #Step 1: Convert the input "end position" to the position on xPath syntax. 
@@ -206,6 +226,7 @@ Check then see if Rack "${rackID}" Panel "${panelID}" Row "${row}" Module "${mod
     ${xPath syntax2}=    Replace String    ${xPath syntax1}    Port Information    ${input port information}
     
     #Step 4: Find the desired element in the list of lines in Bulk Patching screen
+    # ${count}= 0 [not found], 1 [found]
     ${number of lines}=    Number of Lines in Bulk Patching Screen    
     
     ${count}=    Set Variable    0
@@ -222,9 +243,14 @@ Check then see if Rack "${rackID}" Panel "${panelID}" Row "${row}" Module "${mod
         Exit For Loop If    ${count} == 1
     END
     
-    #Step 5: Check if found the desired element
-        
-    Should Be Equal As Strings    ${count}    1    
+    #Step 5: Check if the element appeared/ disappeared
+    #Step 5.1: Change the input status to 1 [if appeared] or 0 [if disappeared]
+    ${temp status}=    Convert To Lowercase    ${status}
+    ${expected value}=    Run Keyword If    '${temp status}' == 'appeared'    Set Variable    1
+    ...    ELSE IF        '${temp status}' == 'disappeared'    Set Variable    0
+    
+    #Step 5.2: compare the status to the value checking from list of lines in Bulk Patching screen         
+    Run Keyword And Continue On Failure    Should Be Equal    '${count}'    '${expected value}'    
 
 Get Color Code of Port Information 
     [Arguments]    ${color}
@@ -279,7 +305,8 @@ Check if Rack "${rackID}" Panel "${panelID}" Row "${row} Port "${portID}" in End
     END
     
     #Step 5: Check if found the desired element
-    Should Be Equal As Strings    ${count}    1        
+    Run Keyword And Continue On Failure    Should Be Equal    '${count}'    '1'
+            
 
 
 ##########################################################################################################################
