@@ -40,12 +40,57 @@ The Help Text Is "${helptext}"
     
     ${get helptext}=    Get Text    ${lblHelpText} 
     Should Be Equal    ${helptext}    ${get helptext}    msg="The helptext is not matched the checked value!!!"
-       
+
 Check to see if Rack "${rackID}" Panel "${panelID}" Port "${portID}" existed in End "${end position}"
     
-    [Documentation]    This keyword is used to check the information of Coper or LC panel displaying in either End A or End B on Bulk Patching screen
+    [Documentation]    This keyword is used to check the information of LC panel displaying in either End A or End B on Bulk Patching screen
     ...      
-    ...                Argument: rackID, panelID, portID, end position  
+    ...                Argument: rackID, panelID, portID, end position[A/B]  
+    #//ul[@id='bulkPatchList']/li[Line Position]/div[End Position]/p[contains(text(),'Port Information')]
+    
+    #Step 1: Convert the input "end position" to the position on xPath syntax. 
+    #Currently, the div[2] will be End A, and the div[4] will be End B   
+    ${input end position}=    Run Keyword If    '${end position}'=='a' or '${end position}'=='A'    Set Variable    2   
+    ...    ELSE IF         '${end position}'=='b' or '${end position}'=='B'    Set Variable    4
+      
+    #Step 2: Join the input port information to be a text in form of "Rack 1-Panel 1-Port 3", to use to add to xPatch node "p[contains(text(),'Port Information')]" for comparision purpose
+    
+    ${input rack}=    Catenate    Rack    ${rackID}
+    ${input panel}=    Catenate    -Panel    ${panelID}
+    ${input port}=    Catenate    -Port    ${portID}
+            
+    ${input port information}=    Catenate    SEPARATOR=    ${input rack}    ${input panel}    ${input port}
+    
+    
+    #Step 3: On the xPath syntax of Port position on "Bulk Patching" screen, replace the "End Position" by value of ${input end position} and "Port Information" by value of ${input port information} 
+    ${xPath syntax1}=    Replace String    ${dynamic port position}    End Position    ${input end position}                
+    ${xPath syntax2}=    Replace String    ${xPath syntax1}    Port Information    ${input port information}
+    
+    #Step 4: Find the desired element in the list of lines in Bulk Patching screen
+    ${number of lines}=    Number of Lines in Bulk Patching Screen    
+    
+    ${count}=    Set Variable    0
+    FOR    ${index}    IN RANGE    ${number of lines+1}
+            
+        ${index temp}=    Evaluate        ${index} + 1
+             
+
+        #${index string}=    Convert To String    ${index temp}
+        ${index string}=    Convert To String    ${index+1}
+        ${xPath syntax3}=    Replace String    ${xPath syntax2}    Line Position    ${index string}
+        Log    ${xPath syntax3}    
+        ${count}=    Get Element Count    ${xPath syntax3}
+        Exit For Loop If    ${count} == 1
+    END
+    
+    #Step 5: Check if found the desired element
+    Should Be Equal As Strings    ${count}    1    
+       
+Check if Rack "${rackID}" Panel "${panelID}" Row "${row} Port "${portID}" existed in End "${end position}"
+    
+    [Documentation]    This keyword is used to check the information of Coper panel displaying in either End A or End B on Bulk Patching screen
+    ...      
+    ...                Argument: rackID, panelID, row, portID, end position[A/B]  
     #//ul[@id='bulkPatchList']/li[Line Position]/div[End Position]/p[contains(text(),'Port Information')]
     
     #Step 1: Convert the input "end position" to the position on xPath syntax. 
@@ -86,7 +131,7 @@ Check to see if Rack "${rackID}" Panel "${panelID}" Port "${portID}" existed in 
     #Step 5: Check if found the desired element
     Should Be Equal As Strings    ${count}    1    
         
-Check and see if Rack "${rackID}" Panel "${panelID}" Module "${module}" Port "${portID}" existed in End "${end position}"
+Check and see if Rack "${rackID}" Panel "${panelID}" ModuleHD "${module}" Port "${portID}" existed in End "${end position}"
         
     [Documentation]    This keyword is used to check the information of HDF panel displaying in either End A or End B on Bulk Patching screen
     ...      
@@ -190,7 +235,7 @@ Get Color Code of Port Information
     
     [Return]    ${color code}
                   
-Check to see if Rack "${rackID}" Panel "${panelID}" Row "${row} Port "${portID}" in End "${end position}" color "${color}"
+Check if Rack "${rackID}" Panel "${panelID}" Row "${row} Port "${portID}" in End "${end position}" color "${color}"
     
     [Documentation]    This keyword is used to check the color of port information of Coper or LC panel displaying in either End A or End B on Bulk Patching screen
     ...      

@@ -6,10 +6,13 @@ Resource    ../Test Pages/Home Page.robot
 
 
 *** Variables ***
+#------------------Elements------------------
 ${btnHome}    //div[@id='home-lang']  
 ${lnkRack Name}    //div[@id='middle_rack_id']
 ${btnExit}    //div[@id='exit-footer' and @style='display: block;']/div[@id='exit-button']
 ${btnCancel}    //div[@style='display: block;']/div[@id='cancel-button']
+${btnDelete}    //div[@id='exit-footer' and @style='display: block;']/div[@id='delete-button']
+${btnReplace}    //div[@id='exit-footer' and @style='display: block;']/div[@id='replace-button']
 
 *** Keywords ***
 Open WebUI And Go To Home Screen
@@ -43,7 +46,12 @@ Close Current Screen
 Click Web Button
     [Arguments]    ${btnName}
     Click Element    ${btnName}
-        
+
+Click Delete Button
+    Click Button    ${btnDelete}            
+
+
+
 Wait For Page Load
     Sleep    ${PAGE LOAD TIMEOUT}
 

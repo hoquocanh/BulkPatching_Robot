@@ -2,6 +2,7 @@
 Library    SeleniumLibrary   
 
 *** Variables ***
+#------------------Elements------------------
 ${lblBulk Patching Title}    //div[@id='bulk-patch-title' and @style='display: block;']
 ${btnExit}    //div[@id='exit-footer' and @style='display: block;']/div[@id='exit-button']
 ${tabEndA}    //div[@id='btn-end-a']
@@ -12,6 +13,7 @@ ${number of lines}    //ul[@id='bulkPatchList']/li
 ${dynamic port position}    //ul[@id='bulkPatchList']/li[Line Position]/div[End Position]/p[contains(text(),'Port Information')]
 ${dynamic port position with color}    //ul[@id='bulkPatchList']/li[Line Position]/div[End Position][@style='Color']/p[contains(text(),'Port Information')]
 
+#------------------Elements attribute------------------
 ${attribute tab active}    background: black;
 ${attribute tab inactive}    background: gray;
 
