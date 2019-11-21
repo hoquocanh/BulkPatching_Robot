@@ -1,5 +1,9 @@
 *** Settings ***
-Library    SeleniumLibrary   
+Library    SeleniumLibrary
+Library    String    
+
+Resource    General Page.robot
+Resource    Home Page.robot   
 
 *** Variables ***
 #------------------Elements------------------
@@ -32,4 +36,14 @@ Get Status of Tab End A
     ...    ELSE IF    '${output status}' == '${attribute tab inactive}'    Set Variable    "inactive"           
      
     #Step 3: Return the correct status
-    [Return]    ${status}     
+    [Return]    ${status}   
+    
+Select Tab End "${end position}"
+    ${temp end position}=    Convert To Lowercase    ${end position}    
+    
+    Run Keyword If    '${temp end position}' == 'a'    Click Web Button    ${tabEndA}
+    ...    ELSE IF    '${temp end position}' == 'b'    Click Web Button    ${tabEndB}
+    
+    #Since switching tab take more than to update tab status, then it need wait for 2 seconds
+    Wait For Page Load                
+      

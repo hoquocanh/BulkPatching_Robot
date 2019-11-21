@@ -133,7 +133,7 @@ Plugin Copper Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Port "${po
     
     #Step 3: Send virtual command via SSH connection
     Enter Virtual Command ${completed command} 
-
+     
 Plugout Copper Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Port "${portID}"
     #Step 1: Get virtual panel index from virtual panels table
     ${panel index}=    Get Copper Panel Index    ${rackID}    ${panelID}    ${row}
@@ -144,6 +144,26 @@ Plugout Copper Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Port "${p
     
     #Step 3: Send virtual command via SSH connection
     Enter Virtual Command ${completed command} 
+
+Plugin Serial Copper Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" from Port "${port1ID}" to Port "${port2ID}"
+    #Step 1: Convert ${from port} and ${to port} to integer    
+    ${from port}=    Convert To Integer    ${port1ID}
+    ${to port}=    Convert To Integer    ${port2ID}
+    
+    #Step 2: Plug tip from ${from port} to ${to port}     
+    FOR    ${i}    IN RANGE    ${from port}    ${to port+1}
+        Plugin Copper Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Port "${i}"
+    END            
+
+Plugout Serial Copper Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" from Port "${port1ID}" to Port "${port2ID}"
+    #Step 1: Convert ${from port} and ${to port} to integer        
+    ${from port}=    Convert To Integer    ${port1ID}
+    ${to port}=    Convert To Integer    ${port2ID}
+    
+    #Step 2: Plugout tip from ${from port} to ${to port}
+    FOR    ${i}    IN RANGE    ${from port}    ${to port+1}
+        Plugout Copper Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Port "${i}"
+    END
 
 Plugin LC Tip to Rack "${rackID}" Panel "${panelID}" Port "${portID}"
     #Step 1: Get virtual panel index from virtual panels table
@@ -167,6 +187,26 @@ Plugout LC Tip to Rack "${rackID}" Panel "${panelID}" Port "${portID}"
     #Step 3: Send virtual command via SSH connection
     Enter Virtual Command ${completed command} 
 
+Plugin Serial LC Tip to Rack "${rackID}" Panel "${panelID}" from Port "${port1ID}" to Port "${port2ID}"
+    #Step 1: Convert ${from port} and ${to port} to integer    
+    ${from port}=    Convert To Integer    ${port1ID}
+    ${to port}=    Convert To Integer    ${port2ID}
+    
+    #Step 2: Plug tip from ${from port} to ${to port}     
+    FOR    ${i}    IN RANGE    ${from port}    ${to port+1}
+        Plugin LC Tip to Rack "${rackID}" Panel "${panelID}" Port "${i}"
+    END       
+
+Plugout Serial LC Tip to Rack "${rackID}" Panel "${panelID}" from Port "${port1ID}" to Port "${port2ID}"
+    #Step 1: Convert ${from port} and ${to port} to integer    
+    ${from port}=    Convert To Integer    ${port1ID}
+    ${to port}=    Convert To Integer    ${port2ID}
+    
+    #Step 2: Plugout tip from ${from port} to ${to port}     
+    FOR    ${i}    IN RANGE    ${from port}    ${to port+1}
+        Plugout LC Tip to Rack "${rackID}" Panel "${panelID}" Port "${i}"
+    END       
+    
 Plugin HDF Tip to Rack "${rackID}" Panel "${panelID}" ModuleHD "${moduleHD}" Port "${portID}"
     #Step 1: Get virtual panel index from virtual panels table
     ${panel index}=    Get HDF Panel Index    ${rackID}    ${panelID}    ${moduleHD}
@@ -191,6 +231,26 @@ Plugout HDF Tip to Rack "${rackID}" Panel "${panelID}" ModuleHD "${moduleHD}" Po
     #Step 3: Send virtual command via SSH connection
     Enter Virtual Command ${completed command} 
 
+Plugin Serial HDF Tip to Rack "${rackID}" Panel "${panelID}" ModuleHD "${moduleHD}" from Port "${port1ID}" to Port "${port2ID}"
+    #Step 1: Convert ${from port} and ${to port} to integer    
+    ${from port}=    Convert To Integer    ${port1ID}
+    ${to port}=    Convert To Integer    ${port2ID}
+    
+    #Step 2: Plug tip from ${from port} to ${to port}     
+    FOR    ${i}    IN RANGE    ${from port}    ${to port+1}
+        Plugin HDF Tip to Rack "${rackID}" Panel "${panelID}" ModuleHD "${moduleHD}" Port "${i}"
+    END
+
+Plugout Serial HDF Tip to Rack "${rackID}" Panel "${panelID}" ModuleHD "${moduleHD}" from Port "${port1ID}" to Port "${port2ID}"
+    #Step 1: Convert ${from port} and ${to port} to integer    
+    ${from port}=    Convert To Integer    ${port1ID}
+    ${to port}=    Convert To Integer    ${port2ID}
+    
+    #Step 2: Plugout tip from ${from port} to ${to port}     
+    FOR    ${i}    IN RANGE    ${from port}    ${to port+1}
+        Plugout HDF Tip to Rack "${rackID}" Panel "${panelID}" ModuleHD "${moduleHD}" Port "${i}"
+    END
+             
 Plugin 24F Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Module "${module}" Port "${portID}"
     #Step 1: Get virtual panel index from virtual panels table
     ${panel index}=    Get 24F Panel Index    ${rackID}    ${panelID}    ${row}    ${module}
@@ -202,6 +262,7 @@ Plugin 24F Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Module "${mod
     
     #Step 3: Send virtual command via SSH connection
     Enter Virtual Command ${completed command} 
+    
 Plugout 24F Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Module "${module}" Port "${portID}"
     #Step 1: Get virtual panel index from virtual panels table
     ${panel index}=    Get 24F Panel Index    ${rackID}    ${panelID}    ${row}    ${module}
@@ -212,4 +273,24 @@ Plugout 24F Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Module "${mo
     Log    ${completed command}  
     
     #Step 3: Send virtual command via SSH connection
-    Enter Virtual Command ${completed command}     
+    Enter Virtual Command ${completed command}
+    
+Plugin Serial 24F Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Module "${module}" from Port "${port1ID}" to Port "${port2ID}"
+    #Step 1: Convert ${from port} and ${to port} to integer    
+    ${from port}=    Convert To Integer    ${port1ID}
+    ${to port}=    Convert To Integer    ${port2ID}
+    
+    #Step 2: Plug tip from ${from port} to ${to port}     
+    FOR    ${i}    IN RANGE    ${from port}    ${to port+1}
+        Plugin 24F Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Module "${module}" Port "${i}"
+    END   
+    
+Plugout Serial 24F Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Module "${module}" from Port "${port1ID}" to Port "${port2ID}"
+    #Step 1: Convert ${from port} and ${to port} to integer    
+    ${from port}=    Convert To Integer    ${port1ID}
+    ${to port}=    Convert To Integer    ${port2ID}
+    
+    #Step 2: Plugout tip from ${from port} to ${to port}     
+    FOR    ${i}    IN RANGE    ${from port}    ${to port+1}
+        Plugout 24F Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Module "${module}" Port "${i}"
+    END     

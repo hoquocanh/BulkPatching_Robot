@@ -18,7 +18,7 @@ Resource    ../Test Pages/Bulk Patching Page.robot
 
 The Header of End A Is "${status}"
     ${get status}=    Get Status of Tab End A 
-    Run Keyword And Continue On Failure    Should Be Equal    ${status}    ${get status}    msg="Status of End A is not matched the checked value!!!"
+    Run Keyword And Continue On Failure    Should Be Equal    "${status}"    ${get status}    msg="Status of End A is not matched the checked value!!!"
     
 Get Status of Tab End B
     #Step 1: Get value of attribute "style" from element "tabEndB"
@@ -34,7 +34,7 @@ Get Status of Tab End B
 
 The Header of End B Is "${status}"
     ${get status}=    Get Status of Tab End B 
-    Run Keyword And Continue On Failure    Should Be Equal    ${status}    ${get status}    msg="Status of End B is not matched the checked value!!!"      
+    Run Keyword And Continue On Failure    Should Be Equal    "${status}"    ${get status}    msg="Status of End B is not matched the checked value!!!"      
 
 The Help Text Is "${helptext}"
     

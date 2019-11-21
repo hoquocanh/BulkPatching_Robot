@@ -3,7 +3,7 @@ Resource    ../../Test Definitions/Cucumber Definitions/General definitions.robo
 Resource    ../../Test Definitions/Cucumber Definitions/Home definitions.robot
 Resource    ../../Test Definitions/Cucumber Definitions/Bulk Patching definitions.robot
 Resource    ../Profiles/Constant.robot
-Resource    ../../Test Definitions/Test Pages/General Page.robot
+
 
 Suite Setup    Open WebUI And Go To Home Screen
 Suite Teardown    Set Web UI to Stand By State and Close Current Browser
