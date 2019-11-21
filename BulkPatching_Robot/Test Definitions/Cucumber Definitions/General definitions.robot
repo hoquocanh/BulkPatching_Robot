@@ -11,6 +11,9 @@ Resource    ../Test Pages/Home Page.robot
 Delete Button is "${status}"
     ${temp status}=    Convert To Lowercase    ${status}    
 
-    Run Keyword If    '${temp status}' == 'appeared'    Element Should Be Visible    ${btnDelete}
-    ...    ELSE IF    '${temp status}' == 'disappeared'    Element Should Not Be Visible    ${btnDelete}            
-        
+    Run Keyword If    '${temp status}' == 'appeared'    Run Keyword And Continue On Failure    Element Should Be Visible    ${btnDelete}
+    ...    ELSE IF    '${temp status}' == 'disappeared'    Run Keyword And Continue On Failure    Element Should Not Be Visible    ${btnDelete}
+
+Check The Number of Confirm is "${confirm number}"
+    Run Keyword And Continue On Failure    Element Attribute Value Should Be    ${btnConfirm}    value    ${confirm number}                     
+         

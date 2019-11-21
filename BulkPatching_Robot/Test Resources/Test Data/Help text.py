@@ -1,2 +1,7 @@
 txtInsertAllEndAPlugs = 'Insert all End A plugs, then select End B.'
 txtRestoreTheUnpluggedEndAPort = 'Restore the unplugged End A ports, or press Delete to reorder the entries.'
+txtMoreThan24PlugsWereInserted = 'More than 24 plugs were inserted. Extra insertions were saved in the Confirm list. Select End B to continue.'
+txtInsertAllEndBPlugs = 'Insert all End B plugs, then press Exit.'
+txtRestoreTheUnpluggedEndBPort = 'Restore the unplugged End B ports, or press Delete to reorder the entries.'
+txtPressExitToCompleteBulkPatching = 'Press Exit to complete bulk patching.'
+txtRestoreTheUnpluggedEndAPortOrContinue = 'Restore the unplugged End A ports, or continue with End B.'

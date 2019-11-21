@@ -13,6 +13,7 @@ ${btnExit}    //div[@id='exit-footer' and @style='display: block;']/div[@id='exi
 ${btnCancel}    //div[@style='display: block;']/div[@id='cancel-button']
 ${btnDelete}    //div[@id='exit-footer' and @style='display: block;']/div[@id='delete-button']
 ${btnReplace}    //div[@id='exit-footer' and @style='display: block;']/div[@id='replace-button']
+${btnConfirm}    //div[@id='confirms' and @style='visibility: visible;']//input[@type='submit']
 
 *** Keywords ***
 Open WebUI And Go To Home Screen
@@ -46,18 +47,23 @@ Close Current Screen
 Click Web Button
     [Arguments]    ${btnName}
     Click Element    ${btnName}
-
+    
+    
+    
 Click Delete Button
-    Click Button    ${btnDelete}            
-
-
+    Click Web Button    ${btnDelete}            
+    #This waiting is necessary to make sure the elements are up to date
+    Wait For Page Update
 
 Wait For Page Load
     Sleep    ${PAGE LOAD TIMEOUT}
+    
+Wait For Page Update
+    Sleep    ${PAGE UPDATE TIMEOUT}
 
 Exit Screen
     Click Web Button    ${btnExit}
-        Wait For Page Load         
+        Wait For Page Load
 
 Set Web UI to Stand By State
     #Step 1.1: If the Web UI is being a specific screen with "Exit" button, press that button

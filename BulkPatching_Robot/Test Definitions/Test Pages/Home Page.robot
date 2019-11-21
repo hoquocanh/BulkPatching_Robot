@@ -11,7 +11,7 @@ ${lblBulk Patching Home Page}    //div[@id='bulkpatch-lang']
 
 *** Keywords ***
 Home Screen Should Be Opened
-    Page Should Contain Element    ${lblimVisionX}
+    Run Keyword And Continue On Failure    Page Should Contain Element    ${lblimVisionX}
     
 Go To Bulk Patching Screen
     Click Element    ${btnBulk Patching} 

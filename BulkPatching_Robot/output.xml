@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.8.0 on win32)" generated="20191119 17:56:00.339" rpa="false">
+<robot generator="Robot 3.1.2 (Python 3.8.0 on win32)" generated="20191121 16:31:40.773" rpa="false">
 <suite id="s1" name="BulkPatching Robot" source="D:\RobotFW_program\BulkPatching_Robot\BulkPatching_Robot">
 <suite id="s1-s1" name="Test Resources" source="D:\RobotFW_program\BulkPatching_Robot\BulkPatching_Robot\Test Resources">
 <suite id="s1-s1-s1" name="Test Suites" source="D:\RobotFW_program\BulkPatching_Robot\BulkPatching_Robot\Test Resources\Test Suites">
-<suite id="s1-s1-s1-s1" name="2. Insert All End As" source="D:\RobotFW_program\BulkPatching_Robot\BulkPatching_Robot\Test Resources\Test Suites\2. Insert All End As">
-<suite id="s1-s1-s1-s1-s1" name="2.4. Check End A when plugging correct tip in the middle of list of End A then replug" source="D:\RobotFW_program\BulkPatching_Robot\BulkPatching_Robot\Test Resources\Test Suites\2. Insert All End As\2.4. Check End A when plugging correct tip in the middle of list of End A then replug.robot">
-<test id="s1-s1-s1-s1-s1-t1" name="INSERT_END_A_04_04_Verify that imVision X shall show correctly when plugging a connector that is matched to one of unplugged connectors in the End A list and imVision X shall remove Delete button">
+<suite id="s1-s1-s1-s1" name="3. Insert All End Bs" source="D:\RobotFW_program\BulkPatching_Robot\BulkPatching_Robot\Test Resources\Test Suites\3. Insert All End Bs">
+<suite id="s1-s1-s1-s1-s1" name="3.7. Check number of confirmation when connecting exess plugs" source="D:\RobotFW_program\BulkPatching_Robot\BulkPatching_Robot\Test Resources\Test Suites\3. Insert All End Bs\3.7. Check number of confirmation when connecting exess plugs.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="INSERT_END_A_09_01_Verify that imVision X will generate confirm ports for all connectors in the End A list after selecting Exit button">
 <kw name="Run Keywords" library="BuiltIn" type="setup">
 <doc>Executes all the given keywords in a sequence.</doc>
 <arguments>
@@ -18,7 +18,7 @@
 <arguments>
 <arg>${HOST}</arg>
 </arguments>
-<status status="PASS" starttime="20191119 17:56:00.779" endtime="20191119 17:56:00.779"></status>
+<status status="PASS" starttime="20191121 16:31:41.229" endtime="20191121 16:31:41.230"></status>
 </kw>
 <kw name="Login" library="SSHLibrary">
 <doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
@@ -26,11 +26,11 @@
 <arg>${USERNAME}</arg>
 <arg>${PASSWORD}</arg>
 </arguments>
-<msg timestamp="20191119 17:56:00.779" level="INFO">Logging into '192.168.171.201:22' as 'root'.</msg>
-<msg timestamp="20191119 17:56:02.195" level="INFO">Read output: #</msg>
-<status status="PASS" starttime="20191119 17:56:00.779" endtime="20191119 17:56:02.196"></status>
+<msg timestamp="20191121 16:31:41.231" level="INFO">Logging into '192.168.171.201:22' as 'root'.</msg>
+<msg timestamp="20191121 16:31:43.081" level="INFO">Read output: #</msg>
+<status status="PASS" starttime="20191121 16:31:41.230" endtime="20191121 16:31:43.081"></status>
 </kw>
-<status status="PASS" starttime="20191119 17:56:00.779" endtime="20191119 17:56:02.197"></status>
+<status status="PASS" starttime="20191121 16:31:41.229" endtime="20191121 16:31:43.081"></status>
 </kw>
 <kw name="Open WebUI And Go To Home Screen" library="General Page">
 <kw name="Catenate" library="BuiltIn">
@@ -44,8 +44,8 @@
 <assign>
 <var>${WebUI url}</var>
 </assign>
-<msg timestamp="20191119 17:56:02.202" level="INFO">${WebUI url} = http://192.168.171.201:8888</msg>
-<status status="PASS" starttime="20191119 17:56:02.200" endtime="20191119 17:56:02.202"></status>
+<msg timestamp="20191121 16:31:43.083" level="INFO">${WebUI url} = http://192.168.171.201:8888</msg>
+<status status="PASS" starttime="20191121 16:31:43.082" endtime="20191121 16:31:43.083"></status>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
@@ -53,20 +53,20 @@
 <arg>${WebUI url}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20191119 17:56:02.205" level="INFO">Opening browser 'Chrome' to base url 'http://192.168.171.201:8888'.</msg>
-<status status="PASS" starttime="20191119 17:56:02.203" endtime="20191119 17:56:06.261"></status>
+<msg timestamp="20191121 16:31:43.083" level="INFO">Opening browser 'Chrome' to base url 'http://192.168.171.201:8888'.</msg>
+<status status="PASS" starttime="20191121 16:31:43.083" endtime="20191121 16:31:47.402"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20191119 17:56:06.261" endtime="20191119 17:56:07.409"></status>
+<status status="PASS" starttime="20191121 16:31:47.402" endtime="20191121 16:31:48.552"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>${PAGE LOAD TIMEOUT}</arg>
 </arguments>
-<msg timestamp="20191119 17:56:07.911" level="INFO">Slept 500 milliseconds</msg>
-<status status="PASS" starttime="20191119 17:56:07.409" endtime="20191119 17:56:07.911"></status>
+<msg timestamp="20191121 16:31:49.555" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20191121 16:31:48.553" endtime="20191121 16:31:49.555"></status>
 </kw>
 <kw name="Set Web UI to Stand By State" library="General Page">
 <kw name="Get Element Count" library="SeleniumLibrary">
@@ -77,1792 +77,8 @@
 <assign>
 <var>${count Exit button}</var>
 </assign>
-<msg timestamp="20191119 17:56:07.940" level="INFO">${count Exit button} = 0</msg>
-<status status="PASS" starttime="20191119 17:56:07.913" endtime="20191119 17:56:07.940"></status>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<arguments>
-<arg>${count Exit button} &gt; 0</arg>
-<arg>Exit Screen</arg>
-</arguments>
-<status status="PASS" starttime="20191119 17:56:07.941" endtime="20191119 17:56:07.941"></status>
-</kw>
-<kw name="Get Element Count" library="SeleniumLibrary">
-<doc>Returns the number of elements matching ``locator``.</doc>
-<arguments>
-<arg>${btnCancel}</arg>
-</arguments>
-<assign>
-<var>${count Cancel button}</var>
-</assign>
-<msg timestamp="20191119 17:56:07.954" level="INFO">${count Cancel button} = 0</msg>
-<status status="PASS" starttime="20191119 17:56:07.942" endtime="20191119 17:56:07.954"></status>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<arguments>
-<arg>${count Cancel button} &gt; 0</arg>
-<arg>Exit Screen</arg>
-</arguments>
-<status status="PASS" starttime="20191119 17:56:07.954" endtime="20191119 17:56:07.955"></status>
-</kw>
-<kw name="Get Element Count" library="SeleniumLibrary">
-<doc>Returns the number of elements matching ``locator``.</doc>
-<arguments>
-<arg>${lblimVisionX}</arg>
-</arguments>
-<assign>
-<var>${count Home screen}</var>
-</assign>
-<msg timestamp="20191119 17:56:07.967" level="INFO">${count Home screen} = 0</msg>
-<status status="PASS" starttime="20191119 17:56:07.955" endtime="20191119 17:56:07.967"></status>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<arguments>
-<arg>${count Home screen} &gt; 0</arg>
-<arg>Run Keywords</arg>
-<arg>Click Web Button</arg>
-<arg>${btnHome}</arg>
-<arg>AND</arg>
-<arg>Wait For Page Load</arg>
-</arguments>
-<status status="PASS" starttime="20191119 17:56:07.968" endtime="20191119 17:56:07.968"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:07.912" endtime="20191119 17:56:07.968"></status>
-</kw>
-<kw name="Go To Home Screen" library="General Page">
-<kw name="Click Web Button" library="General Page">
-<arguments>
-<arg>${btnHome}</arg>
-</arguments>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${btnName}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:07.970" level="INFO">Clicking element '//div[@id='home-lang']'.</msg>
-<status status="PASS" starttime="20191119 17:56:07.969" endtime="20191119 17:56:08.046"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:07.969" endtime="20191119 17:56:08.046"></status>
-</kw>
-<kw name="Wait For Page Load" library="General Page">
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>${PAGE LOAD TIMEOUT}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:08.548" level="INFO">Slept 500 milliseconds</msg>
-<status status="PASS" starttime="20191119 17:56:08.047" endtime="20191119 17:56:08.548"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:08.046" endtime="20191119 17:56:08.549"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:07.968" endtime="20191119 17:56:08.550"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:02.198" endtime="20191119 17:56:08.551"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:00.779" endtime="20191119 17:56:08.551"></status>
-</kw>
-<kw name="Given Go To Bulk Patching Screen" library="Home Page">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${btnBulk Patching}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:08.555" level="INFO">Clicking element '//input[@id='bulk-patch-btn']'.</msg>
-<status status="PASS" starttime="20191119 17:56:08.554" endtime="20191119 17:56:08.634"></status>
-</kw>
-<kw name="Wait For Page Load" library="General Page">
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>${PAGE LOAD TIMEOUT}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:09.136" level="INFO">Slept 500 milliseconds</msg>
-<status status="PASS" starttime="20191119 17:56:08.635" endtime="20191119 17:56:09.136"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:08.635" endtime="20191119 17:56:09.137"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:08.553" endtime="20191119 17:56:09.138"></status>
-</kw>
-<kw name="When Plugin Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;1&quot;" library="Virtual Panel definitions">
-<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
-<arguments>
-<arg>${rackID}</arg>
-<arg>${panelID}</arg>
-<arg>${row}</arg>
-</arguments>
-<assign>
-<var>${panel index}</var>
-</assign>
-<kw name="Get Length" library="BuiltIn">
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<arguments>
-<arg>${VPpanels}</arg>
-</arguments>
-<assign>
-<var>${panels number}</var>
-</assign>
-<msg timestamp="20191119 17:56:09.142" level="INFO">Length is 12</msg>
-<msg timestamp="20191119 17:56:09.142" level="INFO">${panels number} = 12</msg>
-<status status="PASS" starttime="20191119 17:56:09.141" endtime="20191119 17:56:09.143"></status>
-</kw>
-<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
-<kw name="${panel index} = 0" type="foritem">
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<arguments>
-<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
-<arg>Exit For Loop</arg>
-</arguments>
-<kw name="Exit For Loop" library="BuiltIn">
-<doc>Stops executing the enclosing for loop.</doc>
-<msg timestamp="20191119 17:56:09.149" level="INFO">Exiting for loop altogether.</msg>
-<status status="PASS" starttime="20191119 17:56:09.149" endtime="20191119 17:56:09.150"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:09.145" endtime="20191119 17:56:09.150"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:09.144" endtime="20191119 17:56:09.151"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:09.143" endtime="20191119 17:56:09.151"></status>
-</kw>
-<msg timestamp="20191119 17:56:09.152" level="INFO">${panel index} = 1</msg>
-<status status="PASS" starttime="20191119 17:56:09.140" endtime="20191119 17:56:09.153"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${panel index}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:09.154" level="INFO">1</msg>
-<status status="PASS" starttime="20191119 17:56:09.153" endtime="20191119 17:56:09.154"></status>
-</kw>
-<kw name="Catenate" library="BuiltIn">
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<arguments>
-<arg>vp_cmd_helper --plugin --rack</arg>
-<arg>${rackID}</arg>
-<arg>--panel</arg>
-<arg>${panel index}</arg>
-<arg>--port</arg>
-<arg>${portID}</arg>
-</arguments>
-<assign>
-<var>${completed command}</var>
-</assign>
-<msg timestamp="20191119 17:56:09.156" level="INFO">${completed command} = vp_cmd_helper --plugin --rack 1 --panel 1 --port 1</msg>
-<status status="PASS" starttime="20191119 17:56:09.155" endtime="20191119 17:56:09.156"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${completed command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:09.158" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 1</msg>
-<status status="PASS" starttime="20191119 17:56:09.157" endtime="20191119 17:56:09.158"></status>
-</kw>
-<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
-<kw name="Write" library="SSHLibrary">
-<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
-<arguments>
-<arg>${command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:09.177" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 1</msg>
-<status status="PASS" starttime="20191119 17:56:09.160" endtime="20191119 17:56:09.177"></status>
-</kw>
-<kw name="Read" library="SSHLibrary">
-<doc>Consumes and returns everything available on the server output.</doc>
-<arguments>
-<arg>loglevel=Trace</arg>
-<arg>delay=1s</arg>
-</arguments>
-<assign>
-<var>${stdout}</var>
-</assign>
-<msg timestamp="20191119 17:56:11.180" level="INFO">${stdout} = result=success
-command=plugin
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:09.177" endtime="20191119 17:56:11.181"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${stdout}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:11.184" level="INFO">result=success
-command=plugin
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:11.182" endtime="20191119 17:56:11.185"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:09.159" endtime="20191119 17:56:11.186"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:09.139" endtime="20191119 17:56:11.187"></status>
-</kw>
-<kw name="When Plugin Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;2&quot;" library="Virtual Panel definitions">
-<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
-<arguments>
-<arg>${rackID}</arg>
-<arg>${panelID}</arg>
-<arg>${row}</arg>
-</arguments>
-<assign>
-<var>${panel index}</var>
-</assign>
-<kw name="Get Length" library="BuiltIn">
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<arguments>
-<arg>${VPpanels}</arg>
-</arguments>
-<assign>
-<var>${panels number}</var>
-</assign>
-<msg timestamp="20191119 17:56:11.194" level="INFO">Length is 12</msg>
-<msg timestamp="20191119 17:56:11.195" level="INFO">${panels number} = 12</msg>
-<status status="PASS" starttime="20191119 17:56:11.192" endtime="20191119 17:56:11.195"></status>
-</kw>
-<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
-<kw name="${panel index} = 0" type="foritem">
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<arguments>
-<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
-<arg>Exit For Loop</arg>
-</arguments>
-<kw name="Exit For Loop" library="BuiltIn">
-<doc>Stops executing the enclosing for loop.</doc>
-<msg timestamp="20191119 17:56:11.206" level="INFO">Exiting for loop altogether.</msg>
-<status status="PASS" starttime="20191119 17:56:11.205" endtime="20191119 17:56:11.206"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:11.198" endtime="20191119 17:56:11.207"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:11.197" endtime="20191119 17:56:11.208"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:11.196" endtime="20191119 17:56:11.208"></status>
-</kw>
-<msg timestamp="20191119 17:56:11.209" level="INFO">${panel index} = 1</msg>
-<status status="PASS" starttime="20191119 17:56:11.190" endtime="20191119 17:56:11.209"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${panel index}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:11.210" level="INFO">1</msg>
-<status status="PASS" starttime="20191119 17:56:11.210" endtime="20191119 17:56:11.211"></status>
-</kw>
-<kw name="Catenate" library="BuiltIn">
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<arguments>
-<arg>vp_cmd_helper --plugin --rack</arg>
-<arg>${rackID}</arg>
-<arg>--panel</arg>
-<arg>${panel index}</arg>
-<arg>--port</arg>
-<arg>${portID}</arg>
-</arguments>
-<assign>
-<var>${completed command}</var>
-</assign>
-<msg timestamp="20191119 17:56:11.212" level="INFO">${completed command} = vp_cmd_helper --plugin --rack 1 --panel 1 --port 2</msg>
-<status status="PASS" starttime="20191119 17:56:11.211" endtime="20191119 17:56:11.212"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${completed command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:11.213" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 2</msg>
-<status status="PASS" starttime="20191119 17:56:11.213" endtime="20191119 17:56:11.214"></status>
-</kw>
-<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
-<kw name="Write" library="SSHLibrary">
-<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
-<arguments>
-<arg>${command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:11.238" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 2</msg>
-<status status="PASS" starttime="20191119 17:56:11.215" endtime="20191119 17:56:11.238"></status>
-</kw>
-<kw name="Read" library="SSHLibrary">
-<doc>Consumes and returns everything available on the server output.</doc>
-<arguments>
-<arg>loglevel=Trace</arg>
-<arg>delay=1s</arg>
-</arguments>
-<assign>
-<var>${stdout}</var>
-</assign>
-<msg timestamp="20191119 17:56:13.240" level="INFO">${stdout} = result=success
-command=plugin
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:11.238" endtime="20191119 17:56:13.240"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${stdout}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:13.241" level="INFO">result=success
-command=plugin
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:13.240" endtime="20191119 17:56:13.241"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:11.214" endtime="20191119 17:56:13.241"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:11.189" endtime="20191119 17:56:13.242"></status>
-</kw>
-<kw name="When Plugin Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;3&quot;" library="Virtual Panel definitions">
-<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
-<arguments>
-<arg>${rackID}</arg>
-<arg>${panelID}</arg>
-<arg>${row}</arg>
-</arguments>
-<assign>
-<var>${panel index}</var>
-</assign>
-<kw name="Get Length" library="BuiltIn">
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<arguments>
-<arg>${VPpanels}</arg>
-</arguments>
-<assign>
-<var>${panels number}</var>
-</assign>
-<msg timestamp="20191119 17:56:13.243" level="INFO">Length is 12</msg>
-<msg timestamp="20191119 17:56:13.244" level="INFO">${panels number} = 12</msg>
-<status status="PASS" starttime="20191119 17:56:13.243" endtime="20191119 17:56:13.244"></status>
-</kw>
-<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
-<kw name="${panel index} = 0" type="foritem">
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<arguments>
-<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
-<arg>Exit For Loop</arg>
-</arguments>
-<kw name="Exit For Loop" library="BuiltIn">
-<doc>Stops executing the enclosing for loop.</doc>
-<msg timestamp="20191119 17:56:13.246" level="INFO">Exiting for loop altogether.</msg>
-<status status="PASS" starttime="20191119 17:56:13.246" endtime="20191119 17:56:13.246"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:13.244" endtime="20191119 17:56:13.246"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:13.244" endtime="20191119 17:56:13.246"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:13.244" endtime="20191119 17:56:13.247"></status>
-</kw>
-<msg timestamp="20191119 17:56:13.247" level="INFO">${panel index} = 1</msg>
-<status status="PASS" starttime="20191119 17:56:13.243" endtime="20191119 17:56:13.247"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${panel index}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:13.248" level="INFO">1</msg>
-<status status="PASS" starttime="20191119 17:56:13.247" endtime="20191119 17:56:13.248"></status>
-</kw>
-<kw name="Catenate" library="BuiltIn">
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<arguments>
-<arg>vp_cmd_helper --plugin --rack</arg>
-<arg>${rackID}</arg>
-<arg>--panel</arg>
-<arg>${panel index}</arg>
-<arg>--port</arg>
-<arg>${portID}</arg>
-</arguments>
-<assign>
-<var>${completed command}</var>
-</assign>
-<msg timestamp="20191119 17:56:13.249" level="INFO">${completed command} = vp_cmd_helper --plugin --rack 1 --panel 1 --port 3</msg>
-<status status="PASS" starttime="20191119 17:56:13.248" endtime="20191119 17:56:13.249"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${completed command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:13.249" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 3</msg>
-<status status="PASS" starttime="20191119 17:56:13.249" endtime="20191119 17:56:13.249"></status>
-</kw>
-<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
-<kw name="Write" library="SSHLibrary">
-<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
-<arguments>
-<arg>${command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:13.266" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 3</msg>
-<status status="PASS" starttime="20191119 17:56:13.250" endtime="20191119 17:56:13.266"></status>
-</kw>
-<kw name="Read" library="SSHLibrary">
-<doc>Consumes and returns everything available on the server output.</doc>
-<arguments>
-<arg>loglevel=Trace</arg>
-<arg>delay=1s</arg>
-</arguments>
-<assign>
-<var>${stdout}</var>
-</assign>
-<msg timestamp="20191119 17:56:15.270" level="INFO">${stdout} = result=success
-command=plugin
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:13.267" endtime="20191119 17:56:15.270"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${stdout}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:15.272" level="INFO">result=success
-command=plugin
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:15.271" endtime="20191119 17:56:15.272"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:13.250" endtime="20191119 17:56:15.272"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:13.242" endtime="20191119 17:56:15.272"></status>
-</kw>
-<kw name="When Plugin Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;4&quot;" library="Virtual Panel definitions">
-<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
-<arguments>
-<arg>${rackID}</arg>
-<arg>${panelID}</arg>
-<arg>${row}</arg>
-</arguments>
-<assign>
-<var>${panel index}</var>
-</assign>
-<kw name="Get Length" library="BuiltIn">
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<arguments>
-<arg>${VPpanels}</arg>
-</arguments>
-<assign>
-<var>${panels number}</var>
-</assign>
-<msg timestamp="20191119 17:56:15.274" level="INFO">Length is 12</msg>
-<msg timestamp="20191119 17:56:15.274" level="INFO">${panels number} = 12</msg>
-<status status="PASS" starttime="20191119 17:56:15.274" endtime="20191119 17:56:15.275"></status>
-</kw>
-<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
-<kw name="${panel index} = 0" type="foritem">
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<arguments>
-<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
-<arg>Exit For Loop</arg>
-</arguments>
-<kw name="Exit For Loop" library="BuiltIn">
-<doc>Stops executing the enclosing for loop.</doc>
-<msg timestamp="20191119 17:56:15.277" level="INFO">Exiting for loop altogether.</msg>
-<status status="PASS" starttime="20191119 17:56:15.277" endtime="20191119 17:56:15.277"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:15.275" endtime="20191119 17:56:15.277"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:15.275" endtime="20191119 17:56:15.278"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:15.275" endtime="20191119 17:56:15.278"></status>
-</kw>
-<msg timestamp="20191119 17:56:15.278" level="INFO">${panel index} = 1</msg>
-<status status="PASS" starttime="20191119 17:56:15.273" endtime="20191119 17:56:15.278"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${panel index}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:15.279" level="INFO">1</msg>
-<status status="PASS" starttime="20191119 17:56:15.279" endtime="20191119 17:56:15.279"></status>
-</kw>
-<kw name="Catenate" library="BuiltIn">
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<arguments>
-<arg>vp_cmd_helper --plugin --rack</arg>
-<arg>${rackID}</arg>
-<arg>--panel</arg>
-<arg>${panel index}</arg>
-<arg>--port</arg>
-<arg>${portID}</arg>
-</arguments>
-<assign>
-<var>${completed command}</var>
-</assign>
-<msg timestamp="20191119 17:56:15.280" level="INFO">${completed command} = vp_cmd_helper --plugin --rack 1 --panel 1 --port 4</msg>
-<status status="PASS" starttime="20191119 17:56:15.279" endtime="20191119 17:56:15.280"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${completed command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:15.281" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 4</msg>
-<status status="PASS" starttime="20191119 17:56:15.280" endtime="20191119 17:56:15.281"></status>
-</kw>
-<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
-<kw name="Write" library="SSHLibrary">
-<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
-<arguments>
-<arg>${command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:15.324" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 4</msg>
-<status status="PASS" starttime="20191119 17:56:15.281" endtime="20191119 17:56:15.324"></status>
-</kw>
-<kw name="Read" library="SSHLibrary">
-<doc>Consumes and returns everything available on the server output.</doc>
-<arguments>
-<arg>loglevel=Trace</arg>
-<arg>delay=1s</arg>
-</arguments>
-<assign>
-<var>${stdout}</var>
-</assign>
-<msg timestamp="20191119 17:56:17.326" level="INFO">${stdout} = result=success
-command=plugin
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:15.325" endtime="20191119 17:56:17.327"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${stdout}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:17.331" level="INFO">result=success
-command=plugin
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:17.328" endtime="20191119 17:56:17.331"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:15.281" endtime="20191119 17:56:17.332"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:15.273" endtime="20191119 17:56:17.333"></status>
-</kw>
-<kw name="When Plugout Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;2&quot;" library="Virtual Panel definitions">
-<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
-<arguments>
-<arg>${rackID}</arg>
-<arg>${panelID}</arg>
-<arg>${row}</arg>
-</arguments>
-<assign>
-<var>${panel index}</var>
-</assign>
-<kw name="Get Length" library="BuiltIn">
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<arguments>
-<arg>${VPpanels}</arg>
-</arguments>
-<assign>
-<var>${panels number}</var>
-</assign>
-<msg timestamp="20191119 17:56:17.340" level="INFO">Length is 12</msg>
-<msg timestamp="20191119 17:56:17.341" level="INFO">${panels number} = 12</msg>
-<status status="PASS" starttime="20191119 17:56:17.339" endtime="20191119 17:56:17.341"></status>
-</kw>
-<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
-<kw name="${panel index} = 0" type="foritem">
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<arguments>
-<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
-<arg>Exit For Loop</arg>
-</arguments>
-<kw name="Exit For Loop" library="BuiltIn">
-<doc>Stops executing the enclosing for loop.</doc>
-<msg timestamp="20191119 17:56:17.352" level="INFO">Exiting for loop altogether.</msg>
-<status status="PASS" starttime="20191119 17:56:17.351" endtime="20191119 17:56:17.352"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:17.344" endtime="20191119 17:56:17.353"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:17.343" endtime="20191119 17:56:17.354"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:17.342" endtime="20191119 17:56:17.354"></status>
-</kw>
-<msg timestamp="20191119 17:56:17.356" level="INFO">${panel index} = 1</msg>
-<status status="PASS" starttime="20191119 17:56:17.337" endtime="20191119 17:56:17.357"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${panel index}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:17.358" level="INFO">1</msg>
-<status status="PASS" starttime="20191119 17:56:17.358" endtime="20191119 17:56:17.358"></status>
-</kw>
-<kw name="Catenate" library="BuiltIn">
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<arguments>
-<arg>vp_cmd_helper --plugout --rack</arg>
-<arg>${rackID}</arg>
-<arg>--panel</arg>
-<arg>${panel index}</arg>
-<arg>--port</arg>
-<arg>${portID}</arg>
-</arguments>
-<assign>
-<var>${completed command}</var>
-</assign>
-<msg timestamp="20191119 17:56:17.360" level="INFO">${completed command} = vp_cmd_helper --plugout --rack 1 --panel 1 --port 2</msg>
-<status status="PASS" starttime="20191119 17:56:17.359" endtime="20191119 17:56:17.360"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${completed command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:17.361" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 2</msg>
-<status status="PASS" starttime="20191119 17:56:17.360" endtime="20191119 17:56:17.361"></status>
-</kw>
-<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
-<kw name="Write" library="SSHLibrary">
-<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
-<arguments>
-<arg>${command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:17.405" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 2</msg>
-<status status="PASS" starttime="20191119 17:56:17.363" endtime="20191119 17:56:17.405"></status>
-</kw>
-<kw name="Read" library="SSHLibrary">
-<doc>Consumes and returns everything available on the server output.</doc>
-<arguments>
-<arg>loglevel=Trace</arg>
-<arg>delay=1s</arg>
-</arguments>
-<assign>
-<var>${stdout}</var>
-</assign>
-<msg timestamp="20191119 17:56:19.410" level="INFO">${stdout} = result=success
-command=plugout
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:17.406" endtime="20191119 17:56:19.410"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${stdout}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:19.410" level="INFO">result=success
-command=plugout
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:19.410" endtime="20191119 17:56:19.410"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:17.362" endtime="20191119 17:56:19.410"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:17.335" endtime="20191119 17:56:19.410"></status>
-</kw>
-<kw name="When Plugout Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;3&quot;" library="Virtual Panel definitions">
-<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
-<arguments>
-<arg>${rackID}</arg>
-<arg>${panelID}</arg>
-<arg>${row}</arg>
-</arguments>
-<assign>
-<var>${panel index}</var>
-</assign>
-<kw name="Get Length" library="BuiltIn">
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<arguments>
-<arg>${VPpanels}</arg>
-</arguments>
-<assign>
-<var>${panels number}</var>
-</assign>
-<msg timestamp="20191119 17:56:19.410" level="INFO">Length is 12</msg>
-<msg timestamp="20191119 17:56:19.410" level="INFO">${panels number} = 12</msg>
-<status status="PASS" starttime="20191119 17:56:19.410" endtime="20191119 17:56:19.410"></status>
-</kw>
-<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
-<kw name="${panel index} = 0" type="foritem">
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<arguments>
-<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
-<arg>Exit For Loop</arg>
-</arguments>
-<kw name="Exit For Loop" library="BuiltIn">
-<doc>Stops executing the enclosing for loop.</doc>
-<msg timestamp="20191119 17:56:19.410" level="INFO">Exiting for loop altogether.</msg>
-<status status="PASS" starttime="20191119 17:56:19.410" endtime="20191119 17:56:19.410"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:19.410" endtime="20191119 17:56:19.410"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:19.410" endtime="20191119 17:56:19.410"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:19.410" endtime="20191119 17:56:19.410"></status>
-</kw>
-<msg timestamp="20191119 17:56:19.410" level="INFO">${panel index} = 1</msg>
-<status status="PASS" starttime="20191119 17:56:19.410" endtime="20191119 17:56:19.410"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${panel index}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:19.410" level="INFO">1</msg>
-<status status="PASS" starttime="20191119 17:56:19.410" endtime="20191119 17:56:19.410"></status>
-</kw>
-<kw name="Catenate" library="BuiltIn">
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<arguments>
-<arg>vp_cmd_helper --plugout --rack</arg>
-<arg>${rackID}</arg>
-<arg>--panel</arg>
-<arg>${panel index}</arg>
-<arg>--port</arg>
-<arg>${portID}</arg>
-</arguments>
-<assign>
-<var>${completed command}</var>
-</assign>
-<msg timestamp="20191119 17:56:19.410" level="INFO">${completed command} = vp_cmd_helper --plugout --rack 1 --panel 1 --port 3</msg>
-<status status="PASS" starttime="20191119 17:56:19.410" endtime="20191119 17:56:19.410"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${completed command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:19.420" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 3</msg>
-<status status="PASS" starttime="20191119 17:56:19.410" endtime="20191119 17:56:19.420"></status>
-</kw>
-<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
-<kw name="Write" library="SSHLibrary">
-<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
-<arguments>
-<arg>${command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:19.503" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 3</msg>
-<status status="PASS" starttime="20191119 17:56:19.420" endtime="20191119 17:56:19.504"></status>
-</kw>
-<kw name="Read" library="SSHLibrary">
-<doc>Consumes and returns everything available on the server output.</doc>
-<arguments>
-<arg>loglevel=Trace</arg>
-<arg>delay=1s</arg>
-</arguments>
-<assign>
-<var>${stdout}</var>
-</assign>
-<msg timestamp="20191119 17:56:21.510" level="INFO">${stdout} = result=success
-command=plugout
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:19.504" endtime="20191119 17:56:21.510"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${stdout}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:21.513" level="INFO">result=success
-command=plugout
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:21.513" endtime="20191119 17:56:21.513"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:19.420" endtime="20191119 17:56:21.513"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:19.410" endtime="20191119 17:56:21.513"></status>
-</kw>
-<kw name="When Plugin Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;3&quot;" library="Virtual Panel definitions">
-<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
-<arguments>
-<arg>${rackID}</arg>
-<arg>${panelID}</arg>
-<arg>${row}</arg>
-</arguments>
-<assign>
-<var>${panel index}</var>
-</assign>
-<kw name="Get Length" library="BuiltIn">
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<arguments>
-<arg>${VPpanels}</arg>
-</arguments>
-<assign>
-<var>${panels number}</var>
-</assign>
-<msg timestamp="20191119 17:56:21.522" level="INFO">Length is 12</msg>
-<msg timestamp="20191119 17:56:21.522" level="INFO">${panels number} = 12</msg>
-<status status="PASS" starttime="20191119 17:56:21.522" endtime="20191119 17:56:21.522"></status>
-</kw>
-<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
-<kw name="${panel index} = 0" type="foritem">
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<arguments>
-<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
-<arg>Exit For Loop</arg>
-</arguments>
-<kw name="Exit For Loop" library="BuiltIn">
-<doc>Stops executing the enclosing for loop.</doc>
-<msg timestamp="20191119 17:56:21.532" level="INFO">Exiting for loop altogether.</msg>
-<status status="PASS" starttime="20191119 17:56:21.532" endtime="20191119 17:56:21.532"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:21.522" endtime="20191119 17:56:21.532"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:21.522" endtime="20191119 17:56:21.532"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:21.522" endtime="20191119 17:56:21.532"></status>
-</kw>
-<msg timestamp="20191119 17:56:21.540" level="INFO">${panel index} = 1</msg>
-<status status="PASS" starttime="20191119 17:56:21.520" endtime="20191119 17:56:21.540"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${panel index}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:21.543" level="INFO">1</msg>
-<status status="PASS" starttime="20191119 17:56:21.543" endtime="20191119 17:56:21.543"></status>
-</kw>
-<kw name="Catenate" library="BuiltIn">
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<arguments>
-<arg>vp_cmd_helper --plugin --rack</arg>
-<arg>${rackID}</arg>
-<arg>--panel</arg>
-<arg>${panel index}</arg>
-<arg>--port</arg>
-<arg>${portID}</arg>
-</arguments>
-<assign>
-<var>${completed command}</var>
-</assign>
-<msg timestamp="20191119 17:56:21.543" level="INFO">${completed command} = vp_cmd_helper --plugin --rack 1 --panel 1 --port 3</msg>
-<status status="PASS" starttime="20191119 17:56:21.543" endtime="20191119 17:56:21.543"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${completed command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:21.550" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 3</msg>
-<status status="PASS" starttime="20191119 17:56:21.543" endtime="20191119 17:56:21.550"></status>
-</kw>
-<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
-<kw name="Write" library="SSHLibrary">
-<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
-<arguments>
-<arg>${command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:21.620" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 3</msg>
-<status status="PASS" starttime="20191119 17:56:21.552" endtime="20191119 17:56:21.620"></status>
-</kw>
-<kw name="Read" library="SSHLibrary">
-<doc>Consumes and returns everything available on the server output.</doc>
-<arguments>
-<arg>loglevel=Trace</arg>
-<arg>delay=1s</arg>
-</arguments>
-<assign>
-<var>${stdout}</var>
-</assign>
-<msg timestamp="20191119 17:56:23.622" level="INFO">${stdout} = result=success
-command=plugin
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:21.620" endtime="20191119 17:56:23.622"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${stdout}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:23.624" level="INFO">result=success
-command=plugin
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:23.623" endtime="20191119 17:56:23.625"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:21.550" endtime="20191119 17:56:23.625"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:21.513" endtime="20191119 17:56:23.626"></status>
-</kw>
-<kw name="Then Delete Button is &quot;appeared&quot;" library="General definitions">
-<kw name="Convert To Lowercase" library="String">
-<doc>Converts string to lowercase.</doc>
-<arguments>
-<arg>${status}</arg>
-</arguments>
-<assign>
-<var>${temp status}</var>
-</assign>
-<msg timestamp="20191119 17:56:23.629" level="INFO">${temp status} = appeared</msg>
-<status status="PASS" starttime="20191119 17:56:23.628" endtime="20191119 17:56:23.629"></status>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<arguments>
-<arg>'${temp status}' == 'appeared'</arg>
-<arg>Element Should Be Visible</arg>
-<arg>${btnDelete}</arg>
-<arg>ELSE IF</arg>
-<arg>'${temp status}' == 'disappeared'</arg>
-<arg>Element Should Not Be Visible</arg>
-<arg>${btnDelete}</arg>
-</arguments>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<arguments>
-<arg>${btnDelete}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:23.676" level="INFO">Element '//div[@id='exit-footer' and @style='display: block;']/div[@id='delete-button']' is displayed.</msg>
-<status status="PASS" starttime="20191119 17:56:23.631" endtime="20191119 17:56:23.677"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:23.630" endtime="20191119 17:56:23.677"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:23.627" endtime="20191119 17:56:23.677"></status>
-</kw>
-<kw name="When Plugin Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;2&quot;" library="Virtual Panel definitions">
-<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
-<arguments>
-<arg>${rackID}</arg>
-<arg>${panelID}</arg>
-<arg>${row}</arg>
-</arguments>
-<assign>
-<var>${panel index}</var>
-</assign>
-<kw name="Get Length" library="BuiltIn">
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<arguments>
-<arg>${VPpanels}</arg>
-</arguments>
-<assign>
-<var>${panels number}</var>
-</assign>
-<msg timestamp="20191119 17:56:23.679" level="INFO">Length is 12</msg>
-<msg timestamp="20191119 17:56:23.679" level="INFO">${panels number} = 12</msg>
-<status status="PASS" starttime="20191119 17:56:23.679" endtime="20191119 17:56:23.679"></status>
-</kw>
-<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
-<kw name="${panel index} = 0" type="foritem">
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<arguments>
-<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
-<arg>Exit For Loop</arg>
-</arguments>
-<kw name="Exit For Loop" library="BuiltIn">
-<doc>Stops executing the enclosing for loop.</doc>
-<msg timestamp="20191119 17:56:23.682" level="INFO">Exiting for loop altogether.</msg>
-<status status="PASS" starttime="20191119 17:56:23.682" endtime="20191119 17:56:23.682"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:23.680" endtime="20191119 17:56:23.683"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:23.680" endtime="20191119 17:56:23.683"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:23.680" endtime="20191119 17:56:23.683"></status>
-</kw>
-<msg timestamp="20191119 17:56:23.684" level="INFO">${panel index} = 1</msg>
-<status status="PASS" starttime="20191119 17:56:23.678" endtime="20191119 17:56:23.684"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${panel index}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:23.684" level="INFO">1</msg>
-<status status="PASS" starttime="20191119 17:56:23.684" endtime="20191119 17:56:23.684"></status>
-</kw>
-<kw name="Catenate" library="BuiltIn">
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<arguments>
-<arg>vp_cmd_helper --plugin --rack</arg>
-<arg>${rackID}</arg>
-<arg>--panel</arg>
-<arg>${panel index}</arg>
-<arg>--port</arg>
-<arg>${portID}</arg>
-</arguments>
-<assign>
-<var>${completed command}</var>
-</assign>
-<msg timestamp="20191119 17:56:23.685" level="INFO">${completed command} = vp_cmd_helper --plugin --rack 1 --panel 1 --port 2</msg>
-<status status="PASS" starttime="20191119 17:56:23.685" endtime="20191119 17:56:23.685"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${completed command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:23.686" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 2</msg>
-<status status="PASS" starttime="20191119 17:56:23.686" endtime="20191119 17:56:23.686"></status>
-</kw>
-<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
-<kw name="Write" library="SSHLibrary">
-<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
-<arguments>
-<arg>${command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:23.719" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 2</msg>
-<status status="PASS" starttime="20191119 17:56:23.687" endtime="20191119 17:56:23.719"></status>
-</kw>
-<kw name="Read" library="SSHLibrary">
-<doc>Consumes and returns everything available on the server output.</doc>
-<arguments>
-<arg>loglevel=Trace</arg>
-<arg>delay=1s</arg>
-</arguments>
-<assign>
-<var>${stdout}</var>
-</assign>
-<msg timestamp="20191119 17:56:25.720" level="INFO">${stdout} = result=success
-command=plugin
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:23.720" endtime="20191119 17:56:25.721"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${stdout}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:25.724" level="INFO">result=success
-command=plugin
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:25.722" endtime="20191119 17:56:25.725"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:23.686" endtime="20191119 17:56:25.726"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:23.678" endtime="20191119 17:56:25.727"></status>
-</kw>
-<kw name="Then Delete Button is &quot;disappeared&quot;" library="General definitions">
-<kw name="Convert To Lowercase" library="String">
-<doc>Converts string to lowercase.</doc>
-<arguments>
-<arg>${status}</arg>
-</arguments>
-<assign>
-<var>${temp status}</var>
-</assign>
-<msg timestamp="20191119 17:56:25.732" level="INFO">${temp status} = disappeared</msg>
-<status status="PASS" starttime="20191119 17:56:25.730" endtime="20191119 17:56:25.733"></status>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<arguments>
-<arg>'${temp status}' == 'appeared'</arg>
-<arg>Element Should Be Visible</arg>
-<arg>${btnDelete}</arg>
-<arg>ELSE IF</arg>
-<arg>'${temp status}' == 'disappeared'</arg>
-<arg>Element Should Not Be Visible</arg>
-<arg>${btnDelete}</arg>
-</arguments>
-<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
-<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
-<arguments>
-<arg>${btnDelete}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:25.782" level="INFO">Element '//div[@id='exit-footer' and @style='display: block;']/div[@id='delete-button']' exists but is not displayed.</msg>
-<status status="PASS" starttime="20191119 17:56:25.736" endtime="20191119 17:56:25.782"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:25.734" endtime="20191119 17:56:25.783"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:25.729" endtime="20191119 17:56:25.783"></status>
-</kw>
-<kw name="Then Plugout Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;4&quot;" library="Virtual Panel definitions">
-<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
-<arguments>
-<arg>${rackID}</arg>
-<arg>${panelID}</arg>
-<arg>${row}</arg>
-</arguments>
-<assign>
-<var>${panel index}</var>
-</assign>
-<kw name="Get Length" library="BuiltIn">
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<arguments>
-<arg>${VPpanels}</arg>
-</arguments>
-<assign>
-<var>${panels number}</var>
-</assign>
-<msg timestamp="20191119 17:56:25.786" level="INFO">Length is 12</msg>
-<msg timestamp="20191119 17:56:25.786" level="INFO">${panels number} = 12</msg>
-<status status="PASS" starttime="20191119 17:56:25.786" endtime="20191119 17:56:25.787"></status>
-</kw>
-<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
-<kw name="${panel index} = 0" type="foritem">
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<arguments>
-<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
-<arg>Exit For Loop</arg>
-</arguments>
-<kw name="Exit For Loop" library="BuiltIn">
-<doc>Stops executing the enclosing for loop.</doc>
-<msg timestamp="20191119 17:56:25.792" level="INFO">Exiting for loop altogether.</msg>
-<status status="PASS" starttime="20191119 17:56:25.791" endtime="20191119 17:56:25.792"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:25.788" endtime="20191119 17:56:25.792"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:25.788" endtime="20191119 17:56:25.792"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:25.787" endtime="20191119 17:56:25.793"></status>
-</kw>
-<msg timestamp="20191119 17:56:25.794" level="INFO">${panel index} = 1</msg>
-<status status="PASS" starttime="20191119 17:56:25.785" endtime="20191119 17:56:25.794"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${panel index}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:25.795" level="INFO">1</msg>
-<status status="PASS" starttime="20191119 17:56:25.794" endtime="20191119 17:56:25.795"></status>
-</kw>
-<kw name="Catenate" library="BuiltIn">
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<arguments>
-<arg>vp_cmd_helper --plugout --rack</arg>
-<arg>${rackID}</arg>
-<arg>--panel</arg>
-<arg>${panel index}</arg>
-<arg>--port</arg>
-<arg>${portID}</arg>
-</arguments>
-<assign>
-<var>${completed command}</var>
-</assign>
-<msg timestamp="20191119 17:56:25.797" level="INFO">${completed command} = vp_cmd_helper --plugout --rack 1 --panel 1 --port 4</msg>
-<status status="PASS" starttime="20191119 17:56:25.796" endtime="20191119 17:56:25.797"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${completed command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:25.798" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 4</msg>
-<status status="PASS" starttime="20191119 17:56:25.797" endtime="20191119 17:56:25.798"></status>
-</kw>
-<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
-<kw name="Write" library="SSHLibrary">
-<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
-<arguments>
-<arg>${command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:25.834" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 4</msg>
-<status status="PASS" starttime="20191119 17:56:25.800" endtime="20191119 17:56:25.835"></status>
-</kw>
-<kw name="Read" library="SSHLibrary">
-<doc>Consumes and returns everything available on the server output.</doc>
-<arguments>
-<arg>loglevel=Trace</arg>
-<arg>delay=1s</arg>
-</arguments>
-<assign>
-<var>${stdout}</var>
-</assign>
-<msg timestamp="20191119 17:56:27.836" level="INFO">${stdout} = result=success
-command=plugout
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:25.835" endtime="20191119 17:56:27.837"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${stdout}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:27.840" level="INFO">result=success
-command=plugout
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:27.838" endtime="20191119 17:56:27.841"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:25.799" endtime="20191119 17:56:27.842"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:25.784" endtime="20191119 17:56:27.843"></status>
-</kw>
-<kw name="Then Plugout Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;3&quot;" library="Virtual Panel definitions">
-<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
-<arguments>
-<arg>${rackID}</arg>
-<arg>${panelID}</arg>
-<arg>${row}</arg>
-</arguments>
-<assign>
-<var>${panel index}</var>
-</assign>
-<kw name="Get Length" library="BuiltIn">
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<arguments>
-<arg>${VPpanels}</arg>
-</arguments>
-<assign>
-<var>${panels number}</var>
-</assign>
-<msg timestamp="20191119 17:56:27.850" level="INFO">Length is 12</msg>
-<msg timestamp="20191119 17:56:27.850" level="INFO">${panels number} = 12</msg>
-<status status="PASS" starttime="20191119 17:56:27.848" endtime="20191119 17:56:27.851"></status>
-</kw>
-<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
-<kw name="${panel index} = 0" type="foritem">
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<arguments>
-<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
-<arg>Exit For Loop</arg>
-</arguments>
-<kw name="Exit For Loop" library="BuiltIn">
-<doc>Stops executing the enclosing for loop.</doc>
-<msg timestamp="20191119 17:56:27.860" level="INFO">Exiting for loop altogether.</msg>
-<status status="PASS" starttime="20191119 17:56:27.860" endtime="20191119 17:56:27.861"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:27.854" endtime="20191119 17:56:27.861"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:27.853" endtime="20191119 17:56:27.862"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:27.852" endtime="20191119 17:56:27.862"></status>
-</kw>
-<msg timestamp="20191119 17:56:27.863" level="INFO">${panel index} = 1</msg>
-<status status="PASS" starttime="20191119 17:56:27.846" endtime="20191119 17:56:27.863"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${panel index}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:27.865" level="INFO">1</msg>
-<status status="PASS" starttime="20191119 17:56:27.864" endtime="20191119 17:56:27.865"></status>
-</kw>
-<kw name="Catenate" library="BuiltIn">
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<arguments>
-<arg>vp_cmd_helper --plugout --rack</arg>
-<arg>${rackID}</arg>
-<arg>--panel</arg>
-<arg>${panel index}</arg>
-<arg>--port</arg>
-<arg>${portID}</arg>
-</arguments>
-<assign>
-<var>${completed command}</var>
-</assign>
-<msg timestamp="20191119 17:56:27.866" level="INFO">${completed command} = vp_cmd_helper --plugout --rack 1 --panel 1 --port 3</msg>
-<status status="PASS" starttime="20191119 17:56:27.866" endtime="20191119 17:56:27.867"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${completed command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:27.868" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 3</msg>
-<status status="PASS" starttime="20191119 17:56:27.867" endtime="20191119 17:56:27.869"></status>
-</kw>
-<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
-<kw name="Write" library="SSHLibrary">
-<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
-<arguments>
-<arg>${command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:27.891" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 3</msg>
-<status status="PASS" starttime="20191119 17:56:27.870" endtime="20191119 17:56:27.892"></status>
-</kw>
-<kw name="Read" library="SSHLibrary">
-<doc>Consumes and returns everything available on the server output.</doc>
-<arguments>
-<arg>loglevel=Trace</arg>
-<arg>delay=1s</arg>
-</arguments>
-<assign>
-<var>${stdout}</var>
-</assign>
-<msg timestamp="20191119 17:56:29.910" level="INFO">${stdout} = result=success
-command=plugout
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:27.892" endtime="20191119 17:56:29.911"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${stdout}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:29.913" level="INFO">result=success
-command=plugout
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:29.912" endtime="20191119 17:56:29.914"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:27.869" endtime="20191119 17:56:29.915"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:27.845" endtime="20191119 17:56:29.915"></status>
-</kw>
-<kw name="Then Plugout Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;2&quot;" library="Virtual Panel definitions">
-<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
-<arguments>
-<arg>${rackID}</arg>
-<arg>${panelID}</arg>
-<arg>${row}</arg>
-</arguments>
-<assign>
-<var>${panel index}</var>
-</assign>
-<kw name="Get Length" library="BuiltIn">
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<arguments>
-<arg>${VPpanels}</arg>
-</arguments>
-<assign>
-<var>${panels number}</var>
-</assign>
-<msg timestamp="20191119 17:56:29.921" level="INFO">Length is 12</msg>
-<msg timestamp="20191119 17:56:29.922" level="INFO">${panels number} = 12</msg>
-<status status="PASS" starttime="20191119 17:56:29.920" endtime="20191119 17:56:29.922"></status>
-</kw>
-<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
-<kw name="${panel index} = 0" type="foritem">
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<arguments>
-<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
-<arg>Exit For Loop</arg>
-</arguments>
-<kw name="Exit For Loop" library="BuiltIn">
-<doc>Stops executing the enclosing for loop.</doc>
-<msg timestamp="20191119 17:56:29.930" level="INFO">Exiting for loop altogether.</msg>
-<status status="PASS" starttime="20191119 17:56:29.929" endtime="20191119 17:56:29.930"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:29.924" endtime="20191119 17:56:29.930"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:29.924" endtime="20191119 17:56:29.930"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:29.923" endtime="20191119 17:56:29.931"></status>
-</kw>
-<msg timestamp="20191119 17:56:29.932" level="INFO">${panel index} = 1</msg>
-<status status="PASS" starttime="20191119 17:56:29.918" endtime="20191119 17:56:29.932"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${panel index}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:29.933" level="INFO">1</msg>
-<status status="PASS" starttime="20191119 17:56:29.932" endtime="20191119 17:56:29.933"></status>
-</kw>
-<kw name="Catenate" library="BuiltIn">
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<arguments>
-<arg>vp_cmd_helper --plugout --rack</arg>
-<arg>${rackID}</arg>
-<arg>--panel</arg>
-<arg>${panel index}</arg>
-<arg>--port</arg>
-<arg>${portID}</arg>
-</arguments>
-<assign>
-<var>${completed command}</var>
-</assign>
-<msg timestamp="20191119 17:56:29.935" level="INFO">${completed command} = vp_cmd_helper --plugout --rack 1 --panel 1 --port 2</msg>
-<status status="PASS" starttime="20191119 17:56:29.934" endtime="20191119 17:56:29.935"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${completed command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:29.936" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 2</msg>
-<status status="PASS" starttime="20191119 17:56:29.935" endtime="20191119 17:56:29.936"></status>
-</kw>
-<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
-<kw name="Write" library="SSHLibrary">
-<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
-<arguments>
-<arg>${command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:29.970" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 2</msg>
-<status status="PASS" starttime="20191119 17:56:29.937" endtime="20191119 17:56:29.970"></status>
-</kw>
-<kw name="Read" library="SSHLibrary">
-<doc>Consumes and returns everything available on the server output.</doc>
-<arguments>
-<arg>loglevel=Trace</arg>
-<arg>delay=1s</arg>
-</arguments>
-<assign>
-<var>${stdout}</var>
-</assign>
-<msg timestamp="20191119 17:56:31.980" level="INFO">${stdout} = result=success
-command=plugout
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:29.971" endtime="20191119 17:56:31.981"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${stdout}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:31.984" level="INFO">result=success
-command=plugout
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:31.982" endtime="20191119 17:56:31.985"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:29.937" endtime="20191119 17:56:31.986"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:29.917" endtime="20191119 17:56:31.987"></status>
-</kw>
-<kw name="Then Plugout Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;1&quot;" library="Virtual Panel definitions">
-<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
-<arguments>
-<arg>${rackID}</arg>
-<arg>${panelID}</arg>
-<arg>${row}</arg>
-</arguments>
-<assign>
-<var>${panel index}</var>
-</assign>
-<kw name="Get Length" library="BuiltIn">
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<arguments>
-<arg>${VPpanels}</arg>
-</arguments>
-<assign>
-<var>${panels number}</var>
-</assign>
-<msg timestamp="20191119 17:56:31.994" level="INFO">Length is 12</msg>
-<msg timestamp="20191119 17:56:31.994" level="INFO">${panels number} = 12</msg>
-<status status="PASS" starttime="20191119 17:56:31.992" endtime="20191119 17:56:31.995"></status>
-</kw>
-<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
-<kw name="${panel index} = 0" type="foritem">
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<arguments>
-<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
-<arg>Exit For Loop</arg>
-</arguments>
-<kw name="Exit For Loop" library="BuiltIn">
-<doc>Stops executing the enclosing for loop.</doc>
-<msg timestamp="20191119 17:56:32.002" level="INFO">Exiting for loop altogether.</msg>
-<status status="PASS" starttime="20191119 17:56:32.001" endtime="20191119 17:56:32.002"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:31.998" endtime="20191119 17:56:32.003"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:31.997" endtime="20191119 17:56:32.003"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:31.996" endtime="20191119 17:56:32.004"></status>
-</kw>
-<msg timestamp="20191119 17:56:32.005" level="INFO">${panel index} = 1</msg>
-<status status="PASS" starttime="20191119 17:56:31.990" endtime="20191119 17:56:32.005"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${panel index}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:32.006" level="INFO">1</msg>
-<status status="PASS" starttime="20191119 17:56:32.006" endtime="20191119 17:56:32.007"></status>
-</kw>
-<kw name="Catenate" library="BuiltIn">
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<arguments>
-<arg>vp_cmd_helper --plugout --rack</arg>
-<arg>${rackID}</arg>
-<arg>--panel</arg>
-<arg>${panel index}</arg>
-<arg>--port</arg>
-<arg>${portID}</arg>
-</arguments>
-<assign>
-<var>${completed command}</var>
-</assign>
-<msg timestamp="20191119 17:56:32.008" level="INFO">${completed command} = vp_cmd_helper --plugout --rack 1 --panel 1 --port 1</msg>
-<status status="PASS" starttime="20191119 17:56:32.007" endtime="20191119 17:56:32.008"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${completed command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:32.010" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 1</msg>
-<status status="PASS" starttime="20191119 17:56:32.009" endtime="20191119 17:56:32.010"></status>
-</kw>
-<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
-<kw name="Write" library="SSHLibrary">
-<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
-<arguments>
-<arg>${command}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:32.046" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 1</msg>
-<status status="PASS" starttime="20191119 17:56:32.011" endtime="20191119 17:56:32.046"></status>
-</kw>
-<kw name="Read" library="SSHLibrary">
-<doc>Consumes and returns everything available on the server output.</doc>
-<arguments>
-<arg>loglevel=Trace</arg>
-<arg>delay=1s</arg>
-</arguments>
-<assign>
-<var>${stdout}</var>
-</assign>
-<msg timestamp="20191119 17:56:34.060" level="INFO">${stdout} = result=success
-command=plugout
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:32.047" endtime="20191119 17:56:34.060"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${stdout}</arg>
-</arguments>
-<msg timestamp="20191119 17:56:34.063" level="INFO">result=success
-command=plugout
-test_setup=on
-bus_connect=on
-bus_power=on
-rack=1
-panel=1
-type=1100ps
-panel_state=RUN
-row=1
-serial=28FFFF600001
-count=11
-# </msg>
-<status status="PASS" starttime="20191119 17:56:34.063" endtime="20191119 17:56:34.063"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:32.011" endtime="20191119 17:56:34.063"></status>
-</kw>
-<status status="PASS" starttime="20191119 17:56:31.989" endtime="20191119 17:56:34.063"></status>
-</kw>
-<kw name="Set Web UI to Stand By State and Close Current Browser" library="General Page" type="teardown">
-<kw name="Get Element Count" library="SeleniumLibrary">
-<doc>Returns the number of elements matching ``locator``.</doc>
-<arguments>
-<arg>${btnExit}</arg>
-</arguments>
-<assign>
-<var>${count Exit button}</var>
-</assign>
-<msg timestamp="20191119 17:56:34.100" level="INFO">${count Exit button} = 1</msg>
-<status status="PASS" starttime="20191119 17:56:34.070" endtime="20191119 17:56:34.100"></status>
+<msg timestamp="20191121 16:31:49.599" level="INFO">${count Exit button} = 1</msg>
+<status status="PASS" starttime="20191121 16:31:49.558" endtime="20191121 16:31:49.599"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -1880,10 +96,10 @@ count=11
 <arguments>
 <arg>${btnName}</arg>
 </arguments>
-<msg timestamp="20191119 17:56:34.100" level="INFO">Clicking element '//div[@id='exit-footer' and @style='display: block;']/div[@id='exit-button']'.</msg>
-<status status="PASS" starttime="20191119 17:56:34.100" endtime="20191119 17:56:34.179"></status>
+<msg timestamp="20191121 16:31:49.603" level="INFO">Clicking element '//div[@id='exit-footer' and @style='display: block;']/div[@id='exit-button']'.</msg>
+<status status="PASS" starttime="20191121 16:31:49.603" endtime="20191121 16:31:49.654"></status>
 </kw>
-<status status="PASS" starttime="20191119 17:56:34.100" endtime="20191119 17:56:34.180"></status>
+<status status="PASS" starttime="20191121 16:31:49.602" endtime="20191121 16:31:49.655"></status>
 </kw>
 <kw name="Wait For Page Load" library="General Page">
 <kw name="Sleep" library="BuiltIn">
@@ -1891,14 +107,33 @@ count=11
 <arguments>
 <arg>${PAGE LOAD TIMEOUT}</arg>
 </arguments>
-<msg timestamp="20191119 17:56:34.700" level="INFO">Slept 500 milliseconds</msg>
-<status status="PASS" starttime="20191119 17:56:34.180" endtime="20191119 17:56:34.700"></status>
+<msg timestamp="20191121 16:31:50.657" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20191121 16:31:49.655" endtime="20191121 16:31:50.657"></status>
 </kw>
-<status status="PASS" starttime="20191119 17:56:34.180" endtime="20191119 17:56:34.700"></status>
+<status status="PASS" starttime="20191121 16:31:49.655" endtime="20191121 16:31:50.658"></status>
 </kw>
-<status status="PASS" starttime="20191119 17:56:34.100" endtime="20191119 17:56:34.700"></status>
+<status status="PASS" starttime="20191121 16:31:49.600" endtime="20191121 16:31:50.658"></status>
 </kw>
-<status status="PASS" starttime="20191119 17:56:34.100" endtime="20191119 17:56:34.700"></status>
+<status status="PASS" starttime="20191121 16:31:49.600" endtime="20191121 16:31:50.659"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${btnCancel}</arg>
+</arguments>
+<assign>
+<var>${count Cancel button}</var>
+</assign>
+<msg timestamp="20191121 16:31:50.682" level="INFO">${count Cancel button} = 0</msg>
+<status status="PASS" starttime="20191121 16:31:50.660" endtime="20191121 16:31:50.683"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${count Cancel button} &gt; 0</arg>
+<arg>Exit Screen</arg>
+</arguments>
+<status status="PASS" starttime="20191121 16:31:50.683" endtime="20191121 16:31:50.684"></status>
 </kw>
 <kw name="Get Element Count" library="SeleniumLibrary">
 <doc>Returns the number of elements matching ``locator``.</doc>
@@ -1908,8 +143,2174 @@ count=11
 <assign>
 <var>${count Home screen}</var>
 </assign>
-<msg timestamp="20191119 17:56:34.710" level="INFO">${count Home screen} = 1</msg>
-<status status="PASS" starttime="20191119 17:56:34.700" endtime="20191119 17:56:34.710"></status>
+<msg timestamp="20191121 16:31:50.706" level="INFO">${count Home screen} = 0</msg>
+<status status="PASS" starttime="20191121 16:31:50.685" endtime="20191121 16:31:50.706"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${count Home screen} &gt; 0</arg>
+<arg>Run Keywords</arg>
+<arg>Click Web Button</arg>
+<arg>${btnHome}</arg>
+<arg>AND</arg>
+<arg>Wait For Page Load</arg>
+</arguments>
+<status status="PASS" starttime="20191121 16:31:50.706" endtime="20191121 16:31:50.707"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:49.556" endtime="20191121 16:31:50.707"></status>
+</kw>
+<kw name="Go To Home Screen" library="General Page">
+<kw name="Click Web Button" library="General Page">
+<arguments>
+<arg>${btnHome}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btnName}</arg>
+</arguments>
+<msg timestamp="20191121 16:31:50.709" level="INFO">Clicking element '//div[@id='home-lang']'.</msg>
+<status status="PASS" starttime="20191121 16:31:50.709" endtime="20191121 16:31:50.795"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:50.708" endtime="20191121 16:31:50.795"></status>
+</kw>
+<kw name="Wait For Page Load" library="General Page">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${PAGE LOAD TIMEOUT}</arg>
+</arguments>
+<msg timestamp="20191121 16:31:51.798" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20191121 16:31:50.796" endtime="20191121 16:31:51.798"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:50.796" endtime="20191121 16:31:51.798"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:50.708" endtime="20191121 16:31:51.798"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:43.082" endtime="20191121 16:31:51.799"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:41.228" endtime="20191121 16:31:51.799"></status>
+</kw>
+<kw name="Given Go To Bulk Patching Screen" library="Home Page">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btnBulk Patching}</arg>
+</arguments>
+<msg timestamp="20191121 16:31:51.800" level="INFO">Clicking element '//input[@id='bulk-patch-btn']'.</msg>
+<status status="PASS" starttime="20191121 16:31:51.800" endtime="20191121 16:31:51.848"></status>
+</kw>
+<kw name="Wait For Page Load" library="General Page">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${PAGE LOAD TIMEOUT}</arg>
+</arguments>
+<msg timestamp="20191121 16:31:52.851" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20191121 16:31:51.849" endtime="20191121 16:31:52.851"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:51.848" endtime="20191121 16:31:52.851"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:51.799" endtime="20191121 16:31:52.851"></status>
+</kw>
+<kw name="When Plugin Serial Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; from Port &quot;1&quot; to Port &quot;3&quot;" library="Virtual Panel definitions">
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${port1ID}</arg>
+</arguments>
+<assign>
+<var>${from port}</var>
+</assign>
+<msg timestamp="20191121 16:31:52.854" level="INFO">${from port} = 1</msg>
+<status status="PASS" starttime="20191121 16:31:52.854" endtime="20191121 16:31:52.854"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${port2ID}</arg>
+</arguments>
+<assign>
+<var>${to port}</var>
+</assign>
+<msg timestamp="20191121 16:31:52.854" level="INFO">${to port} = 3</msg>
+<status status="PASS" starttime="20191121 16:31:52.854" endtime="20191121 16:31:52.854"></status>
+</kw>
+<kw name="${i} IN RANGE [ ${from port} | ${to port+1} ]" type="for">
+<kw name="${i} = 1" type="foritem">
+<kw name="Plugin Copper Tip to Rack &quot;${rackID}&quot; Panel &quot;${panelID}&quot; Row &quot;${row}&quot; Port &quot;${i}&quot;" library="Virtual Panel definitions">
+<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
+<arguments>
+<arg>${rackID}</arg>
+<arg>${panelID}</arg>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${panel index}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${VPpanels}</arg>
+</arguments>
+<assign>
+<var>${panels number}</var>
+</assign>
+<msg timestamp="20191121 16:31:52.864" level="INFO">Length is 12</msg>
+<msg timestamp="20191121 16:31:52.864" level="INFO">${panels number} = 12</msg>
+<status status="PASS" starttime="20191121 16:31:52.861" endtime="20191121 16:31:52.864"></status>
+</kw>
+<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
+<kw name="${panel index} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20191121 16:31:52.874" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20191121 16:31:52.874" endtime="20191121 16:31:52.874"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:52.864" endtime="20191121 16:31:52.874"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:52.864" endtime="20191121 16:31:52.874"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:52.864" endtime="20191121 16:31:52.874"></status>
+</kw>
+<msg timestamp="20191121 16:31:52.881" level="INFO">${panel index} = 1</msg>
+<status status="PASS" starttime="20191121 16:31:52.861" endtime="20191121 16:31:52.881"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${panel index}</arg>
+</arguments>
+<msg timestamp="20191121 16:31:52.884" level="INFO">1</msg>
+<status status="PASS" starttime="20191121 16:31:52.881" endtime="20191121 16:31:52.884"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>vp_cmd_helper --plugin --rack</arg>
+<arg>${rackID}</arg>
+<arg>--panel</arg>
+<arg>${panel index}</arg>
+<arg>--port</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${completed command}</var>
+</assign>
+<msg timestamp="20191121 16:31:52.884" level="INFO">${completed command} = vp_cmd_helper --plugin --rack 1 --panel 1 --port 1</msg>
+<status status="PASS" starttime="20191121 16:31:52.884" endtime="20191121 16:31:52.884"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${completed command}</arg>
+</arguments>
+<msg timestamp="20191121 16:31:52.884" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 1</msg>
+<status status="PASS" starttime="20191121 16:31:52.884" endtime="20191121 16:31:52.891"></status>
+</kw>
+<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20191121 16:31:52.913" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 1</msg>
+<status status="PASS" starttime="20191121 16:31:52.897" endtime="20191121 16:31:52.913"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20191121 16:31:54.915" level="INFO">${stdout} = result=success
+command=plugin
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:31:52.914" endtime="20191121 16:31:54.915"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20191121 16:31:54.916" level="INFO">result=success
+command=plugin
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:31:54.916" endtime="20191121 16:31:54.917"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:52.894" endtime="20191121 16:31:54.917"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:52.854" endtime="20191121 16:31:54.917"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:52.854" endtime="20191121 16:31:54.917"></status>
+</kw>
+<kw name="${i} = 2" type="foritem">
+<kw name="Plugin Copper Tip to Rack &quot;${rackID}&quot; Panel &quot;${panelID}&quot; Row &quot;${row}&quot; Port &quot;${i}&quot;" library="Virtual Panel definitions">
+<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
+<arguments>
+<arg>${rackID}</arg>
+<arg>${panelID}</arg>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${panel index}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${VPpanels}</arg>
+</arguments>
+<assign>
+<var>${panels number}</var>
+</assign>
+<msg timestamp="20191121 16:31:54.919" level="INFO">Length is 12</msg>
+<msg timestamp="20191121 16:31:54.919" level="INFO">${panels number} = 12</msg>
+<status status="PASS" starttime="20191121 16:31:54.919" endtime="20191121 16:31:54.920"></status>
+</kw>
+<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
+<kw name="${panel index} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20191121 16:31:54.922" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20191121 16:31:54.922" endtime="20191121 16:31:54.922"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:54.920" endtime="20191121 16:31:54.923"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:54.920" endtime="20191121 16:31:54.923"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:54.920" endtime="20191121 16:31:54.923"></status>
+</kw>
+<msg timestamp="20191121 16:31:54.923" level="INFO">${panel index} = 1</msg>
+<status status="PASS" starttime="20191121 16:31:54.918" endtime="20191121 16:31:54.924"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${panel index}</arg>
+</arguments>
+<msg timestamp="20191121 16:31:54.924" level="INFO">1</msg>
+<status status="PASS" starttime="20191121 16:31:54.924" endtime="20191121 16:31:54.924"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>vp_cmd_helper --plugin --rack</arg>
+<arg>${rackID}</arg>
+<arg>--panel</arg>
+<arg>${panel index}</arg>
+<arg>--port</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${completed command}</var>
+</assign>
+<msg timestamp="20191121 16:31:54.925" level="INFO">${completed command} = vp_cmd_helper --plugin --rack 1 --panel 1 --port 2</msg>
+<status status="PASS" starttime="20191121 16:31:54.925" endtime="20191121 16:31:54.925"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${completed command}</arg>
+</arguments>
+<msg timestamp="20191121 16:31:54.926" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 2</msg>
+<status status="PASS" starttime="20191121 16:31:54.925" endtime="20191121 16:31:54.926"></status>
+</kw>
+<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20191121 16:31:54.944" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 2</msg>
+<status status="PASS" starttime="20191121 16:31:54.926" endtime="20191121 16:31:54.945"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20191121 16:31:56.946" level="INFO">${stdout} = result=success
+command=plugin
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:31:54.945" endtime="20191121 16:31:56.946"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20191121 16:31:56.947" level="INFO">result=success
+command=plugin
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:31:56.947" endtime="20191121 16:31:56.948"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:54.926" endtime="20191121 16:31:56.948"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:54.918" endtime="20191121 16:31:56.948"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:54.918" endtime="20191121 16:31:56.948"></status>
+</kw>
+<kw name="${i} = 3" type="foritem">
+<kw name="Plugin Copper Tip to Rack &quot;${rackID}&quot; Panel &quot;${panelID}&quot; Row &quot;${row}&quot; Port &quot;${i}&quot;" library="Virtual Panel definitions">
+<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
+<arguments>
+<arg>${rackID}</arg>
+<arg>${panelID}</arg>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${panel index}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${VPpanels}</arg>
+</arguments>
+<assign>
+<var>${panels number}</var>
+</assign>
+<msg timestamp="20191121 16:31:56.950" level="INFO">Length is 12</msg>
+<msg timestamp="20191121 16:31:56.951" level="INFO">${panels number} = 12</msg>
+<status status="PASS" starttime="20191121 16:31:56.950" endtime="20191121 16:31:56.951"></status>
+</kw>
+<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
+<kw name="${panel index} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20191121 16:31:56.953" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20191121 16:31:56.953" endtime="20191121 16:31:56.954"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:56.952" endtime="20191121 16:31:56.954"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:56.951" endtime="20191121 16:31:56.954"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:56.951" endtime="20191121 16:31:56.954"></status>
+</kw>
+<msg timestamp="20191121 16:31:56.955" level="INFO">${panel index} = 1</msg>
+<status status="PASS" starttime="20191121 16:31:56.950" endtime="20191121 16:31:56.955"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${panel index}</arg>
+</arguments>
+<msg timestamp="20191121 16:31:56.955" level="INFO">1</msg>
+<status status="PASS" starttime="20191121 16:31:56.955" endtime="20191121 16:31:56.956"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>vp_cmd_helper --plugin --rack</arg>
+<arg>${rackID}</arg>
+<arg>--panel</arg>
+<arg>${panel index}</arg>
+<arg>--port</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${completed command}</var>
+</assign>
+<msg timestamp="20191121 16:31:56.956" level="INFO">${completed command} = vp_cmd_helper --plugin --rack 1 --panel 1 --port 3</msg>
+<status status="PASS" starttime="20191121 16:31:56.956" endtime="20191121 16:31:56.957"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${completed command}</arg>
+</arguments>
+<msg timestamp="20191121 16:31:56.957" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 3</msg>
+<status status="PASS" starttime="20191121 16:31:56.957" endtime="20191121 16:31:56.957"></status>
+</kw>
+<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20191121 16:31:56.978" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 3</msg>
+<status status="PASS" starttime="20191121 16:31:56.958" endtime="20191121 16:31:56.979"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20191121 16:31:58.980" level="INFO">${stdout} = result=success
+command=plugin
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:31:56.979" endtime="20191121 16:31:58.981"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20191121 16:31:58.983" level="INFO">result=success
+command=plugin
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:31:58.982" endtime="20191121 16:31:58.984"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:56.958" endtime="20191121 16:31:58.984"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:56.949" endtime="20191121 16:31:58.985"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:56.949" endtime="20191121 16:31:58.986"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:52.854" endtime="20191121 16:31:58.986"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:52.854" endtime="20191121 16:31:58.987"></status>
+</kw>
+<kw name="When Select Tab End &quot;B&quot;" library="Bulk Patching Page">
+<kw name="Convert To Lowercase" library="String">
+<doc>Converts string to lowercase.</doc>
+<arguments>
+<arg>${end position}</arg>
+</arguments>
+<assign>
+<var>${temp end position}</var>
+</assign>
+<msg timestamp="20191121 16:31:58.990" level="INFO">${temp end position} = b</msg>
+<status status="PASS" starttime="20191121 16:31:58.989" endtime="20191121 16:31:58.991"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${temp end position}' == 'a'</arg>
+<arg>Click Web Button</arg>
+<arg>${tabEndA}</arg>
+<arg>ELSE IF</arg>
+<arg>'${temp end position}' == 'b'</arg>
+<arg>Click Web Button</arg>
+<arg>${tabEndB}</arg>
+</arguments>
+<kw name="Click Web Button" library="General Page">
+<arguments>
+<arg>${tabEndB}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btnName}</arg>
+</arguments>
+<msg timestamp="20191121 16:31:58.996" level="INFO">Clicking element '//div[@id='btn-end-b']'.</msg>
+<status status="PASS" starttime="20191121 16:31:58.994" endtime="20191121 16:31:59.065"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:58.993" endtime="20191121 16:31:59.065"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:58.991" endtime="20191121 16:31:59.066"></status>
+</kw>
+<kw name="Wait For Page Load" library="General Page">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${PAGE LOAD TIMEOUT}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:00.069" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20191121 16:31:59.066" endtime="20191121 16:32:00.069"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:59.066" endtime="20191121 16:32:00.069"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:31:58.988" endtime="20191121 16:32:00.070"></status>
+</kw>
+<kw name="When Plugin Serial Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; from Port &quot;4&quot; to Port &quot;6&quot;" library="Virtual Panel definitions">
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${port1ID}</arg>
+</arguments>
+<assign>
+<var>${from port}</var>
+</assign>
+<msg timestamp="20191121 16:32:00.071" level="INFO">${from port} = 4</msg>
+<status status="PASS" starttime="20191121 16:32:00.071" endtime="20191121 16:32:00.071"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${port2ID}</arg>
+</arguments>
+<assign>
+<var>${to port}</var>
+</assign>
+<msg timestamp="20191121 16:32:00.072" level="INFO">${to port} = 6</msg>
+<status status="PASS" starttime="20191121 16:32:00.071" endtime="20191121 16:32:00.072"></status>
+</kw>
+<kw name="${i} IN RANGE [ ${from port} | ${to port+1} ]" type="for">
+<kw name="${i} = 4" type="foritem">
+<kw name="Plugin Copper Tip to Rack &quot;${rackID}&quot; Panel &quot;${panelID}&quot; Row &quot;${row}&quot; Port &quot;${i}&quot;" library="Virtual Panel definitions">
+<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
+<arguments>
+<arg>${rackID}</arg>
+<arg>${panelID}</arg>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${panel index}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${VPpanels}</arg>
+</arguments>
+<assign>
+<var>${panels number}</var>
+</assign>
+<msg timestamp="20191121 16:32:00.074" level="INFO">Length is 12</msg>
+<msg timestamp="20191121 16:32:00.074" level="INFO">${panels number} = 12</msg>
+<status status="PASS" starttime="20191121 16:32:00.074" endtime="20191121 16:32:00.075"></status>
+</kw>
+<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
+<kw name="${panel index} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20191121 16:32:00.077" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20191121 16:32:00.077" endtime="20191121 16:32:00.077"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:00.075" endtime="20191121 16:32:00.077"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:00.075" endtime="20191121 16:32:00.078"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:00.075" endtime="20191121 16:32:00.078"></status>
+</kw>
+<msg timestamp="20191121 16:32:00.078" level="INFO">${panel index} = 1</msg>
+<status status="PASS" starttime="20191121 16:32:00.073" endtime="20191121 16:32:00.078"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${panel index}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:00.079" level="INFO">1</msg>
+<status status="PASS" starttime="20191121 16:32:00.079" endtime="20191121 16:32:00.079"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>vp_cmd_helper --plugin --rack</arg>
+<arg>${rackID}</arg>
+<arg>--panel</arg>
+<arg>${panel index}</arg>
+<arg>--port</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${completed command}</var>
+</assign>
+<msg timestamp="20191121 16:32:00.080" level="INFO">${completed command} = vp_cmd_helper --plugin --rack 1 --panel 1 --port 4</msg>
+<status status="PASS" starttime="20191121 16:32:00.080" endtime="20191121 16:32:00.080"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${completed command}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:00.081" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 4</msg>
+<status status="PASS" starttime="20191121 16:32:00.080" endtime="20191121 16:32:00.081"></status>
+</kw>
+<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:00.103" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 4</msg>
+<status status="PASS" starttime="20191121 16:32:00.081" endtime="20191121 16:32:00.104"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20191121 16:32:02.104" level="INFO">${stdout} = result=success
+command=plugin
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:32:00.104" endtime="20191121 16:32:02.105"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:02.108" level="INFO">result=success
+command=plugin
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:32:02.106" endtime="20191121 16:32:02.109"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:00.081" endtime="20191121 16:32:02.110"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:00.073" endtime="20191121 16:32:02.111"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:00.073" endtime="20191121 16:32:02.112"></status>
+</kw>
+<kw name="${i} = 5" type="foritem">
+<kw name="Plugin Copper Tip to Rack &quot;${rackID}&quot; Panel &quot;${panelID}&quot; Row &quot;${row}&quot; Port &quot;${i}&quot;" library="Virtual Panel definitions">
+<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
+<arguments>
+<arg>${rackID}</arg>
+<arg>${panelID}</arg>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${panel index}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${VPpanels}</arg>
+</arguments>
+<assign>
+<var>${panels number}</var>
+</assign>
+<msg timestamp="20191121 16:32:02.119" level="INFO">Length is 12</msg>
+<msg timestamp="20191121 16:32:02.120" level="INFO">${panels number} = 12</msg>
+<status status="PASS" starttime="20191121 16:32:02.118" endtime="20191121 16:32:02.121"></status>
+</kw>
+<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
+<kw name="${panel index} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20191121 16:32:02.131" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20191121 16:32:02.130" endtime="20191121 16:32:02.132"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:02.124" endtime="20191121 16:32:02.133"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:02.123" endtime="20191121 16:32:02.133"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:02.122" endtime="20191121 16:32:02.134"></status>
+</kw>
+<msg timestamp="20191121 16:32:02.135" level="INFO">${panel index} = 1</msg>
+<status status="PASS" starttime="20191121 16:32:02.116" endtime="20191121 16:32:02.135"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${panel index}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:02.136" level="INFO">1</msg>
+<status status="PASS" starttime="20191121 16:32:02.135" endtime="20191121 16:32:02.136"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>vp_cmd_helper --plugin --rack</arg>
+<arg>${rackID}</arg>
+<arg>--panel</arg>
+<arg>${panel index}</arg>
+<arg>--port</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${completed command}</var>
+</assign>
+<msg timestamp="20191121 16:32:02.137" level="INFO">${completed command} = vp_cmd_helper --plugin --rack 1 --panel 1 --port 5</msg>
+<status status="PASS" starttime="20191121 16:32:02.136" endtime="20191121 16:32:02.137"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${completed command}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:02.138" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 5</msg>
+<status status="PASS" starttime="20191121 16:32:02.138" endtime="20191121 16:32:02.138"></status>
+</kw>
+<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:02.155" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 5</msg>
+<status status="PASS" starttime="20191121 16:32:02.140" endtime="20191121 16:32:02.155"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20191121 16:32:04.157" level="INFO">${stdout} = result=success
+command=plugin
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:32:02.156" endtime="20191121 16:32:04.158"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:04.162" level="INFO">result=success
+command=plugin
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:32:04.160" endtime="20191121 16:32:04.163"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:02.139" endtime="20191121 16:32:04.164"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:02.114" endtime="20191121 16:32:04.165"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:02.113" endtime="20191121 16:32:04.166"></status>
+</kw>
+<kw name="${i} = 6" type="foritem">
+<kw name="Plugin Copper Tip to Rack &quot;${rackID}&quot; Panel &quot;${panelID}&quot; Row &quot;${row}&quot; Port &quot;${i}&quot;" library="Virtual Panel definitions">
+<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
+<arguments>
+<arg>${rackID}</arg>
+<arg>${panelID}</arg>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${panel index}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${VPpanels}</arg>
+</arguments>
+<assign>
+<var>${panels number}</var>
+</assign>
+<msg timestamp="20191121 16:32:04.173" level="INFO">Length is 12</msg>
+<msg timestamp="20191121 16:32:04.174" level="INFO">${panels number} = 12</msg>
+<status status="PASS" starttime="20191121 16:32:04.172" endtime="20191121 16:32:04.174"></status>
+</kw>
+<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
+<kw name="${panel index} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20191121 16:32:04.185" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20191121 16:32:04.184" endtime="20191121 16:32:04.186"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:04.178" endtime="20191121 16:32:04.186"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:04.176" endtime="20191121 16:32:04.187"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:04.175" endtime="20191121 16:32:04.188"></status>
+</kw>
+<msg timestamp="20191121 16:32:04.190" level="INFO">${panel index} = 1</msg>
+<status status="PASS" starttime="20191121 16:32:04.170" endtime="20191121 16:32:04.190"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${panel index}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:04.193" level="INFO">1</msg>
+<status status="PASS" starttime="20191121 16:32:04.191" endtime="20191121 16:32:04.194"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>vp_cmd_helper --plugin --rack</arg>
+<arg>${rackID}</arg>
+<arg>--panel</arg>
+<arg>${panel index}</arg>
+<arg>--port</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${completed command}</var>
+</assign>
+<msg timestamp="20191121 16:32:04.197" level="INFO">${completed command} = vp_cmd_helper --plugin --rack 1 --panel 1 --port 6</msg>
+<status status="PASS" starttime="20191121 16:32:04.195" endtime="20191121 16:32:04.197"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${completed command}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:04.199" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 6</msg>
+<status status="PASS" starttime="20191121 16:32:04.198" endtime="20191121 16:32:04.200"></status>
+</kw>
+<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:04.232" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 6</msg>
+<status status="PASS" starttime="20191121 16:32:04.203" endtime="20191121 16:32:04.232"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20191121 16:32:06.234" level="INFO">${stdout} = result=success
+command=plugin
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:32:04.233" endtime="20191121 16:32:06.235"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:06.239" level="INFO">result=success
+command=plugin
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:32:06.236" endtime="20191121 16:32:06.240"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:04.201" endtime="20191121 16:32:06.241"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:04.168" endtime="20191121 16:32:06.242"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:04.167" endtime="20191121 16:32:06.243"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:00.072" endtime="20191121 16:32:06.243"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:00.070" endtime="20191121 16:32:06.244"></status>
+</kw>
+<kw name="When Plugin Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;7&quot;" library="Virtual Panel definitions">
+<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
+<arguments>
+<arg>${rackID}</arg>
+<arg>${panelID}</arg>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${panel index}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${VPpanels}</arg>
+</arguments>
+<assign>
+<var>${panels number}</var>
+</assign>
+<msg timestamp="20191121 16:32:06.251" level="INFO">Length is 12</msg>
+<msg timestamp="20191121 16:32:06.252" level="INFO">${panels number} = 12</msg>
+<status status="PASS" starttime="20191121 16:32:06.250" endtime="20191121 16:32:06.252"></status>
+</kw>
+<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
+<kw name="${panel index} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20191121 16:32:06.263" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20191121 16:32:06.262" endtime="20191121 16:32:06.263"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:06.255" endtime="20191121 16:32:06.264"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:06.254" endtime="20191121 16:32:06.265"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:06.253" endtime="20191121 16:32:06.265"></status>
+</kw>
+<msg timestamp="20191121 16:32:06.268" level="INFO">${panel index} = 1</msg>
+<status status="PASS" starttime="20191121 16:32:06.248" endtime="20191121 16:32:06.268"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${panel index}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:06.271" level="INFO">1</msg>
+<status status="PASS" starttime="20191121 16:32:06.269" endtime="20191121 16:32:06.271"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>vp_cmd_helper --plugin --rack</arg>
+<arg>${rackID}</arg>
+<arg>--panel</arg>
+<arg>${panel index}</arg>
+<arg>--port</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${completed command}</var>
+</assign>
+<msg timestamp="20191121 16:32:06.274" level="INFO">${completed command} = vp_cmd_helper --plugin --rack 1 --panel 1 --port 7</msg>
+<status status="PASS" starttime="20191121 16:32:06.272" endtime="20191121 16:32:06.274"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${completed command}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:06.275" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 7</msg>
+<status status="PASS" starttime="20191121 16:32:06.274" endtime="20191121 16:32:06.275"></status>
+</kw>
+<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:06.309" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 7</msg>
+<status status="PASS" starttime="20191121 16:32:06.276" endtime="20191121 16:32:06.309"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20191121 16:32:08.322" level="INFO">${stdout} = result=success
+command=plugin
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:32:06.310" endtime="20191121 16:32:08.323"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:08.326" level="INFO">result=success
+command=plugin
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:32:08.325" endtime="20191121 16:32:08.327"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:06.276" endtime="20191121 16:32:08.328"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:06.246" endtime="20191121 16:32:08.329"></status>
+</kw>
+<kw name="And Exit Screen" library="General Page">
+<kw name="Click Web Button" library="General Page">
+<arguments>
+<arg>${btnExit}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btnName}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:08.335" level="INFO">Clicking element '//div[@id='exit-footer' and @style='display: block;']/div[@id='exit-button']'.</msg>
+<status status="PASS" starttime="20191121 16:32:08.334" endtime="20191121 16:32:08.411"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:08.332" endtime="20191121 16:32:08.411"></status>
+</kw>
+<kw name="Wait For Page Load" library="General Page">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${PAGE LOAD TIMEOUT}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:09.414" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20191121 16:32:08.412" endtime="20191121 16:32:09.414"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:08.412" endtime="20191121 16:32:09.415"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:08.331" endtime="20191121 16:32:09.416"></status>
+</kw>
+<kw name="Then Check The Number of Confirm is &quot;1&quot;" library="General definitions">
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Element Attribute Value Should Be</arg>
+<arg>${btnConfirm}</arg>
+<arg>value</arg>
+<arg>${confirm number}</arg>
+</arguments>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>${btnConfirm}</arg>
+<arg>value</arg>
+<arg>${confirm number}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:09.472" level="INFO">Element '//div[@id='confirms' and @style='visibility: visible;']//input[@type='submit']' attribute 'value' contains value '1'.</msg>
+<status status="PASS" starttime="20191121 16:32:09.420" endtime="20191121 16:32:09.472"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:09.419" endtime="20191121 16:32:09.473"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:09.417" endtime="20191121 16:32:09.473"></status>
+</kw>
+<kw name="And Plugout Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;1&quot;" library="Virtual Panel definitions">
+<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
+<arguments>
+<arg>${rackID}</arg>
+<arg>${panelID}</arg>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${panel index}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${VPpanels}</arg>
+</arguments>
+<assign>
+<var>${panels number}</var>
+</assign>
+<msg timestamp="20191121 16:32:09.477" level="INFO">Length is 12</msg>
+<msg timestamp="20191121 16:32:09.478" level="INFO">${panels number} = 12</msg>
+<status status="PASS" starttime="20191121 16:32:09.477" endtime="20191121 16:32:09.478"></status>
+</kw>
+<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
+<kw name="${panel index} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20191121 16:32:09.485" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20191121 16:32:09.485" endtime="20191121 16:32:09.485"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:09.482" endtime="20191121 16:32:09.486"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:09.481" endtime="20191121 16:32:09.486"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:09.479" endtime="20191121 16:32:09.486"></status>
+</kw>
+<msg timestamp="20191121 16:32:09.487" level="INFO">${panel index} = 1</msg>
+<status status="PASS" starttime="20191121 16:32:09.475" endtime="20191121 16:32:09.487"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${panel index}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:09.488" level="INFO">1</msg>
+<status status="PASS" starttime="20191121 16:32:09.487" endtime="20191121 16:32:09.488"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>vp_cmd_helper --plugout --rack</arg>
+<arg>${rackID}</arg>
+<arg>--panel</arg>
+<arg>${panel index}</arg>
+<arg>--port</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${completed command}</var>
+</assign>
+<msg timestamp="20191121 16:32:09.489" level="INFO">${completed command} = vp_cmd_helper --plugout --rack 1 --panel 1 --port 1</msg>
+<status status="PASS" starttime="20191121 16:32:09.488" endtime="20191121 16:32:09.489"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${completed command}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:09.490" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 1</msg>
+<status status="PASS" starttime="20191121 16:32:09.489" endtime="20191121 16:32:09.490"></status>
+</kw>
+<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:09.531" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 1</msg>
+<status status="PASS" starttime="20191121 16:32:09.491" endtime="20191121 16:32:09.531"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20191121 16:32:11.534" level="INFO">${stdout} = result=success
+command=plugout
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:32:09.532" endtime="20191121 16:32:11.534"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:11.536" level="INFO">result=success
+command=plugout
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:32:11.535" endtime="20191121 16:32:11.537"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:09.490" endtime="20191121 16:32:11.537"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:09.474" endtime="20191121 16:32:11.538"></status>
+</kw>
+<kw name="And Plugout Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;4&quot;" library="Virtual Panel definitions">
+<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
+<arguments>
+<arg>${rackID}</arg>
+<arg>${panelID}</arg>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${panel index}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${VPpanels}</arg>
+</arguments>
+<assign>
+<var>${panels number}</var>
+</assign>
+<msg timestamp="20191121 16:32:11.541" level="INFO">Length is 12</msg>
+<msg timestamp="20191121 16:32:11.542" level="INFO">${panels number} = 12</msg>
+<status status="PASS" starttime="20191121 16:32:11.541" endtime="20191121 16:32:11.542"></status>
+</kw>
+<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
+<kw name="${panel index} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20191121 16:32:11.548" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20191121 16:32:11.548" endtime="20191121 16:32:11.549"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:11.544" endtime="20191121 16:32:11.549"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:11.543" endtime="20191121 16:32:11.549"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:11.542" endtime="20191121 16:32:11.550"></status>
+</kw>
+<msg timestamp="20191121 16:32:11.551" level="INFO">${panel index} = 1</msg>
+<status status="PASS" starttime="20191121 16:32:11.540" endtime="20191121 16:32:11.551"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${panel index}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:11.553" level="INFO">1</msg>
+<status status="PASS" starttime="20191121 16:32:11.552" endtime="20191121 16:32:11.553"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>vp_cmd_helper --plugout --rack</arg>
+<arg>${rackID}</arg>
+<arg>--panel</arg>
+<arg>${panel index}</arg>
+<arg>--port</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${completed command}</var>
+</assign>
+<msg timestamp="20191121 16:32:11.554" level="INFO">${completed command} = vp_cmd_helper --plugout --rack 1 --panel 1 --port 4</msg>
+<status status="PASS" starttime="20191121 16:32:11.553" endtime="20191121 16:32:11.554"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${completed command}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:11.555" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 4</msg>
+<status status="PASS" starttime="20191121 16:32:11.554" endtime="20191121 16:32:11.555"></status>
+</kw>
+<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:11.572" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 4</msg>
+<status status="PASS" starttime="20191121 16:32:11.556" endtime="20191121 16:32:11.573"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20191121 16:32:13.582" level="INFO">${stdout} = result=success
+command=plugout
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:32:11.573" endtime="20191121 16:32:13.583"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:13.586" level="INFO">result=success
+command=plugout
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:32:13.584" endtime="20191121 16:32:13.586"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:11.555" endtime="20191121 16:32:13.587"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:11.539" endtime="20191121 16:32:13.588"></status>
+</kw>
+<kw name="And Plugout Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;2&quot;" library="Virtual Panel definitions">
+<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
+<arguments>
+<arg>${rackID}</arg>
+<arg>${panelID}</arg>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${panel index}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${VPpanels}</arg>
+</arguments>
+<assign>
+<var>${panels number}</var>
+</assign>
+<msg timestamp="20191121 16:32:13.594" level="INFO">Length is 12</msg>
+<msg timestamp="20191121 16:32:13.594" level="INFO">${panels number} = 12</msg>
+<status status="PASS" starttime="20191121 16:32:13.593" endtime="20191121 16:32:13.595"></status>
+</kw>
+<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
+<kw name="${panel index} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20191121 16:32:13.605" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20191121 16:32:13.604" endtime="20191121 16:32:13.606"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:13.598" endtime="20191121 16:32:13.607"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:13.597" endtime="20191121 16:32:13.607"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:13.596" endtime="20191121 16:32:13.608"></status>
+</kw>
+<msg timestamp="20191121 16:32:13.610" level="INFO">${panel index} = 1</msg>
+<status status="PASS" starttime="20191121 16:32:13.591" endtime="20191121 16:32:13.611"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${panel index}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:13.613" level="INFO">1</msg>
+<status status="PASS" starttime="20191121 16:32:13.612" endtime="20191121 16:32:13.614"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>vp_cmd_helper --plugout --rack</arg>
+<arg>${rackID}</arg>
+<arg>--panel</arg>
+<arg>${panel index}</arg>
+<arg>--port</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${completed command}</var>
+</assign>
+<msg timestamp="20191121 16:32:13.617" level="INFO">${completed command} = vp_cmd_helper --plugout --rack 1 --panel 1 --port 2</msg>
+<status status="PASS" starttime="20191121 16:32:13.615" endtime="20191121 16:32:13.617"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${completed command}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:13.619" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 2</msg>
+<status status="PASS" starttime="20191121 16:32:13.618" endtime="20191121 16:32:13.620"></status>
+</kw>
+<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:13.642" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 2</msg>
+<status status="PASS" starttime="20191121 16:32:13.623" endtime="20191121 16:32:13.643"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20191121 16:32:15.647" level="INFO">${stdout} = result=success
+command=plugout
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:32:13.644" endtime="20191121 16:32:15.647"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:15.650" level="INFO">result=success
+command=plugout
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:32:15.649" endtime="20191121 16:32:15.651"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:13.621" endtime="20191121 16:32:15.652"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:13.589" endtime="20191121 16:32:15.653"></status>
+</kw>
+<kw name="And Plugout Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;5&quot;" library="Virtual Panel definitions">
+<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
+<arguments>
+<arg>${rackID}</arg>
+<arg>${panelID}</arg>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${panel index}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${VPpanels}</arg>
+</arguments>
+<assign>
+<var>${panels number}</var>
+</assign>
+<msg timestamp="20191121 16:32:15.660" level="INFO">Length is 12</msg>
+<msg timestamp="20191121 16:32:15.661" level="INFO">${panels number} = 12</msg>
+<status status="PASS" starttime="20191121 16:32:15.659" endtime="20191121 16:32:15.662"></status>
+</kw>
+<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
+<kw name="${panel index} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20191121 16:32:15.670" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20191121 16:32:15.669" endtime="20191121 16:32:15.670"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:15.665" endtime="20191121 16:32:15.670"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:15.664" endtime="20191121 16:32:15.671"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:15.662" endtime="20191121 16:32:15.671"></status>
+</kw>
+<msg timestamp="20191121 16:32:15.673" level="INFO">${panel index} = 1</msg>
+<status status="PASS" starttime="20191121 16:32:15.657" endtime="20191121 16:32:15.673"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${panel index}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:15.674" level="INFO">1</msg>
+<status status="PASS" starttime="20191121 16:32:15.674" endtime="20191121 16:32:15.675"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>vp_cmd_helper --plugout --rack</arg>
+<arg>${rackID}</arg>
+<arg>--panel</arg>
+<arg>${panel index}</arg>
+<arg>--port</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${completed command}</var>
+</assign>
+<msg timestamp="20191121 16:32:15.677" level="INFO">${completed command} = vp_cmd_helper --plugout --rack 1 --panel 1 --port 5</msg>
+<status status="PASS" starttime="20191121 16:32:15.675" endtime="20191121 16:32:15.677"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${completed command}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:15.678" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 5</msg>
+<status status="PASS" starttime="20191121 16:32:15.678" endtime="20191121 16:32:15.679"></status>
+</kw>
+<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:15.692" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 5</msg>
+<status status="PASS" starttime="20191121 16:32:15.681" endtime="20191121 16:32:15.693"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20191121 16:32:17.721" level="INFO">${stdout} = result=success
+command=plugout
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:32:15.694" endtime="20191121 16:32:17.721"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:17.721" level="INFO">result=success
+command=plugout
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:32:17.721" endtime="20191121 16:32:17.721"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:15.680" endtime="20191121 16:32:17.721"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:15.655" endtime="20191121 16:32:17.721"></status>
+</kw>
+<kw name="And Plugout Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;3&quot;" library="Virtual Panel definitions">
+<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
+<arguments>
+<arg>${rackID}</arg>
+<arg>${panelID}</arg>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${panel index}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${VPpanels}</arg>
+</arguments>
+<assign>
+<var>${panels number}</var>
+</assign>
+<msg timestamp="20191121 16:32:17.721" level="INFO">Length is 12</msg>
+<msg timestamp="20191121 16:32:17.721" level="INFO">${panels number} = 12</msg>
+<status status="PASS" starttime="20191121 16:32:17.721" endtime="20191121 16:32:17.721"></status>
+</kw>
+<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
+<kw name="${panel index} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20191121 16:32:17.721" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20191121 16:32:17.721" endtime="20191121 16:32:17.721"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:17.721" endtime="20191121 16:32:17.721"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:17.721" endtime="20191121 16:32:17.721"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:17.721" endtime="20191121 16:32:17.721"></status>
+</kw>
+<msg timestamp="20191121 16:32:17.721" level="INFO">${panel index} = 1</msg>
+<status status="PASS" starttime="20191121 16:32:17.721" endtime="20191121 16:32:17.721"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${panel index}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:17.721" level="INFO">1</msg>
+<status status="PASS" starttime="20191121 16:32:17.721" endtime="20191121 16:32:17.721"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>vp_cmd_helper --plugout --rack</arg>
+<arg>${rackID}</arg>
+<arg>--panel</arg>
+<arg>${panel index}</arg>
+<arg>--port</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${completed command}</var>
+</assign>
+<msg timestamp="20191121 16:32:17.721" level="INFO">${completed command} = vp_cmd_helper --plugout --rack 1 --panel 1 --port 3</msg>
+<status status="PASS" starttime="20191121 16:32:17.721" endtime="20191121 16:32:17.721"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${completed command}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:17.721" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 3</msg>
+<status status="PASS" starttime="20191121 16:32:17.721" endtime="20191121 16:32:17.731"></status>
+</kw>
+<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:17.761" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 3</msg>
+<status status="PASS" starttime="20191121 16:32:17.731" endtime="20191121 16:32:17.761"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20191121 16:32:19.763" level="INFO">${stdout} = result=success
+command=plugout
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:32:17.761" endtime="20191121 16:32:19.763"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:19.767" level="INFO">result=success
+command=plugout
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:32:19.765" endtime="20191121 16:32:19.767"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:17.731" endtime="20191121 16:32:19.769"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:17.721" endtime="20191121 16:32:19.770"></status>
+</kw>
+<kw name="And Plugout Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;6&quot;" library="Virtual Panel definitions">
+<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
+<arguments>
+<arg>${rackID}</arg>
+<arg>${panelID}</arg>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${panel index}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${VPpanels}</arg>
+</arguments>
+<assign>
+<var>${panels number}</var>
+</assign>
+<msg timestamp="20191121 16:32:19.778" level="INFO">Length is 12</msg>
+<msg timestamp="20191121 16:32:19.779" level="INFO">${panels number} = 12</msg>
+<status status="PASS" starttime="20191121 16:32:19.776" endtime="20191121 16:32:19.779"></status>
+</kw>
+<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
+<kw name="${panel index} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20191121 16:32:19.791" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20191121 16:32:19.790" endtime="20191121 16:32:19.793"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:19.783" endtime="20191121 16:32:19.794"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:19.782" endtime="20191121 16:32:19.795"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:19.780" endtime="20191121 16:32:19.795"></status>
+</kw>
+<msg timestamp="20191121 16:32:19.798" level="INFO">${panel index} = 1</msg>
+<status status="PASS" starttime="20191121 16:32:19.774" endtime="20191121 16:32:19.799"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${panel index}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:19.801" level="INFO">1</msg>
+<status status="PASS" starttime="20191121 16:32:19.800" endtime="20191121 16:32:19.802"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>vp_cmd_helper --plugout --rack</arg>
+<arg>${rackID}</arg>
+<arg>--panel</arg>
+<arg>${panel index}</arg>
+<arg>--port</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${completed command}</var>
+</assign>
+<msg timestamp="20191121 16:32:19.804" level="INFO">${completed command} = vp_cmd_helper --plugout --rack 1 --panel 1 --port 6</msg>
+<status status="PASS" starttime="20191121 16:32:19.803" endtime="20191121 16:32:19.804"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${completed command}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:19.805" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 6</msg>
+<status status="PASS" starttime="20191121 16:32:19.805" endtime="20191121 16:32:19.806"></status>
+</kw>
+<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:19.848" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 6</msg>
+<status status="PASS" starttime="20191121 16:32:19.807" endtime="20191121 16:32:19.848"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20191121 16:32:21.861" level="INFO">${stdout} = result=success
+command=plugout
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:32:19.849" endtime="20191121 16:32:21.862"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:21.864" level="INFO">result=success
+command=plugout
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:32:21.863" endtime="20191121 16:32:21.864"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:19.806" endtime="20191121 16:32:21.865"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:19.772" endtime="20191121 16:32:21.865"></status>
+</kw>
+<kw name="And Plugout Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;7&quot;" library="Virtual Panel definitions">
+<kw name="Get Copper Panel Index" library="Virtual Panel definitions">
+<arguments>
+<arg>${rackID}</arg>
+<arg>${panelID}</arg>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${panel index}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${VPpanels}</arg>
+</arguments>
+<assign>
+<var>${panels number}</var>
+</assign>
+<msg timestamp="20191121 16:32:21.870" level="INFO">Length is 12</msg>
+<msg timestamp="20191121 16:32:21.870" level="INFO">${panels number} = 12</msg>
+<status status="PASS" starttime="20191121 16:32:21.869" endtime="20191121 16:32:21.870"></status>
+</kw>
+<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
+<kw name="${panel index} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20191121 16:32:21.877" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20191121 16:32:21.876" endtime="20191121 16:32:21.877"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:21.872" endtime="20191121 16:32:21.878"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:21.871" endtime="20191121 16:32:21.878"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:21.871" endtime="20191121 16:32:21.879"></status>
+</kw>
+<msg timestamp="20191121 16:32:21.880" level="INFO">${panel index} = 1</msg>
+<status status="PASS" starttime="20191121 16:32:21.867" endtime="20191121 16:32:21.880"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${panel index}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:21.882" level="INFO">1</msg>
+<status status="PASS" starttime="20191121 16:32:21.881" endtime="20191121 16:32:21.882"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>vp_cmd_helper --plugout --rack</arg>
+<arg>${rackID}</arg>
+<arg>--panel</arg>
+<arg>${panel index}</arg>
+<arg>--port</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${completed command}</var>
+</assign>
+<msg timestamp="20191121 16:32:21.884" level="INFO">${completed command} = vp_cmd_helper --plugout --rack 1 --panel 1 --port 7</msg>
+<status status="PASS" starttime="20191121 16:32:21.883" endtime="20191121 16:32:21.884"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${completed command}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:21.886" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 7</msg>
+<status status="PASS" starttime="20191121 16:32:21.885" endtime="20191121 16:32:21.886"></status>
+</kw>
+<kw name="Enter Virtual Command ${completed command}" library="SSH definitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:21.904" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 7</msg>
+<status status="PASS" starttime="20191121 16:32:21.888" endtime="20191121 16:32:21.904"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20191121 16:32:23.922" level="INFO">${stdout} = result=success
+command=plugout
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:32:21.904" endtime="20191121 16:32:23.923"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:23.926" level="INFO">result=success
+command=plugout
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20191121 16:32:23.925" endtime="20191121 16:32:23.927"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:21.887" endtime="20191121 16:32:23.928"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:21.866" endtime="20191121 16:32:23.929"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" library="General Page" type="teardown">
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${btnExit}</arg>
+</arguments>
+<assign>
+<var>${count Exit button}</var>
+</assign>
+<msg timestamp="20191121 16:32:23.989" level="INFO">${count Exit button} = 1</msg>
+<status status="PASS" starttime="20191121 16:32:23.933" endtime="20191121 16:32:23.989"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${count Exit button} &gt; 0</arg>
+<arg>Exit Screen</arg>
+</arguments>
+<kw name="Exit Screen" library="General Page">
+<kw name="Click Web Button" library="General Page">
+<arguments>
+<arg>${btnExit}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btnName}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:23.993" level="INFO">Clicking element '//div[@id='exit-footer' and @style='display: block;']/div[@id='exit-button']'.</msg>
+<status status="PASS" starttime="20191121 16:32:23.992" endtime="20191121 16:32:24.025"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:23.991" endtime="20191121 16:32:24.025"></status>
+</kw>
+<kw name="Wait For Page Load" library="General Page">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${PAGE LOAD TIMEOUT}</arg>
+</arguments>
+<msg timestamp="20191121 16:32:25.028" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20191121 16:32:24.026" endtime="20191121 16:32:25.029"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:24.026" endtime="20191121 16:32:25.030"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:23.991" endtime="20191121 16:32:25.031"></status>
+</kw>
+<status status="PASS" starttime="20191121 16:32:23.990" endtime="20191121 16:32:25.032"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${lblimVisionX}</arg>
+</arguments>
+<assign>
+<var>${count Home screen}</var>
+</assign>
+<msg timestamp="20191121 16:32:25.064" level="INFO">${count Home screen} = 1</msg>
+<status status="PASS" starttime="20191121 16:32:25.033" endtime="20191121 16:32:25.064"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -1938,10 +2339,10 @@ count=11
 <arguments>
 <arg>${btnName}</arg>
 </arguments>
-<msg timestamp="20191119 17:56:34.710" level="INFO">Clicking element '//div[@id='home-lang']'.</msg>
-<status status="PASS" starttime="20191119 17:56:34.710" endtime="20191119 17:56:34.740"></status>
+<msg timestamp="20191121 16:32:25.067" level="INFO">Clicking element '//div[@id='home-lang']'.</msg>
+<status status="PASS" starttime="20191121 16:32:25.067" endtime="20191121 16:32:25.117"></status>
 </kw>
-<status status="PASS" starttime="20191119 17:56:34.710" endtime="20191119 17:56:34.741"></status>
+<status status="PASS" starttime="20191121 16:32:25.066" endtime="20191121 16:32:25.118"></status>
 </kw>
 <kw name="Wait For Page Load" library="General Page">
 <kw name="Sleep" library="BuiltIn">
@@ -1949,32 +2350,32 @@ count=11
 <arguments>
 <arg>${PAGE LOAD TIMEOUT}</arg>
 </arguments>
-<msg timestamp="20191119 17:56:35.243" level="INFO">Slept 500 milliseconds</msg>
-<status status="PASS" starttime="20191119 17:56:34.742" endtime="20191119 17:56:35.244"></status>
+<msg timestamp="20191121 16:32:26.120" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20191121 16:32:25.119" endtime="20191121 16:32:26.120"></status>
 </kw>
-<status status="PASS" starttime="20191119 17:56:34.741" endtime="20191119 17:56:35.245"></status>
+<status status="PASS" starttime="20191121 16:32:25.118" endtime="20191121 16:32:26.120"></status>
 </kw>
-<status status="PASS" starttime="20191119 17:56:34.710" endtime="20191119 17:56:35.246"></status>
+<status status="PASS" starttime="20191121 16:32:25.065" endtime="20191121 16:32:26.120"></status>
 </kw>
-<status status="PASS" starttime="20191119 17:56:34.710" endtime="20191119 17:56:35.247"></status>
+<status status="PASS" starttime="20191121 16:32:25.064" endtime="20191121 16:32:26.121"></status>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20191119 17:56:35.248" endtime="20191119 17:56:37.390"></status>
+<status status="PASS" starttime="20191121 16:32:26.121" endtime="20191121 16:32:28.232"></status>
 </kw>
-<status status="PASS" starttime="20191119 17:56:34.063" endtime="20191119 17:56:37.390"></status>
+<status status="PASS" starttime="20191121 16:32:23.931" endtime="20191121 16:32:28.232"></status>
 </kw>
-<status status="PASS" starttime="20191119 17:56:00.769" endtime="20191119 17:56:37.390" critical="yes"></status>
+<status status="PASS" starttime="20191121 16:31:41.227" endtime="20191121 16:32:28.232" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20191119 17:56:00.389" endtime="20191119 17:56:37.394"></status>
+<status status="PASS" starttime="20191121 16:31:40.833" endtime="20191121 16:32:28.233"></status>
 </suite>
-<status status="PASS" starttime="20191119 17:56:00.389" endtime="20191119 17:56:37.403"></status>
+<status status="PASS" starttime="20191121 16:31:40.831" endtime="20191121 16:32:28.235"></status>
 </suite>
-<status status="PASS" starttime="20191119 17:56:00.389" endtime="20191119 17:56:37.403"></status>
+<status status="PASS" starttime="20191121 16:31:40.829" endtime="20191121 16:32:28.235"></status>
 </suite>
-<status status="PASS" starttime="20191119 17:56:00.389" endtime="20191119 17:56:37.410"></status>
+<status status="PASS" starttime="20191121 16:31:40.826" endtime="20191121 16:32:28.235"></status>
 </suite>
-<status status="PASS" starttime="20191119 17:56:00.359" endtime="20191119 17:56:37.410"></status>
+<status status="PASS" starttime="20191121 16:31:40.802" endtime="20191121 16:32:28.235"></status>
 </suite>
 <statistics>
 <total>
@@ -1987,8 +2388,8 @@ count=11
 <stat pass="1" fail="0" id="s1" name="BulkPatching Robot">BulkPatching Robot</stat>
 <stat pass="1" fail="0" id="s1-s1" name="Test Resources">BulkPatching Robot.Test Resources</stat>
 <stat pass="1" fail="0" id="s1-s1-s1" name="Test Suites">BulkPatching Robot.Test Resources.Test Suites</stat>
-<stat pass="1" fail="0" id="s1-s1-s1-s1" name="2. Insert All End As">BulkPatching Robot.Test Resources.Test Suites.2. Insert All End As</stat>
-<stat pass="1" fail="0" id="s1-s1-s1-s1-s1" name="2.4. Check End A when plugging correct tip in the middle of list of End A then replug">BulkPatching Robot.Test Resources.Test Suites.2. Insert All End As.2.4. Check End A when plugging correct tip in the middle of list of End A then replug</stat>
+<stat pass="1" fail="0" id="s1-s1-s1-s1" name="3. Insert All End Bs">BulkPatching Robot.Test Resources.Test Suites.3. Insert All End Bs</stat>
+<stat pass="1" fail="0" id="s1-s1-s1-s1-s1" name="3.7. Check number of confirmation when connecting exess plugs">BulkPatching Robot.Test Resources.Test Suites.3. Insert All End Bs.3.7. Check number of confirmation when connecting exess plugs</stat>
 </suite>
 </statistics>
 <errors>
