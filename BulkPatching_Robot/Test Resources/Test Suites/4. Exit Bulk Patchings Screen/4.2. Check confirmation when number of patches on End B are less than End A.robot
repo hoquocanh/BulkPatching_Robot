@@ -1,7 +1,7 @@
 *** Settings ***
 Resource    ../../../Test Definitions/Cucumber Definitions/Home definitions.robot
 Resource    ../../../Test Definitions/Cucumber Definitions/Bulk Patching definitions.robot
-
+Resource    ../../../Test Definitions/Cucumber Definitions/Confirm definitions.robot
                        
 #Help text.py is to store help text for checking
 Variables    ../../Test Data/Help text.py
@@ -22,5 +22,14 @@ Exit_Bulk_02_01_01_Verify that imVision X shall create a confirm port if any por
     When Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "6"
     When Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "1"
     And Exit Screen
+    And Go To Confirm Screen
     Then Check The Number of Confirm is "2"
+    Then Check if Rack "1" Panel "1" Row "1" Port "4" "appeared" in Confirm list    
+    Then Check if Rack "1" Panel "1" Row "1" Port "3" "appeared" in Confirm list
+    And Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "2"
+    And Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "5"
+    And Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "4"
+    And Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "3"
+    
+    
     

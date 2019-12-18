@@ -39,16 +39,22 @@ Open WebUI Screen
 
 Go To Home Screen
     Click Web Button    ${btnHome}
-    Wait For Page Load
-                            
+    
+    
+Go To Confirm Screen
+    Click Web Button    ${btnConfirm}
+                      
+                           
 Close Current Screen
     Close Browser
     
 Click Web Button
     [Arguments]    ${btnName}
-    Click Element    ${btnName}
-    
-    
+     ${button exist}    Get Element Count    ${btnName}
+        
+    Run Keyword If    ${button exist} == 1    
+    ...    Run Keywords    Click Element    ${btnName}
+    ...    AND    Wait For Page Load  
     
 Click Delete Button
     Click Web Button    ${btnDelete}            

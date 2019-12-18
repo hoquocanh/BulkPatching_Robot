@@ -6,8 +6,10 @@ Resource    General Page.robot
 *** Variables ***
 #------------------Elements------------------
 ${lblimVisionX}    //div[@style='display: block;']/div[@id='imvision_tab']/div[contains(text(),'imVision X')]
-${btnBulk Patching}    //input[@id='bulk-patch-btn']
 ${lblBulk Patching Home Page}    //div[@id='bulkpatch-lang']
+
+${btnBulk Patching}    //input[@id='bulk-patch-btn']
+
 
 *** Keywords ***
 Home Screen Should Be Opened
