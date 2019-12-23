@@ -53,7 +53,7 @@ Click Web Button
      ${button exist}    Get Element Count    ${btnName}
         
     Run Keyword If    ${button exist} == 1    
-    ...    Run Keywords    Click Element    ${btnName}
+    ...    Run Keyword And Continue On Failure    Run Keywords    Click Element    ${btnName}
     ...    AND    Wait For Page Load  
     
 Click Delete Button
@@ -69,7 +69,7 @@ Wait For Page Update
 
 Exit Screen
     Click Web Button    ${btnExit}
-        Wait For Page Load
+    Wait For Page Load
 
 Set Web UI to Stand By State
     #Step 1.1: If the Web UI is being a specific screen with "Exit" button, press that button

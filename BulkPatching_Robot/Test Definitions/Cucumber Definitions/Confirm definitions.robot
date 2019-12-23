@@ -55,7 +55,7 @@ Check if Rack "${rackID}" Panel "${panelID}" Row "${row} Port "${portID}" "${sta
     ...    ELSE IF        '${temp status}' == 'disappeared'    Set Variable    0
     
     #Step 4.2: compare the status to the value checking from list of lines in Bulk Patching screen         
-    Run Keyword And Continue On Failure    Should Be Equal    '${count}'    '${expected value}'
+    Run Keyword And Continue On Failure    Should Be Equal    '${count}'    '${expected value}'    Port information is not ${status}
 
 
 Check to see if Rack "${rackID}" Panel "${panelID}" Port "${portID}" "${status}" in Confirm list
@@ -100,7 +100,7 @@ Check to see if Rack "${rackID}" Panel "${panelID}" Port "${portID}" "${status}"
     ...    ELSE IF        '${temp status}' == 'disappeared'    Set Variable    0
     
     #Step 4.2: compare the status to the value checking from list of lines in Bulk Patching screen         
-    Run Keyword And Continue On Failure    Should Be Equal    '${count}'    '${expected value}'  
+    Run Keyword And Continue On Failure    Should Be Equal    '${count}'    '${expected value}'    Port information is not ${status}  
     
 
 Check and see if Rack "${rackID}" Panel "${panelID}" ModuleHD "${module}" Port "${portID}" "${status}" in Confirm list
@@ -146,7 +146,7 @@ Check and see if Rack "${rackID}" Panel "${panelID}" ModuleHD "${module}" Port "
     ...    ELSE IF        '${temp status}' == 'disappeared'    Set Variable    0
     
     #Step 4.2: compare the status to the value checking from list of lines in Bulk Patching screen         
-    Run Keyword And Continue On Failure    Should Be Equal    '${count}'    '${expected value}'
+    Run Keyword And Continue On Failure    Should Be Equal    '${count}'    '${expected value}'    Port information is not ${status}
     
 Check then see if Rack "${rackID}" Panel "${panelID}" Row "${row}" Module "${module}" Port "${portID}" "${status}" in Confirm list
     
@@ -192,7 +192,7 @@ Check then see if Rack "${rackID}" Panel "${panelID}" Row "${row}" Module "${mod
     ...    ELSE IF        '${temp status}' == 'disappeared'    Set Variable    0
     
     #Step 4.2: compare the status to the value checking from list of lines in Bulk Patching screen         
-    Run Keyword And Continue On Failure    Should Be Equal    '${count}'    '${expected value}'
+    Run Keyword And Continue On Failure    Should Be Equal    '${count}'    '${expected value}'    Port information is not ${status}
 ##########################################################################################################################
 #####------------ Xpath keyworks ------------#####    
 
