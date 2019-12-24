@@ -15,11 +15,29 @@ Resource    ../Test Pages/Bulk Patching Page.robot
 
 *** Keywords ***
 #Key work for Behavior Data Driven used in Test Cases
+Bulk Patching Screen Should Be "${status}"
+    
+    ${temp status}=    Convert To Lowercase    ${status}    
+
+    Run Keyword If    '${temp status}' == 'appeared'    Run Keyword And Continue On Failure    Page Should Contain Element    ${lblBulk Patching Title}
+    ...    ELSE IF    '${temp status}' == 'disappeared'    Run Keyword And Continue On Failure    Page Should Not Contain Element    ${lblBulk Patching Title}    
 
 The Header of End A Is "${status}"
     ${get status}=    Get Status of Tab End A 
     Run Keyword And Continue On Failure    Should Be Equal    "${status}"    ${get status}    msg="Status of End A is not matched the checked value!!!"
     
+Get Status of Tab End A
+    #Step 1: Get value of attribute "style" from element "tabEndA"
+    ${output status}=    Get Element Attribute    ${tabEndA}    style
+    
+    #Step 2: Return value "active" if the output attribute's value is "background: black;" else if that value is "background: gray;", return "inactive"
+    
+    ${status}=    Run Keyword If    '${output status}' == '${attribute tab active}'    Set Variable    "active"
+    ...    ELSE IF    '${output status}' == '${attribute tab inactive}'    Set Variable    "inactive"           
+     
+    #Step 3: Return the correct status
+    [Return]    ${status}
+        
 Get Status of Tab End B
     #Step 1: Get value of attribute "style" from element "tabEndB"
     ${output status}=    Get Element Attribute    ${tabEndB}    style

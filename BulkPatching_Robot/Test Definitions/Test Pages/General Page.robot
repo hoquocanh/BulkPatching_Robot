@@ -66,6 +66,9 @@ Wait For Page Load
     
 Wait For Page Update
     Sleep    ${PAGE UPDATE TIMEOUT}
+    
+Wait For Bulk Patching Timeout
+    Sleep    ${BULK PATCHING TIMEOUT}
 
 Exit Screen
     Click Web Button    ${btnExit}

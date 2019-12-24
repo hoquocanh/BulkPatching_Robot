@@ -23,20 +23,7 @@ ${attribute tab inactive}    background: gray;
 
 *** Keywords ***
 
-Bulk Patching Screen Should Be Opened
-    Page Should Contain Element    ${lblBulk Patching Title}    
-    
-Get Status of Tab End A
-    #Step 1: Get value of attribute "style" from element "tabEndA"
-    ${output status}=    Get Element Attribute    ${tabEndA}    style
-    
-    #Step 2: Return value "active" if the output attribute's value is "background: black;" else if that value is "background: gray;", return "inactive"
-    
-    ${status}=    Run Keyword If    '${output status}' == '${attribute tab active}'    Set Variable    "active"
-    ...    ELSE IF    '${output status}' == '${attribute tab inactive}'    Set Variable    "inactive"           
-     
-    #Step 3: Return the correct status
-    [Return]    ${status}   
+   
     
 Select Tab End "${end position}"
     ${temp end position}=    Convert To Lowercase    ${end position}    

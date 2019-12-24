@@ -133,7 +133,23 @@ Plugin Copper Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Port "${po
     
     #Step 3: Send virtual command via SSH connection
     Enter Virtual Command ${completed command} 
-     
+    
+Press Copper port at Rack "${rackID}" Panel "${panelID}" Row "${row}" Port "${portID}" with keymode "${keyMode}"
+    
+    [Documentation]    This keyword is used to press on a specific Copper port regarding to type of keymode
+    ...      
+    ...                Argument: rackID, panelID, row, portID, keyMode[short/long]
+    
+    #Step 1: Get virtual panel index from virtual panels table
+    ${panel index}=    Get Copper Panel Index    ${rackID}    ${panelID}    ${row}
+    Log    ${panel index}    
+    #Step 2: Compose a completed command to press a panel port     
+    ${completed command}=        Catenate    vp_cmd_helper --press --rack     ${rackID}    --panel    ${panel index}     --port     ${portID}    --keymode    ${keyMode}     
+    Log    ${completed command}  
+    
+    #Step 3: Send virtual command via SSH connection
+    Enter Virtual Command ${completed command}   
+       
 Plugout Copper Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Port "${portID}"
     #Step 1: Get virtual panel index from virtual panels table
     ${panel index}=    Get Copper Panel Index    ${rackID}    ${panelID}    ${row}

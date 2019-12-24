@@ -16,4 +16,10 @@ Delete Button is "${status}"
 
 Check The Number of Confirm is "${confirm number}"
     Run Keyword And Continue On Failure    Element Attribute Value Should Be    ${btnConfirm}    value    ${confirm number}                     
+
+Confirm Button is "${status}"
+    ${temp status}=    Convert To Lowercase    ${status}    
+
+    Run Keyword If    '${temp status}' == 'appeared'    Run Keyword And Continue On Failure    Element Should Be Visible    ${btnConfirm}
+    ...    ELSE IF    '${temp status}' == 'disappeared'    Run Keyword And Continue On Failure    Element Should Not Be Visible    ${btnConfirm}
          
