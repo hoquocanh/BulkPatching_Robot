@@ -1,9 +1,9 @@
 *** Settings ***
-Resource    ../../../Test Definitions/Cucumber Definitions/Home definitions.robot
-Resource    ../../../Test Definitions/Cucumber Definitions/Bulk Patching definitions.robot
-
+Resource    ../../../Test_Definitions/Cucumber_Definitions/HomeDefinitions.robot
+Resource    ../../../Test_Definitions/Cucumber_Definitions/BulkPatchingDefinitions.robot
+                       
 #Help text.py is to store help text for checking
-Variables    ../../Test Data/Help text.py
+Variables    ../../Test_Data/HelpText.py
                        
 Test Setup    Run Keywords    
 ...    Open SSH Connection and Login

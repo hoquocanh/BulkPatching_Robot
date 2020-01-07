@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.8.0 on win32)" generated="20200107 17:16:51.786" rpa="false">
+<suite id="s1" name="BulkPatching Robot" source="C:\Users\quocanh.ho\git\BulkPatching_Robot">
+<suite id="s1-s1" name="BulkPatching Robot" source="C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot">
+<suite id="s1-s1-s1" name="Test Resources" source="C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources">
+<suite id="s1-s1-s1-s1" name="Test Suites" source="C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites">
+<suite id="s1-s1-s1-s1-s1" name="2.Insert All End As" source="C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As">
+<suite id="s1-s1-s1-s1-s1-s1" name="2.1.CheckHeaderOfEndAAndEndBWhenOpenningBulkPatchingScreenFirstly" source="C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.1.CheckHeaderOfEndAAndEndBWhenOpenningBulkPatchingScreenFirstly.robot">
+<test id="s1-s1-s1-s1-s1-s1-t1" name="INSERT_END_A_01_01_Verify that imVision X shows correctly after selecting Bulk Patching button on the home page if observing all ImVisionX Displays">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:51.880" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:51.880" endtime="20200107 17:16:51.896"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:51.880" endtime="20200107 17:16:51.896"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:51.896" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:51.896" endtime="20200107 17:16:51.896">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:51.880" endtime="20200107 17:16:51.896" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<test id="s1-s1-s1-s1-s1-s1-t2" name="INSERT_END_A_01_02_Verify that imVision X shows correctly after selecting Bulk Patching button on the home page if observing the header of End A">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:51.896" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:51.896" endtime="20200107 17:16:51.896"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:51.896" endtime="20200107 17:16:51.896"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:51.896" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:51.896" endtime="20200107 17:16:51.896">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:51.896" endtime="20200107 17:16:51.896" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<test id="s1-s1-s1-s1-s1-s1-t3" name="INSERT_END_A_01_03_Verify that imVision X shows correctly after selecting Bulk Patching button on the home page if observing the header of End B">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:51.896" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:51.896" endtime="20200107 17:16:51.896"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:51.896" endtime="20200107 17:16:51.911"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:51.911" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:51.911" endtime="20200107 17:16:51.911">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:51.896" endtime="20200107 17:16:51.911" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<test id="s1-s1-s1-s1-s1-s1-t4" name="INSERT_END_A_01_04_Verify that imVision X shows correctly after selecting Bulk Patching button on the home page if observing the help text on Display of ImVisionX">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:51.911" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:51.911" endtime="20200107 17:16:51.911"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:51.911" endtime="20200107 17:16:51.911"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:51.911" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:51.911" endtime="20200107 17:16:51.911">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:51.911" endtime="20200107 17:16:51.911" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<status status="FAIL" starttime="20200107 17:16:51.880" endtime="20200107 17:16:51.911"></status>
+</suite>
+<suite id="s1-s1-s1-s1-s1-s2" name="2.10.CheckEndAWhenPluggingCorrectTipAtTheEndOfListOfEndA" source="C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.10.CheckEndAWhenPluggingCorrectTipAtTheEndOfListOfEndA.robot">
+<test id="s1-s1-s1-s1-s1-s2-t1" name="INSERT_END_A_10_01_Verify that imVision X shall remove the port from the list when the port at the bottom of the End A list is unplugged if doing on a 24-port Legacy Copper">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:51.927" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:51.927" endtime="20200107 17:16:51.927"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:51.927" endtime="20200107 17:16:51.927"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:51.942" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:51.942" endtime="20200107 17:16:51.942">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:51.927" endtime="20200107 17:16:51.942" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<test id="s1-s1-s1-s1-s1-s2-t2" name="INSERT_END_A_10_02_Verify that imVision X shall remove the port from the list when the port at the bottom of the End A list is unplugged if doing on a 48-port Legacy Copper">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:51.942" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:51.942" endtime="20200107 17:16:51.942"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:51.942" endtime="20200107 17:16:51.942"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:51.942" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:51.942" endtime="20200107 17:16:51.942">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:51.942" endtime="20200107 17:16:51.942" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<test id="s1-s1-s1-s1-s1-s2-t3" name="INSERT_END_A_10_06_Verify that imVision X shall remove the port from the list when the port at the bottom of the End A list is unplugged if doing on a LC Fiber panel">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:51.958" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:51.958" endtime="20200107 17:16:51.958"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:51.958" endtime="20200107 17:16:51.958"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:51.958" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:51.958" endtime="20200107 17:16:51.958">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:51.942" endtime="20200107 17:16:51.958" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<test id="s1-s1-s1-s1-s1-s2-t4" name="INSERT_END_A_10_08_Verify that imVision X shall remove the port from the list when the port at the bottom of the End A list is unplugged if doing on a HDF panel">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:51.958" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:51.958" endtime="20200107 17:16:51.958"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:51.958" endtime="20200107 17:16:51.958"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:51.958" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:51.958" endtime="20200107 17:16:51.958">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:51.958" endtime="20200107 17:16:51.958" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<test id="s1-s1-s1-s1-s1-s2-t5" name="INSERT_END_A_10_09_Verify that imVision X shall remove the port from the list when the port at the bottom of the End A list is unplugged if doing on a 96LC fiber type">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:51.974" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:51.974" endtime="20200107 17:16:51.974"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:51.974" endtime="20200107 17:16:51.974"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:51.974" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:51.974" endtime="20200107 17:16:51.974">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:51.974" endtime="20200107 17:16:51.974" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<status status="FAIL" starttime="20200107 17:16:51.911" endtime="20200107 17:16:51.974"></status>
+</suite>
+<suite id="s1-s1-s1-s1-s1-s3" name="2.2.CheckEndAWhenPluggingCorrectTipOnEndA" source="C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.2.CheckEndAWhenPluggingCorrectTipOnEndA.robot">
+<test id="s1-s1-s1-s1-s1-s3-t1" name="INSERT_END_A_02_02_01_Verify that all ImVisionXs in the zone show the bulk patching list correctly after plugging a connector into the End A list if there is a 24-port Legacy Copper">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:51.989" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:51.989" endtime="20200107 17:16:51.989"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:51.989" endtime="20200107 17:16:51.989"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:52.005" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.005" endtime="20200107 17:16:52.005">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:51.989" endtime="20200107 17:16:52.005" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<test id="s1-s1-s1-s1-s1-s3-t2" name="INSERT_END_A_02_02_02_Verify that all ImVisionXs in the zone show the bulk patching list correctly after plugging a connector into the End A list if there is a 48-port Legacy Copper">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:52.005" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.005" endtime="20200107 17:16:52.005"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.005" endtime="20200107 17:16:52.005"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:52.005" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.005" endtime="20200107 17:16:52.005">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.005" endtime="20200107 17:16:52.005" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<test id="s1-s1-s1-s1-s1-s3-t3" name="INSERT_END_A_02_02_06_Verify that all ImVisionXs in the zone show the bulk patching list correctly after plugging a connector into the End A list if there is a LC Fiber panel">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:52.005" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.005" endtime="20200107 17:16:52.005"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.005" endtime="20200107 17:16:52.005"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:52.021" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.005" endtime="20200107 17:16:52.021">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.005" endtime="20200107 17:16:52.021" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<test id="s1-s1-s1-s1-s1-s3-t4" name="INSERT_END_A_02_02_08_Verify that all ImVisionXs in the zone show the bulk patching list correctly after plugging a connector into the End A list if there is a HDF panel">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:52.021" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.021" endtime="20200107 17:16:52.021"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.021" endtime="20200107 17:16:52.021"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:52.021" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.021" endtime="20200107 17:16:52.021">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.021" endtime="20200107 17:16:52.021" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<test id="s1-s1-s1-s1-s1-s3-t5" name="INSERT_END_A_02_02_09_Verify that all ImVisionXs in the zone show the bulk patching list correctly after plugging a connector into the End A list if there is a 96LC fiber type">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:52.036" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.036" endtime="20200107 17:16:52.036"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.021" endtime="20200107 17:16:52.036"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:52.036" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.036" endtime="20200107 17:16:52.036">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.021" endtime="20200107 17:16:52.036" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<status status="FAIL" starttime="20200107 17:16:51.974" endtime="20200107 17:16:52.036"></status>
+</suite>
+<suite id="s1-s1-s1-s1-s1-s4" name="2.3.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndA" source="C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.3.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndA.robot">
+<test id="s1-s1-s1-s1-s1-s4-t1" name="INSERT_END_A_03_02_Verify that imVision X shall show correctly when any connector in the middle of the End A list is unplugged and the unplugged port in red color highligted">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:52.052" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.052" endtime="20200107 17:16:52.052"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.052" endtime="20200107 17:16:52.052"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:52.052" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.052" endtime="20200107 17:16:52.052">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.052" endtime="20200107 17:16:52.052" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<test id="s1-s1-s1-s1-s1-s4-t2" name="INSERT_END_A_03_04_Verify that imVision X shall show correctly when any connector in the middle of the End A list is unplugged and Delete button in the bottom bar showed">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:52.052" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.052" endtime="20200107 17:16:52.052"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.052" endtime="20200107 17:16:52.052"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:52.067" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.067" endtime="20200107 17:16:52.067">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.052" endtime="20200107 17:16:52.067" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<test id="s1-s1-s1-s1-s1-s4-t3" name="INSERT_END_A_03_05_Verify that imVision X shall show correctly when any connector in the middle of the End A list is unplugged and the appropriate help text showed">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:52.067" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.067" endtime="20200107 17:16:52.067"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.067" endtime="20200107 17:16:52.067"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:52.067" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.067" endtime="20200107 17:16:52.067">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.067" endtime="20200107 17:16:52.067" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<status status="FAIL" starttime="20200107 17:16:52.036" endtime="20200107 17:16:52.067"></status>
+</suite>
+<suite id="s1-s1-s1-s1-s1-s5" name="2.4.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndAThenReplug" source="C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.4.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndAThenReplug.robot">
+<test id="s1-s1-s1-s1-s1-s5-t1" name="INSERT_END_A_04_01_Verify that imVision X shall show correctly when plugging a connector that is matched to one of unplugged connectors in the End A list and the connector is highlighted in black">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:52.083" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.083" endtime="20200107 17:16:52.083"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.083" endtime="20200107 17:16:52.083"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:52.083" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.083" endtime="20200107 17:16:52.083">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.083" endtime="20200107 17:16:52.083" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<test id="s1-s1-s1-s1-s1-s5-t2" name="INSERT_END_A_04_04_Verify that imVision X shall show correctly when plugging a connector that is matched to one of unplugged connectors in the End A list and imVision X shall remove Delete button">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:52.099" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.099" endtime="20200107 17:16:52.099"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.099" endtime="20200107 17:16:52.099"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:52.099" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.099" endtime="20200107 17:16:52.099">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.083" endtime="20200107 17:16:52.099" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<test id="s1-s1-s1-s1-s1-s5-t3" name="INSERT_END_A_04_05_Verify that imVision X shall show correctly when plugging a connector that is matched to one of unplugged connectors in the End A list and the appropriate help text showed">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:52.099" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.099" endtime="20200107 17:16:52.099"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.099" endtime="20200107 17:16:52.099"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:52.099" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.099" endtime="20200107 17:16:52.099">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.099" endtime="20200107 17:16:52.099" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<status status="FAIL" starttime="20200107 17:16:52.067" endtime="20200107 17:16:52.099"></status>
+</suite>
+<suite id="s1-s1-s1-s1-s1-s6" name="2.5.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndAThenDeleteIt" source="C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.5.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndAThenDeleteIt.robot">
+<test id="s1-s1-s1-s1-s1-s6-t1" name="INSERT_END_A_05_01_Verify that imVision X will remove all unplugged ports from the End A list, and turn off all port LEDs after selecting Delete button in the bottom bar if doing on a 24-port Legacy Copper">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:52.130" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.130" endtime="20200107 17:16:52.130"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.114" endtime="20200107 17:16:52.130"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:52.130" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.130" endtime="20200107 17:16:52.130">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.114" endtime="20200107 17:16:52.130" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<test id="s1-s1-s1-s1-s1-s6-t2" name="INSERT_END_A_05_02_Verify that imVision X will remove all unplugged ports from the End A list, and turn off all port LEDs after selecting Delete button in the bottom bar if doing on a 48-port Legacy Copper">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:52.130" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.130" endtime="20200107 17:16:52.130"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.130" endtime="20200107 17:16:52.130"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:52.130" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.130" endtime="20200107 17:16:52.130">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.130" endtime="20200107 17:16:52.130" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<test id="s1-s1-s1-s1-s1-s6-t3" name="INSERT_END_A_05_06_Verify that imVision X will remove all unplugged ports from the End A list, and turn off all port LEDs after selecting Delete button in the bottom bar if doing on a LC Fiber panel">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:52.146" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.146" endtime="20200107 17:16:52.146"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.146" endtime="20200107 17:16:52.146"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:52.146" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.146" endtime="20200107 17:16:52.146">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.130" endtime="20200107 17:16:52.146" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<test id="s1-s1-s1-s1-s1-s6-t4" name="INSERT_END_A_05_08_Verify that imVision X will remove all unplugged ports from the End A list, and turn off all port LEDs after selecting Delete button in the bottom bar if doing on a HDF panel">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:52.146" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.146" endtime="20200107 17:16:52.146"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.146" endtime="20200107 17:16:52.146"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:52.146" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.146" endtime="20200107 17:16:52.161">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.146" endtime="20200107 17:16:52.161" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<test id="s1-s1-s1-s1-s1-s6-t5" name="INSERT_END_A_05_09_Verify that imVision X will remove all unplugged ports from the End A list, and turn off all port LEDs after selecting Delete button in the bottom bar if doing on a 96LC fiber type">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:52.161" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.161" endtime="20200107 17:16:52.161"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.161" endtime="20200107 17:16:52.161"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:52.161" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.161" endtime="20200107 17:16:52.161">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.161" endtime="20200107 17:16:52.161" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<status status="FAIL" starttime="20200107 17:16:52.114" endtime="20200107 17:16:52.161"></status>
+</suite>
+<suite id="s1-s1-s1-s1-s1-s7" name="2.8.CheckEndAWhenRemovingAllExcessPlugs" source="C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.8.CheckEndAWhenRemovingAllExcessPlugs.robot">
+<test id="s1-s1-s1-s1-s1-s7-t1" name="INSERT_END_A_08_01_Verify that imVision X update help text &quot;Insert all End A plugs, then select End B.&quot; after remove all excess plugs">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:52.177" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.177" endtime="20200107 17:16:52.177"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.177" endtime="20200107 17:16:52.177"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:52.192" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.192" endtime="20200107 17:16:52.192">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.177" endtime="20200107 17:16:52.192" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<status status="FAIL" starttime="20200107 17:16:52.161" endtime="20200107 17:16:52.192"></status>
+</suite>
+<suite id="s1-s1-s1-s1-s1-s8" name="2.9.CheckNumberOfConfirmationWhenInterruptingEndAScreen" source="C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.9.CheckNumberOfConfirmationWhenInterruptingEndAScreen.robot">
+<test id="s1-s1-s1-s1-s1-s8-t1" name="INSERT_END_A_09_01_Verify that imVision X will generate confirm ports for all connectors in the End A list after selecting Exit button">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login">
+<msg timestamp="20200107 17:16:52.208" level="FAIL">No keyword with name 'Open SSH Connection and Login' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.208" endtime="20200107 17:16:52.208"></status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.192" endtime="20200107 17:16:52.208"></status>
+</kw>
+<kw name="Set Web UI to Stand By State and Close Current Browser" type="teardown">
+<msg timestamp="20200107 17:16:52.208" level="FAIL">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</msg>
+<status status="FAIL" starttime="20200107 17:16:52.208" endtime="20200107 17:16:52.208">No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</kw>
+<status status="FAIL" starttime="20200107 17:16:52.192" endtime="20200107 17:16:52.208" critical="yes">Setup failed:
+No keyword with name 'Open SSH Connection and Login' found.
+
+Also teardown failed:
+No keyword with name 'Set Web UI to Stand By State and Close Current Browser' found.</status>
+</test>
+<status status="FAIL" starttime="20200107 17:16:52.192" endtime="20200107 17:16:52.208"></status>
+</suite>
+<status status="FAIL" starttime="20200107 17:16:51.864" endtime="20200107 17:16:52.208"></status>
+</suite>
+<status status="FAIL" starttime="20200107 17:16:51.864" endtime="20200107 17:16:52.208"></status>
+</suite>
+<status status="FAIL" starttime="20200107 17:16:51.864" endtime="20200107 17:16:52.224"></status>
+</suite>
+<status status="FAIL" starttime="20200107 17:16:51.864" endtime="20200107 17:16:52.224"></status>
+</suite>
+<status status="FAIL" starttime="20200107 17:16:51.833" endtime="20200107 17:16:52.224"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="27">Critical Tests</stat>
+<stat pass="0" fail="27">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="27" id="s1" name="BulkPatching Robot">BulkPatching Robot</stat>
+<stat pass="0" fail="27" id="s1-s1" name="BulkPatching Robot">BulkPatching Robot.BulkPatching Robot</stat>
+<stat pass="0" fail="27" id="s1-s1-s1" name="Test Resources">BulkPatching Robot.BulkPatching Robot.Test Resources</stat>
+<stat pass="0" fail="27" id="s1-s1-s1-s1" name="Test Suites">BulkPatching Robot.BulkPatching Robot.Test Resources.Test Suites</stat>
+<stat pass="0" fail="27" id="s1-s1-s1-s1-s1" name="2.Insert All End As">BulkPatching Robot.BulkPatching Robot.Test Resources.Test Suites.2.Insert All End As</stat>
+<stat pass="0" fail="4" id="s1-s1-s1-s1-s1-s1" name="2.1.CheckHeaderOfEndAAndEndBWhenOpenningBulkPatchingScreenFirstly">BulkPatching Robot.BulkPatching Robot.Test Resources.Test Suites.2.Insert All End As.2.1.CheckHeaderOfEndAAndEndBWhenOpenningBulkPatchingScreenFirstly</stat>
+<stat pass="0" fail="5" id="s1-s1-s1-s1-s1-s2" name="2.10.CheckEndAWhenPluggingCorrectTipAtTheEndOfListOfEndA">BulkPatching Robot.BulkPatching Robot.Test Resources.Test Suites.2.Insert All End As.2.10.CheckEndAWhenPluggingCorrectTipAtTheEndOfListOfEndA</stat>
+<stat pass="0" fail="5" id="s1-s1-s1-s1-s1-s3" name="2.2.CheckEndAWhenPluggingCorrectTipOnEndA">BulkPatching Robot.BulkPatching Robot.Test Resources.Test Suites.2.Insert All End As.2.2.CheckEndAWhenPluggingCorrectTipOnEndA</stat>
+<stat pass="0" fail="3" id="s1-s1-s1-s1-s1-s4" name="2.3.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndA">BulkPatching Robot.BulkPatching Robot.Test Resources.Test Suites.2.Insert All End As.2.3.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndA</stat>
+<stat pass="0" fail="3" id="s1-s1-s1-s1-s1-s5" name="2.4.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndAThenReplug">BulkPatching Robot.BulkPatching Robot.Test Resources.Test Suites.2.Insert All End As.2.4.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndAThenReplug</stat>
+<stat pass="0" fail="5" id="s1-s1-s1-s1-s1-s6" name="2.5.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndAThenDeleteIt">BulkPatching Robot.BulkPatching Robot.Test Resources.Test Suites.2.Insert All End As.2.5.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndAThenDeleteIt</stat>
+<stat pass="0" fail="1" id="s1-s1-s1-s1-s1-s7" name="2.8.CheckEndAWhenRemovingAllExcessPlugs">BulkPatching Robot.BulkPatching Robot.Test Resources.Test Suites.2.Insert All End As.2.8.CheckEndAWhenRemovingAllExcessPlugs</stat>
+<stat pass="0" fail="1" id="s1-s1-s1-s1-s1-s8" name="2.9.CheckNumberOfConfirmationWhenInterruptingEndAScreen">BulkPatching Robot.BulkPatching Robot.Test Resources.Test Suites.2.Insert All End As.2.9.CheckNumberOfConfirmationWhenInterruptingEndAScreen</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20200107 17:16:51.880" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.1.CheckHeaderOfEndAAndEndBWhenOpenningBulkPatchingScreenFirstly.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\General definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:51.880" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.1.CheckHeaderOfEndAAndEndBWhenOpenningBulkPatchingScreenFirstly.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\Home definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:51.880" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.1.CheckHeaderOfEndAAndEndBWhenOpenningBulkPatchingScreenFirstly.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\Bulk Patching definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:51.880" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.1.CheckHeaderOfEndAAndEndBWhenOpenningBulkPatchingScreenFirstly.robot': Variable file '..\..\Test Data\Help text.py' does not exist.</msg>
+<msg timestamp="20200107 17:16:51.927" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.10.CheckEndAWhenPluggingCorrectTipAtTheEndOfListOfEndA.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\General definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:51.927" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.10.CheckEndAWhenPluggingCorrectTipAtTheEndOfListOfEndA.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\Home definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:51.927" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.10.CheckEndAWhenPluggingCorrectTipAtTheEndOfListOfEndA.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\Bulk Patching definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:51.927" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.10.CheckEndAWhenPluggingCorrectTipAtTheEndOfListOfEndA.robot': Variable file '..\..\Test Data\Help text.py' does not exist.</msg>
+<msg timestamp="20200107 17:16:51.974" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.2.CheckEndAWhenPluggingCorrectTipOnEndA.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\General definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:51.974" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.2.CheckEndAWhenPluggingCorrectTipOnEndA.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\Home definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:51.989" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.2.CheckEndAWhenPluggingCorrectTipOnEndA.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\Bulk Patching definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:52.036" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.3.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndA.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\General definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:52.036" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.3.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndA.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\Home definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:52.036" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.3.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndA.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\Bulk Patching definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:52.052" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.3.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndA.robot': Variable file '..\..\Test Data\Help text.py' does not exist.</msg>
+<msg timestamp="20200107 17:16:52.083" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.4.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndAThenReplug.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\General definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:52.083" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.4.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndAThenReplug.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\Home definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:52.083" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.4.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndAThenReplug.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\Bulk Patching definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:52.083" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.4.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndAThenReplug.robot': Variable file '..\..\Test Data\Help text.py' does not exist.</msg>
+<msg timestamp="20200107 17:16:52.114" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.5.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndAThenDeleteIt.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\General definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:52.114" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.5.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndAThenDeleteIt.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\Home definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:52.114" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.5.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndAThenDeleteIt.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\Bulk Patching definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:52.114" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.5.CheckEndAWhenPluggingCorrectTipInTheMiddleOfListOfEndAThenDeleteIt.robot': Variable file '..\..\Test Data\Help text.py' does not exist.</msg>
+<msg timestamp="20200107 17:16:52.161" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.8.CheckEndAWhenRemovingAllExcessPlugs.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\General definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:52.177" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.8.CheckEndAWhenRemovingAllExcessPlugs.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\Home definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:52.177" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.8.CheckEndAWhenRemovingAllExcessPlugs.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\Bulk Patching definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:52.177" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.8.CheckEndAWhenRemovingAllExcessPlugs.robot': Variable file '..\..\Test Data\Help text.py' does not exist.</msg>
+<msg timestamp="20200107 17:16:52.192" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.9.CheckNumberOfConfirmationWhenInterruptingEndAScreen.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\General definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:52.192" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.9.CheckNumberOfConfirmationWhenInterruptingEndAScreen.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\Home definitions.robot' does not exist.</msg>
+<msg timestamp="20200107 17:16:52.192" level="ERROR">Error in file 'C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\2.Insert_All_End_As\2.9.CheckNumberOfConfirmationWhenInterruptingEndAScreen.robot': Resource file '..\..\..\Test Definitions\Cucumber Definitions\Bulk Patching definitions.robot' does not exist.</msg>
+</errors>
+</robot>

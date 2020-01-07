@@ -4,7 +4,7 @@ Resource    ../../../Test_Definitions/Cucumber_Definitions/BulkPatchingDefinitio
 Resource    ../../../Test_Definitions/Cucumber_Definitions/ConfirmDefinitions.robot
                        
 #Help text.py is to store help text for checking
-Variables    ../../Test Data/Help text.py
+Variables    ../../Test_Data/HelpText.py
 
 Test Setup    Run Keywords    
 ...    Open SSH Connection and Login
