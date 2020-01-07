@@ -2,8 +2,8 @@
 Library    SeleniumLibrary
 Library    String    
 
-Resource    General Page.robot
-Resource    Home Page.robot   
+Resource    GeneralPage.robot
+Resource    HomePage.robot   
 
 *** Variables ***
 #------------------Elements------------------

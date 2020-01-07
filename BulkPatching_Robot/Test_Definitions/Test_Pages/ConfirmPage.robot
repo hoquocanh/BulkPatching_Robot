@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary    
-Resource    ../../Test Resources/Profiles/Constant.robot
-Resource    General Page.robot
+Resource    ../../Test_Resources/Profiles/Constant.robot
+Resource    GeneralPage.robot
 
 *** Variables ***
 #------------------Elements------------------

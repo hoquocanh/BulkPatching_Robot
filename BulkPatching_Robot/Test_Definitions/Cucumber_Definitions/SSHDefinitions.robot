@@ -1,7 +1,7 @@
 *** Settings ***
 
 Library    SSHLibrary    
-Resource    ../../Test Resources/Profiles/Constant.robot    
+Resource    ../../Test_Resources/Profiles/Constant.robot    
 
 *** Variables ***
 
@@ -13,7 +13,7 @@ ${command_Plugout_Copper}   vp_cmd_helper --plugout --rack 1 --panel 1 --port 1
 
 *** Keywords ***
 Open SSH Connection and Login
-    Open Connection  ${HOST}
+    Open Connection  ${HOST_A}
     Login  ${USERNAME}  ${PASSWORD}
 
   

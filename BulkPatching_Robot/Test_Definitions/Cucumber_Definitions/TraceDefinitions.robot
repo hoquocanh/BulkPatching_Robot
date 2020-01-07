@@ -3,12 +3,12 @@ Library    SeleniumLibrary
 Library    String    
 
 #Definition files
-Resource    ../../Test Resources/Profiles/Constant.robot
+Resource    ../../Test_Resources/Profiles/Constant.robot
 
 #Interface
-Resource    ../Test Pages/General Page.robot    
-Resource    ../Test Pages/Trace Page.robot
-Variables    ../../Test Resources/Test Data/AttributeValue.py
+Resource    ../Test_Pages/GeneralPage.robot    
+Resource    ../Test_Pages/TracePage.robot
+Variables    ../../Test_Resources/Test_Data/AttributeValue.py
 *** Variables ***
 
 *** Keywords ***

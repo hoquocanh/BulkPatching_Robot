@@ -3,12 +3,12 @@ Library    SeleniumLibrary
 Library    String    
 
 #Definition files
-Resource    ../../Test Resources/Profiles/Constant.robot
-Resource    SSH definitions.robot
-Resource    Virtual Panel definitions.robot
+Resource    ../../Test_Resources/Profiles/Constant.robot
+Resource    SSHDefinitions.robot
+Resource    VirtualPanelDefinitions.robot
 
 #Interface
-Resource    ../Test Pages/Bulk Patching Page.robot
+Resource    ../Test_Pages/BulkPatchingPage.robot
 *** Variables ***
 
 

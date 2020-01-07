@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary    
-Resource    ../../Test Resources/Profiles/Constant.robot
-Resource    ../Test Pages/Home Page.robot
+Resource    ../../Test_Resources/Profiles/Constant.robot
+Resource    ../Test_Pages/HomePage.robot
 
 
 
@@ -17,9 +17,9 @@ ${btnConfirm}    //div[@id='confirms' and @style='visibility: visible;']//input[
 
 *** Keywords ***
 Open WebUI And Go To Home Screen
-    
+    [Tags]    host_A    host_B
     #Step 1: Open Web UI
-    ${WebUI url}=        Catenate    SEPARATOR=    http://   ${HOST}    :8888             
+    ${WebUI url}=        Catenate    SEPARATOR=    http://   ${HOST A}    :8888             
     Open Browser    ${WebUI url}    ${BROWSER}
     Maximize Browser Window
     Sleep    ${PAGE LOAD TIMEOUT}
@@ -104,4 +104,4 @@ Set Web UI to Stand By State and Close Current Browser
 
     #Step 3: Close current browser
     Close Browser
-
+   

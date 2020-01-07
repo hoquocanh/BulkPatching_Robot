@@ -1,7 +1,7 @@
 *** Settings ***
 Library    Collections    
-Resource    ../../Test Resources/Profiles/Constant.robot
-Resource    SSH definitions.robot
+Resource    ../../Test_Resources/Profiles/Constant.robot
+Resource    SSHDefinitions.robot
 
 *** Variables ***
        
