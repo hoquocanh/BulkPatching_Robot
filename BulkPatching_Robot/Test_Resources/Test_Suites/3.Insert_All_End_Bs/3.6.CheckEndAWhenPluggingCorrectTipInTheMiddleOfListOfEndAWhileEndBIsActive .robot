@@ -19,7 +19,9 @@ INSERT_END_B_06_02_01_Verify that The screen will center the red removed port in
     When Select Tab End "B"
     When Plugin Serial Copper Tip to Rack "1" Panel "1" Row "1" from Port "4" to Port "6"
     When Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "2"
+    
     Then The Help Text Is "${txtRestoreTheUnpluggedEndAPortOrContinue}"
+    
     And Plugout Serial Copper Tip to Rack "1" Panel "1" Row "1" from Port "4" to Port "6"
     Then Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "3"
     Then Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "1"

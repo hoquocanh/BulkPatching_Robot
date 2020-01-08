@@ -17,6 +17,8 @@ INSERT_END_B_02_02_01_Verify that all ImVisionXs in the zone show the bulk patch
     When Plugin Serial Copper Tip to Rack "1" Panel "1" Row "1" from Port "1" to Port "2"
     When Select Tab End "B"
     Then Plugin Copper Tip to Rack "1" Panel "1" Row "1" Port "3"
+    
     Then Check if Rack "1" Panel "1" Row "1" Port "3" "appeared" in End "B"
+    
     Then Plugout Serial Copper Tip to Rack "1" Panel "1" Row "1" from Port "1" to Port "3"
 

@@ -20,7 +20,9 @@ INSERT_END_A_03_02_Verify that imVision X shall show correctly when any connecto
     When Plugin Copper Tip to Rack "1" Panel "1" Row "1" Port "3"
     When Plugin Copper Tip to Rack "1" Panel "1" Row "1" Port "4"
     When Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "2"
+    
     Then Check if Rack "1" Panel "1" Row "1" Port "2" in End "A" color "red"
+    
     Then Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "4"
     Then Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "3"
     Then Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "1"
@@ -32,7 +34,9 @@ INSERT_END_A_03_04_Verify that imVision X shall show correctly when any connecto
     When Plugin Copper Tip to Rack "1" Panel "1" Row "1" Port "3"
     When Plugin Copper Tip to Rack "1" Panel "1" Row "1" Port "4"
     When Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "2"
+    
     Then Delete Button is "appeared"    
+    
     Then Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "4"
     Then Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "3"
     Then Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "1"
@@ -44,7 +48,9 @@ INSERT_END_A_03_05_Verify that imVision X shall show correctly when any connecto
     When Plugin Copper Tip to Rack "1" Panel "1" Row "1" Port "3"
     When Plugin Copper Tip to Rack "1" Panel "1" Row "1" Port "4"
     When Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "2"
-    Then The Help Text Is "${txtRestoreTheUnpluggedEndAPort}"    
+    
+    Then The Help Text Is "${txtRestoreTheUnpluggedEndAPort}"  
+      
     Then Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "4"
     Then Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "3"
     Then Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "1"

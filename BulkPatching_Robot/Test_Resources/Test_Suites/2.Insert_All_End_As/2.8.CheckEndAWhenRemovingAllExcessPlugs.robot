@@ -18,7 +18,10 @@ INSERT_END_A_08_01_Verify that imVision X update help text "Insert all End A plu
     Given Go To Bulk Patching Screen
     When Plugin Serial Copper Tip to Rack "1" Panel "2" Row "1" from Port "1" to Port "24"
     When Plugin Copper Tip to Rack "1" Panel "2" Row "2" Port "25"
+    
     Then The Help Text Is "${txtMoreThan24PlugsWereInserted}"
+    
     When Plugout Copper Tip to Rack "1" Panel "2" Row "2" Port "25"
+    
     Then The Help Text Is "${txtInsertAllEndAPlugs}"
     Then Plugout Serial Copper Tip to Rack "1" Panel "2" Row "1" from Port "1" to Port "24"

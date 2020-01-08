@@ -18,7 +18,9 @@ INSERT_END_B_03_02_Verify that imVision X shall show correctly when any connecto
     When Select Tab End "B"
     When Plugin Serial Copper Tip to Rack "1" Panel "1" Row "1" from Port "1" to Port "4"
     When Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "2"
+    
     Then Check if Rack "1" Panel "1" Row "1" Port "2" in End "B" color "red"
+    
     And Plugout Serial Copper Tip to Rack "1" Panel "1" Row "1" from Port "1" to Port "4"
     And Plugout Serial Copper Tip to Rack "1" Panel "2" Row "1" from Port "1" to Port "4"
     

@@ -19,7 +19,9 @@ INSERT_END_B_07_01_02_Verify that imVision X shall show correctly when plugging 
     When Plugin Serial Copper Tip to Rack "1" Panel "1" Row "1" from Port "4" to Port "6"
     When Plugin Copper Tip to Rack "1" Panel "1" Row "1" Port "7"
     And Exit Screen
+    
     Then Check The Number of Confirm is "1"
+    
     And Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "1"
     And Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "4"
     And Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "2"
