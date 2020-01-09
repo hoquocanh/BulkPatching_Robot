@@ -14,7 +14,7 @@ Variables    ../../Test_Resources/Test_Data/AttributeValue.py
 *** Keywords ***
 #Key work for Behavior Data Driven used in Test Cases
 
-Check if Rack "${rackID}" Panel "${panelID}" Row "${row} Port "${portID}" "${status}" in Trace screen
+Check if Rack "${rackID}" Panel "${panelID}" Row "${row}" Port "${portID}" "${status}" in Trace screen
     
     [Documentation]    This keyword is used to check the information of Copper panel displaying in the same information rectangle area
     ...      
@@ -22,9 +22,14 @@ Check if Rack "${rackID}" Panel "${panelID}" Row "${row} Port "${portID}" "${sta
     #//div[@id='row-left-center' and contains(@style,'visible')]/div[contains(text(),'port information')]
     
     #Step 1: Join the input port information to be a text in form of "Rack 1-Panel 1-Port  3", to use to add to xPatch node "input[@value='Port Information ']" for comparision purpose
-    ${input rack}=    Catenate    Rack    ${rackID}
-    ${input panel}=    Catenate    Panel    ${panelID}
-    ${input port}=    Catenate    Port    ${portID} 
+    ${temp rack}=    Catenate    Rack    00
+    ${input rack}=    Catenate  SEPARATOR=  ${temp rack}    ${rackID}
+    
+    ${temp panel}=    Catenate    Panel    0
+    ${input panel}=   Catenate    SEPARATOR=    ${temp panel}    ${panelID}
+    
+    ${temp port}=    Catenate    Port    0
+    ${input port}=   Catenate    SEPARATOR=    ${temp port}    ${portID} 
     
     #ste 2: Find each of infor in Left or Right Rectangle Area
     ${temp rack 1}=    Is Information Belong to Left Rectangle Area    ${input rack} 
@@ -57,7 +62,7 @@ Check if the "${portion}" of "${panel type}" Patching Bar "${status}" in Trace s
     
     [Documentation]    This keyword is used to check the portion of patching bar of Copper/ LC panel appeared/ disappeared in Trace screen
     ...      
-    ...                Argument: portion [full/haft], panel type [copper/LC...], status[appeared/disappeared]  
+    ...                Argument: portion [full/haft], panel type [copper/LC], status[appeared/disappeared]  
     #//div[@id='connectivity-icon' and @class='panel type']
     
     #Step 1: Select the correct attribute value based on the inputed value of ${portion} and ${panel type}     
@@ -68,10 +73,10 @@ Check if the "${portion}" of "${panel type}" Patching Bar "${status}" in Trace s
     ...    ELSE IF        '${temp portion}' == 'haft' and '${temp panel type}' == 'copper'    Run Keyword And Continue On Failure    Set Variable    ${barHaftCopper}
     
     #Step 2: On the xPath syntax of patching bar, replace "Panel Type" by value of ${replace panel type} 
-    ${xPath syntax}=    Replace String    ${dynamic patching bar}    Panel Type    ${replace panel type}
+    #${xPath syntax}=    Replace String    ${dynamic patching bar}    Panel Type    ${replace panel type}
     
     #Step 3: Get the number of element be seen in current page 
-    ${result}=    Get Element Count    ${xPath syntax}
+    ${result}=    Get Element Count    ${dynamic patching bar}
     
     #Step 4: Check if the element appeared/ disappeared
     #Step 4.1: Change the input status to 1 [if appeared] or 0 [if disappeared]
@@ -89,7 +94,7 @@ Is Information Belong to Left Rectangle Area
     #//div[@id='row-left-center' and contains(@style,'visible')]/div[contains(text(),'port information')]
     
     #Step 1: On the xPath syntax of Left Rectangle Area, replace "Port Information" by value of ${infor} 
-    ${xPath syntax}=    Replace String    ${dynamic trace port position on left rectangle}    Port Information    ${infor}
+    ${xPath syntax}=    Replace String    ${dynamic trace port position on left rectangle}    port information    ${infor}
     
     #Step 2: Get the number of element be seen in current page 
     ${result}=    Get Element Count    ${xPath syntax}
@@ -101,7 +106,7 @@ Is Information Belong to Right Rectangle Area
     #//div[@id='row-right-center' and contains(@style,'visible')]/div[contains(text(),'port information')]
     
     #Step 1: On the xPath syntax of Right Rectangle Area, replace "Port Information" by value of ${infor} 
-    ${xPath syntax}=    Replace String    ${dynamic trace port position on right rectangle}    Port Information    ${infor}
+    ${xPath syntax}=    Replace String    ${dynamic trace port position on right rectangle}    port information    ${infor}
     
     #Step 2: Get the number of element be seen in current page 
     ${result}=    Get Element Count    ${xPath syntax}

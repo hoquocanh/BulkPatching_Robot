@@ -180,7 +180,20 @@ Plugout Serial Copper Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" fr
     FOR    ${i}    IN RANGE    ${from port}    ${to port+1}
         Plugout Copper Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Port "${i}"
     END
-
+Press LC port at Rack "${rackID}" Panel "${panelID}" Port "${portID}" with keymode "${keyMode}"
+    [Documentation]    This keyword is used to press on a specific Copper port regarding to type of keymode
+    ...      
+    ...                Argument: rackID, panelID, portID, keyMode[short/long]
+    
+    #Step 1: Get virtual panel index from virtual panels table
+    ${panel index}=    Get LC Panel Index    ${rackID}    ${panelID}
+    Log    ${panel index}    
+    #Step 2: Compose a completed command to press a panel port     
+    ${completed command}=        Catenate    vp_cmd_helper --press --rack     ${rackID}    --panel    ${panel index}     --port     ${portID}    --keymode    ${keyMode}     
+    Log    ${completed command}  
+    
+    #Step 3: Send virtual command via SSH connection
+    Enter Virtual Command ${completed command}   
 Plugin LC Tip to Rack "${rackID}" Panel "${panelID}" Port "${portID}"
     #Step 1: Get virtual panel index from virtual panels table
     ${panel index}=    Get LC Panel Index    ${rackID}    ${panelID}
@@ -222,6 +235,21 @@ Plugout Serial LC Tip to Rack "${rackID}" Panel "${panelID}" from Port "${port1I
     FOR    ${i}    IN RANGE    ${from port}    ${to port+1}
         Plugout LC Tip to Rack "${rackID}" Panel "${panelID}" Port "${i}"
     END       
+    
+Press HDF port at Rack "${rackID}" Panel "${panelID}" ModuleHD "${moduleHD}" Port "${portID}" with keymode "${keyMode}"
+    [Documentation]    This keyword is used to press on a specific Copper port regarding to type of keymode
+    ...      
+    ...                Argument: rackID, panelID, moduleHD, portID, keyMode[short/long]
+    
+    #Step 1: Get virtual panel index from virtual panels table
+    ${panel index}=    Get HDF Panel Index    ${rackID}    ${panelID}    ${moduleHD}
+    Log    ${panel index}    
+    #Step 2: Compose a completed command to press a panel port     
+    ${completed command}=        Catenate    vp_cmd_helper --press --rack     ${rackID}    --panel    ${panel index}     --port     ${portID}    --keymode    ${keyMode}     
+    Log    ${completed command}  
+    
+    #Step 3: Send virtual command via SSH connection
+    Enter Virtual Command ${completed command}   
     
 Plugin HDF Tip to Rack "${rackID}" Panel "${panelID}" ModuleHD "${moduleHD}" Port "${portID}"
     #Step 1: Get virtual panel index from virtual panels table
@@ -266,7 +294,22 @@ Plugout Serial HDF Tip to Rack "${rackID}" Panel "${panelID}" ModuleHD "${module
     FOR    ${i}    IN RANGE    ${from port}    ${to port+1}
         Plugout HDF Tip to Rack "${rackID}" Panel "${panelID}" ModuleHD "${moduleHD}" Port "${i}"
     END
-             
+           
+Press 24F port at Rack "${rackID}" Panel "${panelID}" Row "${row}" ModuleHD "${moduleHD}" Port "${portID}" with keymode "${keyMode}"
+    [Documentation]    This keyword is used to press on a specific Copper port regarding to type of keymode
+    ...      
+    ...                Argument: rackID, panelID, row, moduleHD, portID, keyMode[short/long]
+    
+    #Step 1: Get virtual panel index from virtual panels table
+    ${panel index}=    Get 24F Panel Index    ${rackID}    ${panelID}    ${row}    ${moduleHD}
+    Log    ${panel index}    
+    #Step 2: Compose a completed command to press a panel port     
+    ${completed command}=        Catenate    vp_cmd_helper --press --rack     ${rackID}    --panel    ${panel index}    --module    ${moduleHD}     --port     ${portID}    --keymode    ${keyMode}     
+    Log    ${completed command}  
+    
+    #Step 3: Send virtual command via SSH connection
+    Enter Virtual Command ${completed command}   
+      
 Plugin 24F Tip to Rack "${rackID}" Panel "${panelID}" Row "${row}" Module "${module}" Port "${portID}"
     #Step 1: Get virtual panel index from virtual panels table
     ${panel index}=    Get 24F Panel Index    ${rackID}    ${panelID}    ${row}    ${module}

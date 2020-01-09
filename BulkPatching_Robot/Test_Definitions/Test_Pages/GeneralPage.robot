@@ -68,7 +68,7 @@ Wait For Page Update
     Sleep    ${PAGE UPDATE TIMEOUT}
     
 Wait For Bulk Patching Timeout
-    Sleep    ${BULK PATCHING TIMEOUT}
+    Sleep    ${SHORT TIMEOUT}
 
 Exit Screen
     Click Web Button    ${btnExit}
@@ -91,6 +91,8 @@ Set Web UI to Stand By State
     ...    AND    Wait For Page Load    
 
 Set Web UI to Stand By State and Close Current Browser
+    
+    Wait For Page Update
     #Step 1: If the Web UI is being a specific screen with "Exit" button, press that button
     ${count Exit button}=      Get Element Count     ${btnExit}   
     Run Keyword If    ${count Exit button} > 0    Exit Screen           
