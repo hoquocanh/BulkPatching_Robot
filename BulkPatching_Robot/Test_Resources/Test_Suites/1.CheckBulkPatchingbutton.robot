@@ -16,3 +16,11 @@ ADD_BULK_BUTTON_0101_Verify that imVision X shall be back to the homepage after 
     When Exit Screen
     
     Then Home Screen Should Be Opened   
+    
+ADD_BULK_BUTTON_0102_Verify that imVision X shall be back to the homepage after the screen timeout
+    Given Go To Bulk Patching Screen
+    
+    Then Bulk Patching Screen Should Be "appeared"
+    When Exit Screen
+    
+    Then Home Screen Should Be Opened   
