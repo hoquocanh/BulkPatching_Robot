@@ -12,6 +12,8 @@ ${btnExit}    //div[@id='exit-footer' and @style='display: block;']/div[@id='exi
 ${tabEndA}    //div[@id='btn-end-a']
 ${tabEndB}    //div[@id='btn-end-b']
 ${lblHelpText}    //ul[@id='text-line']/li/p
+${btnEquipment}    //div[@id='btn-header' and contains(@style,'visibility: visible')]
+${txtList1_Equipment}    //li[@id='list1']/div/div/div[@style='float:left']
 
 ${number of lines}    //ul[@id='bulkPatchList']/li
 ${dynamic port position}    //ul[@id='bulkPatchList']/li[Line Position]/div[End Position]/p[contains(text(),'Port Information')]
@@ -33,4 +35,7 @@ Select Tab End "${end position}"
     
     #Since switching tab take more than to update tab status, then it need wait for 2 seconds
     Wait For Page Load                
-      
+  
+Touch Equipment Button
+    Click Web Button    ${btnEquipment} 
+    Wait For Page Load

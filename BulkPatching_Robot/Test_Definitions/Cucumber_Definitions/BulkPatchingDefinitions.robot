@@ -11,10 +11,17 @@ Resource    VirtualPanelDefinitions.robot
 Resource    ../Test_Pages/BulkPatchingPage.robot
 *** Variables ***
 
-
+${btnEquipment}    //div[@id='btn-header' and contains(@style,'visibility: visible')]
 
 *** Keywords ***
 #Key work for Behavior Data Driven used in Test Cases
+Equipment Button Should Be "${status}"
+    
+    ${temp status}=    Convert To Lowercase    ${status}    
+
+    Run Keyword If    '${temp status}' == 'appeared'    Run Keyword And Continue On Failure    Page Should Contain Element    ${btnEquipment}
+    ...    ELSE IF    '${temp status}' == 'disappeared'    Run Keyword And Continue On Failure    Page Should Not Contain Element    ${btnEquipment}    
+
 Bulk Patching Screen Should Be "${status}"
     
     ${temp status}=    Convert To Lowercase    ${status}    
@@ -440,6 +447,50 @@ Check then see color if Rack "${rackID}" Panel "${panelID}" Row "${row}" Module 
     #Step 5.2: compare the status to the value checking from list of lines in Bulk Patching screen         
     Run Keyword And Continue On Failure    Should Be Equal    '${count}'    '${expected value}'    
 
+Check Equipment in List "${listID}" "${status}" 
+    
+    [Documentation]    This keyword is used to check the text"Equipment" displayed in End B list on Bulk Patching screen
+    ...      
+    ...                Argument: listID, status[appeared/disappeared]  
+    #//li[@id='list1']/div/div/div[@style='float:left']
+    
+       
+    #Step 1: Convert the listId
+    
+    ${input list}=    Catenate  SEPARATOR=  list    ${listID}
+    Log     ${input list}
+    
+    #Step 2: Change the listid by ${input list}
+    ${xPath syntax}=    Replace String    ${txtList1_Equipment}   list1    ${input list}                
+     
+    Log    ${xPath syntax}
+    
+    #Step 3: Find the desired element in the list of lines in Bulk Patching screen
+    # ${count}= 0 [not found], 1 [found]
+    ${number of lines}=    Number of Lines in Bulk Patching Screen    
+    
+    ${count}=    Set Variable    0
+    FOR    ${index}    IN RANGE    ${number of lines+1}
+            
+        ${index temp}=    Evaluate        ${index} + 1
+             
+
+        #${index string}=    Convert To String    ${index temp}
+        ${index string}=    Convert To String    ${index+1}
+        # ${xPath syntax}=    Replace String    ${xPath syntax}    Line Position    ${index string}
+           
+        ${count}=    Get Element Count    ${xPath syntax}
+        Exit For Loop If    ${count} == 1
+    END
+    
+    #Step 5: Check if the element appeared/ disappeared
+    #Step 5.1: Change the input status to 1 [if appeared] or 0 [if disappeared]
+    ${temp status}=    Convert To Lowercase    ${status}
+    ${expected value}=    Run Keyword If    '${temp status}' == 'appeared'    Set Variable    1
+    ...    ELSE IF        '${temp status}' == 'disappeared'    Set Variable    0
+    
+    #Step 5.2: compare the status to the value checking from list of lines in Bulk Patching screen         
+    Run Keyword And Continue On Failure    Should Be Equal    '${count}'    '${expected value}'  
 ##########################################################################################################################
 #####------------ Xpath keyworks ------------#####    
 

@@ -86,6 +86,44 @@ Check if the "${portion}" of "${panel type}" Patching Bar "${status}" in Trace s
     
     #Step 4.2: compare the status to the value checking from list of lines in Bulk Patching screen         
     Run Keyword And Continue On Failure    Should Be Equal    '${result}'    '${expected value}'    The patching bar is not ${status}
+    
+Check if Equipment Connection "${equipmentText}" "${status}" in Trace screen
+    
+    [Documentation]    This keyword is used to check the information of Equipment Connection displaying in the same information rectangle area
+    ...      
+    ...                Argument: equipmentID, status[appeared/disappeared]  
+    #//div[@id='row-left-center' and contains(@style,'visible')]/div[contains(text(),'port information')]
+    
+    #Step 1: Join the input port information to be a text in form of "Rack 1-Panel 1-Port  3", to use to add to xPatch node "input[@value='Port Information ']" for comparision purpose
+   ${input equipment}=    Catenate    ${equipmentText}    Connection
+   
+    
+       
+    #step 2: Find each of infor in Left or Right Rectangle Area
+    ${temp rack 1}=    Is Information Belong to Left Rectangle Area    ${input equipment} 
+    
+    
+    ${temp rack 2}=    Is Information Belong to Right Rectangle Area    ${input equipment} 
+    
+                   
+    #Step 3: Find the whole infor in either Left Rectangle Area or Right Rectangle Area
+    ${infor belong to left rectangle}=    Run Keyword If    ${temp rack 1} == 1     Run Keyword And Continue On Failure    Set Variable    1    
+                                          ...    ELSE    Run Keyword And Continue On Failure    Set Variable    0
+    ${infor belong to right rectangle}=   Run Keyword If    ${temp rack 2} == 1     Run Keyword And Continue On Failure    Set Variable    1
+                                           ...    ELSE    Run Keyword And Continue On Failure    Set Variable    0
+    
+    ${result}=    Run Keyword If    ${infor belong to left rectangle} == 1 or ${infor belong to right rectangle} == 1    Run Keyword And Continue On Failure    Set Variable    1        
+                  ...    ELSE    Run Keyword And Continue On Failure    Set Variable    0
+                  
+    #Step 4: Check if the element appeared/ disappeared
+    #Step 4.1: Change the input status to 1 [if appeared] or 0 [if disappeared]
+    ${temp status}=    Convert To Lowercase    ${status}
+    ${expected value}=    Run Keyword If    '${temp status}' == 'appeared'    Run Keyword And Continue On Failure    Set Variable    1
+    ...    ELSE IF        '${temp status}' == 'disappeared'    Run Keyword And Continue On Failure    Set Variable    0
+    
+    #Step 4.2: compare the status to the value checking from list of lines in Bulk Patching screen         
+    Run Keyword And Continue On Failure    Should Be Equal    '${result}'    '${expected value}'    Port information is not ${status}
+
 ##########################################################################################################################
 #####------------ Xpath keyworks ------------#####    
     
