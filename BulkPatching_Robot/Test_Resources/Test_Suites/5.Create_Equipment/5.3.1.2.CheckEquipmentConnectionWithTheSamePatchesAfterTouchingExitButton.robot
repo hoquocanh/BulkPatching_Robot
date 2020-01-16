@@ -5,10 +5,10 @@ Resource    ../../../Test_Definitions/Cucumber_Definitions/ConfirmDefinitions.ro
 Resource    ../../../Test_Definitions/Cucumber_Definitions/TraceDefinitions.robot
 Resource    ../../../Test_Definitions/Cucumber_Definitions/SelectLanguageDefinitions.robot
 Resource    ../../../Test_Definitions/Cucumber_Definitions/GeneralDefinitions.robot
-Resource    ../Test_Pages/HomePage.robot
-Resource    ../Test_Pages/SettingsPage.robot
-Resource    ../Test_Pages/SelectLanguagePage.robot
-Resource    ../Test_Pages/GeneralPage.robot
+Resource    ../../../Test_Definitions/Test_Pages/HomePage.robot
+Resource    ../../../Test_Definitions/Test_Pages/SettingsPage.robot
+Resource    ../../../Test_Definitions/Test_Pages/SelectLanguagePage.robot
+Resource    ../../../Test_Definitions/Test_Pages/GeneralPage.robot
                        
 #Help text.py is to store help text for checking
 Variables    ../../Test_Data/HelpText.py

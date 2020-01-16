@@ -1,4 +1,5 @@
 *** Settings ***
+Library    String
 Library    SeleniumLibrary    
 Resource    ../../Test_Resources/Profiles/Constant.robot
 Resource    ../Test_Pages/HomePage.robot

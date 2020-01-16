@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.8.0 on win32)" generated="20200107 14:25:46.525" rpa="false">
-<suite id="s1" name="1.CheckBulkPatchingbutton" source="D:\RobotFW_program\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\1.CheckBulkPatchingbutton.robot">
-<kw name="Open WebUI And Go To Home Screen" library="GeneralPage" type="setup">
+<robot generator="Robot 3.1.2 (Python 3.8.0 on win32)" generated="20200116 14:21:38.601" rpa="false">
+<suite id="s1" name="BulkPatching Robot" source="C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot">
+<suite id="s1-s1" name="Test Resources" source="C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources">
+<suite id="s1-s1-s1" name="Test Suites" source="C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites">
+<suite id="s1-s1-s1-s1" name="5.Create Equipment" source="C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\5.Create_Equipment">
+<suite id="s1-s1-s1-s1-s1" name="5.3.1.2.CheckEquipmentConnectionWithTheSamePatchesAfterTouchingExitButton" source="C:\Users\quocanh.ho\git\BulkPatching_Robot\BulkPatching_Robot\Test_Resources\Test_Suites\5.Create_Equipment\5.3.1.2.CheckEquipmentConnectionWithTheSamePatchesAfterTouchingExitButton.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="Create_Equip-03_01_02_01_Verify that ports on End A that are on the same line as the text &quot;Equipment&quot; on End B should be connected as Equipment connections when End A and End B have the same patches after time out if patching on a 24-port Legacy Copper">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open SSH Connection and Login</arg>
+<arg>Open WebUI And Go To Home Screen</arg>
+</arguments>
+<kw name="Open SSH Connection and Login" library="SSHDefinitions">
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<arguments>
+<arg>${HOST_A}</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:21:39.960" endtime="20200116 14:21:39.961"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20200116 14:21:39.964" level="INFO">Logging into '192.168.171.201:22' as 'root'.</msg>
+<msg timestamp="20200116 14:21:41.371" level="INFO">Read output: #</msg>
+<status status="PASS" starttime="20200116 14:21:39.963" endtime="20200116 14:21:41.372"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:39.958" endtime="20200116 14:21:41.373"></status>
+</kw>
+<kw name="Open WebUI And Go To Home Screen" library="GeneralPage">
 <tags>
 <tag>host_A</tag>
 <tag>host_B</tag>
@@ -17,8 +48,8 @@
 <assign>
 <var>${WebUI url}</var>
 </assign>
-<msg timestamp="20200107 14:25:46.928" level="INFO">${WebUI url} = http://192.168.171.201:8888</msg>
-<status status="PASS" starttime="20200107 14:25:46.928" endtime="20200107 14:25:46.928"></status>
+<msg timestamp="20200116 14:21:41.384" level="INFO">${WebUI url} = http://192.168.171.201:8888</msg>
+<status status="PASS" starttime="20200116 14:21:41.382" endtime="20200116 14:21:41.384"></status>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
@@ -26,20 +57,20 @@
 <arg>${WebUI url}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200107 14:25:46.928" level="INFO">Opening browser 'Chrome' to base url 'http://192.168.171.201:8888'.</msg>
-<status status="PASS" starttime="20200107 14:25:46.928" endtime="20200107 14:25:55.502"></status>
+<msg timestamp="20200116 14:21:41.388" level="INFO">Opening browser 'Chrome' to base url 'http://192.168.171.201:8888'.</msg>
+<status status="PASS" starttime="20200116 14:21:41.386" endtime="20200116 14:21:44.448"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200107 14:25:55.503" endtime="20200107 14:25:56.635"></status>
+<status status="PASS" starttime="20200116 14:21:44.450" endtime="20200116 14:21:45.587"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>${PAGE LOAD TIMEOUT}</arg>
 </arguments>
-<msg timestamp="20200107 14:25:57.636" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20200107 14:25:56.635" endtime="20200107 14:25:57.636"></status>
+<msg timestamp="20200116 14:21:46.590" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200116 14:21:45.589" endtime="20200116 14:21:46.590"></status>
 </kw>
 <kw name="Set Web UI to Stand By State" library="GeneralPage">
 <kw name="Get Element Count" library="SeleniumLibrary">
@@ -50,8 +81,8 @@
 <assign>
 <var>${count Exit button}</var>
 </assign>
-<msg timestamp="20200107 14:25:57.649" level="INFO">${count Exit button} = 0</msg>
-<status status="PASS" starttime="20200107 14:25:57.636" endtime="20200107 14:25:57.649"></status>
+<msg timestamp="20200116 14:21:46.626" level="INFO">${count Exit button} = 0</msg>
+<status status="PASS" starttime="20200116 14:21:46.594" endtime="20200116 14:21:46.626"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -59,7 +90,7 @@
 <arg>${count Exit button} &gt; 0</arg>
 <arg>Exit Screen</arg>
 </arguments>
-<status status="PASS" starttime="20200107 14:25:57.650" endtime="20200107 14:25:57.650"></status>
+<status status="PASS" starttime="20200116 14:21:46.627" endtime="20200116 14:21:46.628"></status>
 </kw>
 <kw name="Get Element Count" library="SeleniumLibrary">
 <doc>Returns the number of elements matching ``locator``.</doc>
@@ -69,8 +100,8 @@
 <assign>
 <var>${count Cancel button}</var>
 </assign>
-<msg timestamp="20200107 14:25:57.662" level="INFO">${count Cancel button} = 0</msg>
-<status status="PASS" starttime="20200107 14:25:57.650" endtime="20200107 14:25:57.662"></status>
+<msg timestamp="20200116 14:21:46.646" level="INFO">${count Cancel button} = 0</msg>
+<status status="PASS" starttime="20200116 14:21:46.629" endtime="20200116 14:21:46.646"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -78,7 +109,7 @@
 <arg>${count Cancel button} &gt; 0</arg>
 <arg>Exit Screen</arg>
 </arguments>
-<status status="PASS" starttime="20200107 14:25:57.662" endtime="20200107 14:25:57.662"></status>
+<status status="PASS" starttime="20200116 14:21:46.647" endtime="20200116 14:21:46.648"></status>
 </kw>
 <kw name="Get Element Count" library="SeleniumLibrary">
 <doc>Returns the number of elements matching ``locator``.</doc>
@@ -88,8 +119,8 @@
 <assign>
 <var>${count Home screen}</var>
 </assign>
-<msg timestamp="20200107 14:25:57.673" level="INFO">${count Home screen} = 0</msg>
-<status status="PASS" starttime="20200107 14:25:57.662" endtime="20200107 14:25:57.673"></status>
+<msg timestamp="20200116 14:21:46.665" level="INFO">${count Home screen} = 0</msg>
+<status status="PASS" starttime="20200116 14:21:46.649" endtime="20200116 14:21:46.666"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -101,9 +132,9 @@
 <arg>AND</arg>
 <arg>Wait For Page Load</arg>
 </arguments>
-<status status="PASS" starttime="20200107 14:25:57.674" endtime="20200107 14:25:57.674"></status>
+<status status="PASS" starttime="20200116 14:21:46.666" endtime="20200116 14:21:46.667"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:25:57.636" endtime="20200107 14:25:57.674"></status>
+<status status="PASS" starttime="20200116 14:21:46.591" endtime="20200116 14:21:46.667"></status>
 </kw>
 <kw name="Go To Home Screen" library="GeneralPage">
 <kw name="Click Web Button" library="GeneralPage">
@@ -118,8 +149,8 @@
 <assign>
 <var>${button exist}</var>
 </assign>
-<msg timestamp="20200107 14:25:57.687" level="INFO">${button exist} = 1</msg>
-<status status="PASS" starttime="20200107 14:25:57.675" endtime="20200107 14:25:57.687"></status>
+<msg timestamp="20200116 14:21:46.685" level="INFO">${button exist} = 1</msg>
+<status status="PASS" starttime="20200116 14:21:46.669" endtime="20200116 14:21:46.685"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -154,8 +185,8 @@
 <arguments>
 <arg>${btnName}</arg>
 </arguments>
-<msg timestamp="20200107 14:25:57.688" level="INFO">Clicking element '//div[@id='home-lang']'.</msg>
-<status status="PASS" starttime="20200107 14:25:57.688" endtime="20200107 14:25:57.775"></status>
+<msg timestamp="20200116 14:21:46.688" level="INFO">Clicking element '//div[@id='home-lang']'.</msg>
+<status status="PASS" starttime="20200116 14:21:46.687" endtime="20200116 14:21:46.783"></status>
 </kw>
 <kw name="Wait For Page Load" library="GeneralPage">
 <kw name="Sleep" library="BuiltIn">
@@ -163,32 +194,33 @@
 <arguments>
 <arg>${PAGE LOAD TIMEOUT}</arg>
 </arguments>
-<msg timestamp="20200107 14:25:58.777" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20200107 14:25:57.775" endtime="20200107 14:25:58.777"></status>
+<msg timestamp="20200116 14:21:47.786" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200116 14:21:46.784" endtime="20200116 14:21:47.786"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:25:57.775" endtime="20200107 14:25:58.777"></status>
+<status status="PASS" starttime="20200116 14:21:46.784" endtime="20200116 14:21:47.787"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:25:57.688" endtime="20200107 14:25:58.777"></status>
+<status status="PASS" starttime="20200116 14:21:46.687" endtime="20200116 14:21:47.788"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:25:57.688" endtime="20200107 14:25:58.777"></status>
+<status status="PASS" starttime="20200116 14:21:46.686" endtime="20200116 14:21:47.788"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:25:57.687" endtime="20200107 14:25:58.777"></status>
+<status status="PASS" starttime="20200116 14:21:46.685" endtime="20200116 14:21:47.789"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:25:57.675" endtime="20200107 14:25:58.777"></status>
+<status status="PASS" starttime="20200116 14:21:46.668" endtime="20200116 14:21:47.790"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:25:57.674" endtime="20200107 14:25:58.777"></status>
+<status status="PASS" starttime="20200116 14:21:46.668" endtime="20200116 14:21:47.790"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:25:46.926" endtime="20200107 14:25:58.777"></status>
+<status status="PASS" starttime="20200116 14:21:41.374" endtime="20200116 14:21:47.791"></status>
 </kw>
-<test id="s1-t1" name="ADD_BULK_BUTTON_0101_Verify that imVision X shall be back to the homepage after selecting the Exit button">
+<status status="PASS" starttime="20200116 14:21:39.957" endtime="20200116 14:21:47.792"></status>
+</kw>
 <kw name="Given Go To Bulk Patching Screen" library="HomePage">
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${btnBulk Patching}</arg>
 </arguments>
-<msg timestamp="20200107 14:25:58.779" level="INFO">Clicking element '//input[@id='bulk-patch-btn']'.</msg>
-<status status="PASS" starttime="20200107 14:25:58.779" endtime="20200107 14:25:58.829"></status>
+<msg timestamp="20200116 14:21:47.796" level="INFO">Clicking element '//input[@id='bulk-patch-btn']'.</msg>
+<status status="PASS" starttime="20200116 14:21:47.795" endtime="20200116 14:21:47.877"></status>
 </kw>
 <kw name="Wait For Page Load" library="GeneralPage">
 <kw name="Sleep" library="BuiltIn">
@@ -196,57 +228,603 @@
 <arguments>
 <arg>${PAGE LOAD TIMEOUT}</arg>
 </arguments>
-<msg timestamp="20200107 14:25:59.832" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20200107 14:25:58.830" endtime="20200107 14:25:59.832"></status>
+<msg timestamp="20200116 14:21:48.880" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200116 14:21:47.879" endtime="20200116 14:21:48.880"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:25:58.830" endtime="20200107 14:25:59.832"></status>
+<status status="PASS" starttime="20200116 14:21:47.878" endtime="20200116 14:21:48.881"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:25:58.779" endtime="20200107 14:25:59.832"></status>
+<status status="PASS" starttime="20200116 14:21:47.794" endtime="20200116 14:21:48.882"></status>
 </kw>
-<kw name="Then Bulk Patching Screen Should Be &quot;appeared&quot;" library="BulkPatchingDefinitions">
+<kw name="When Plugin Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;1&quot;" library="VirtualPanelDefinitions">
+<kw name="Get Copper Panel Index" library="VirtualPanelDefinitions">
+<arguments>
+<arg>${rackID}</arg>
+<arg>${panelID}</arg>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${panel index}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${VPpanels}</arg>
+</arguments>
+<assign>
+<var>${panels number}</var>
+</assign>
+<msg timestamp="20200116 14:21:48.887" level="INFO">Length is 12</msg>
+<msg timestamp="20200116 14:21:48.888" level="INFO">${panels number} = 12</msg>
+<status status="PASS" starttime="20200116 14:21:48.887" endtime="20200116 14:21:48.888"></status>
+</kw>
+<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
+<kw name="${panel index} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20200116 14:21:48.895" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20200116 14:21:48.894" endtime="20200116 14:21:48.895"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:48.890" endtime="20200116 14:21:48.896"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:48.889" endtime="20200116 14:21:48.897"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:48.889" endtime="20200116 14:21:48.897"></status>
+</kw>
+<msg timestamp="20200116 14:21:48.899" level="INFO">${panel index} = 1</msg>
+<status status="PASS" starttime="20200116 14:21:48.885" endtime="20200116 14:21:48.899"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${panel index}</arg>
+</arguments>
+<msg timestamp="20200116 14:21:48.901" level="INFO">1</msg>
+<status status="PASS" starttime="20200116 14:21:48.900" endtime="20200116 14:21:48.902"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>vp_cmd_helper --plugin --rack</arg>
+<arg>${rackID}</arg>
+<arg>--panel</arg>
+<arg>${panel index}</arg>
+<arg>--port</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${completed command}</var>
+</assign>
+<msg timestamp="20200116 14:21:48.904" level="INFO">${completed command} = vp_cmd_helper --plugin --rack 1 --panel 1 --port 1</msg>
+<status status="PASS" starttime="20200116 14:21:48.903" endtime="20200116 14:21:48.905"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${completed command}</arg>
+</arguments>
+<msg timestamp="20200116 14:21:48.906" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 1</msg>
+<status status="PASS" starttime="20200116 14:21:48.906" endtime="20200116 14:21:48.907"></status>
+</kw>
+<kw name="Enter Virtual Command ${completed command}" library="SSHDefinitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20200116 14:21:48.933" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 1</msg>
+<status status="PASS" starttime="20200116 14:21:48.909" endtime="20200116 14:21:48.934"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20200116 14:21:50.936" level="INFO">${stdout} = result=success
+command=plugin
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20200116 14:21:48.934" endtime="20200116 14:21:50.936"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20200116 14:21:50.938" level="INFO">result=success
+command=plugin
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20200116 14:21:50.937" endtime="20200116 14:21:50.938"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:48.908" endtime="20200116 14:21:50.938"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:48.883" endtime="20200116 14:21:50.939"></status>
+</kw>
+<kw name="When Plugin Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;2&quot;" library="VirtualPanelDefinitions">
+<kw name="Get Copper Panel Index" library="VirtualPanelDefinitions">
+<arguments>
+<arg>${rackID}</arg>
+<arg>${panelID}</arg>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${panel index}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${VPpanels}</arg>
+</arguments>
+<assign>
+<var>${panels number}</var>
+</assign>
+<msg timestamp="20200116 14:21:50.941" level="INFO">Length is 12</msg>
+<msg timestamp="20200116 14:21:50.942" level="INFO">${panels number} = 12</msg>
+<status status="PASS" starttime="20200116 14:21:50.941" endtime="20200116 14:21:50.942"></status>
+</kw>
+<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
+<kw name="${panel index} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20200116 14:21:50.945" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20200116 14:21:50.945" endtime="20200116 14:21:50.946"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:50.943" endtime="20200116 14:21:50.946"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:50.943" endtime="20200116 14:21:50.946"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:50.942" endtime="20200116 14:21:50.946"></status>
+</kw>
+<msg timestamp="20200116 14:21:50.947" level="INFO">${panel index} = 1</msg>
+<status status="PASS" starttime="20200116 14:21:50.940" endtime="20200116 14:21:50.947"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${panel index}</arg>
+</arguments>
+<msg timestamp="20200116 14:21:50.948" level="INFO">1</msg>
+<status status="PASS" starttime="20200116 14:21:50.948" endtime="20200116 14:21:50.948"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>vp_cmd_helper --plugin --rack</arg>
+<arg>${rackID}</arg>
+<arg>--panel</arg>
+<arg>${panel index}</arg>
+<arg>--port</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${completed command}</var>
+</assign>
+<msg timestamp="20200116 14:21:50.949" level="INFO">${completed command} = vp_cmd_helper --plugin --rack 1 --panel 1 --port 2</msg>
+<status status="PASS" starttime="20200116 14:21:50.949" endtime="20200116 14:21:50.949"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${completed command}</arg>
+</arguments>
+<msg timestamp="20200116 14:21:50.950" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 2</msg>
+<status status="PASS" starttime="20200116 14:21:50.950" endtime="20200116 14:21:50.951"></status>
+</kw>
+<kw name="Enter Virtual Command ${completed command}" library="SSHDefinitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20200116 14:21:50.970" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 2</msg>
+<status status="PASS" starttime="20200116 14:21:50.952" endtime="20200116 14:21:50.971"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20200116 14:21:52.973" level="INFO">${stdout} = result=success
+command=plugin
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20200116 14:21:50.971" endtime="20200116 14:21:52.974"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20200116 14:21:52.976" level="INFO">result=success
+command=plugin
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20200116 14:21:52.975" endtime="20200116 14:21:52.977"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:50.951" endtime="20200116 14:21:52.977"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:50.939" endtime="20200116 14:21:52.978"></status>
+</kw>
+<kw name="When Select Tab End &quot;B&quot;" library="BulkPatchingPage">
 <kw name="Convert To Lowercase" library="String">
 <doc>Converts string to lowercase.</doc>
 <arguments>
-<arg>${status}</arg>
+<arg>${end position}</arg>
 </arguments>
 <assign>
-<var>${temp status}</var>
+<var>${temp end position}</var>
 </assign>
-<msg timestamp="20200107 14:25:59.834" level="INFO">${temp status} = appeared</msg>
-<status status="PASS" starttime="20200107 14:25:59.833" endtime="20200107 14:25:59.834"></status>
+<msg timestamp="20200116 14:21:52.981" level="INFO">${temp end position} = b</msg>
+<status status="PASS" starttime="20200116 14:21:52.980" endtime="20200116 14:21:52.982"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>'${temp status}' == 'appeared'</arg>
-<arg>Run Keyword And Continue On Failure</arg>
-<arg>Page Should Contain Element</arg>
-<arg>${lblBulk Patching Title}</arg>
+<arg>'${temp end position}' == 'a'</arg>
+<arg>Click Web Button</arg>
+<arg>${tabEndA}</arg>
 <arg>ELSE IF</arg>
-<arg>'${temp status}' == 'disappeared'</arg>
+<arg>'${temp end position}' == 'b'</arg>
+<arg>Click Web Button</arg>
+<arg>${tabEndB}</arg>
+</arguments>
+<kw name="Click Web Button" library="GeneralPage">
+<arguments>
+<arg>${tabEndB}</arg>
+</arguments>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${btnName}</arg>
+</arguments>
+<assign>
+<var>${button exist}</var>
+</assign>
+<msg timestamp="20200116 14:21:53.008" level="INFO">${button exist} = 1</msg>
+<status status="PASS" starttime="20200116 14:21:52.986" endtime="20200116 14:21:53.008"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${button exist} == 1</arg>
 <arg>Run Keyword And Continue On Failure</arg>
-<arg>Page Should Not Contain Element</arg>
-<arg>${lblBulk Patching Title}</arg>
+<arg>Run Keywords</arg>
+<arg>Click Element</arg>
+<arg>${btnName}</arg>
+<arg>AND</arg>
+<arg>Wait For Page Load</arg>
 </arguments>
 <kw name="Run Keyword And Continue On Failure" library="BuiltIn">
 <doc>Runs the keyword and continues execution even if a failure occurs.</doc>
 <arguments>
-<arg>Page Should Contain Element</arg>
-<arg>${lblBulk Patching Title}</arg>
+<arg>Run Keywords</arg>
+<arg>Click Element</arg>
+<arg>${btnName}</arg>
+<arg>AND</arg>
+<arg>Wait For Page Load</arg>
 </arguments>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
 <arguments>
-<arg>${lblBulk Patching Title}</arg>
+<arg>Click Element</arg>
+<arg>${btnName}</arg>
+<arg>AND</arg>
+<arg>Wait For Page Load</arg>
 </arguments>
-<msg timestamp="20200107 14:25:59.849" level="INFO">Current page contains element '//div[@id='bulk-patch-title' and @style='display: block;']'.</msg>
-<status status="PASS" starttime="20200107 14:25:59.835" endtime="20200107 14:25:59.849"></status>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btnName}</arg>
+</arguments>
+<msg timestamp="20200116 14:21:53.012" level="INFO">Clicking element '//div[@id='btn-end-b']'.</msg>
+<status status="PASS" starttime="20200116 14:21:53.011" endtime="20200116 14:21:53.077"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:25:59.834" endtime="20200107 14:25:59.849"></status>
+<kw name="Wait For Page Load" library="GeneralPage">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${PAGE LOAD TIMEOUT}</arg>
+</arguments>
+<msg timestamp="20200116 14:21:54.080" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200116 14:21:53.079" endtime="20200116 14:21:54.080"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:25:59.834" endtime="20200107 14:25:59.849"></status>
+<status status="PASS" starttime="20200116 14:21:53.078" endtime="20200116 14:21:54.081"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:25:59.833" endtime="20200107 14:25:59.850"></status>
+<status status="PASS" starttime="20200116 14:21:53.011" endtime="20200116 14:21:54.081"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:53.010" endtime="20200116 14:21:54.082"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:53.009" endtime="20200116 14:21:54.082"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:52.984" endtime="20200116 14:21:54.083"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:52.982" endtime="20200116 14:21:54.083"></status>
+</kw>
+<kw name="Wait For Page Load" library="GeneralPage">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${PAGE LOAD TIMEOUT}</arg>
+</arguments>
+<msg timestamp="20200116 14:21:55.085" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200116 14:21:54.084" endtime="20200116 14:21:55.085"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:54.083" endtime="20200116 14:21:55.086"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:52.979" endtime="20200116 14:21:55.086"></status>
+</kw>
+<kw name="When Touch Equipment Button" library="BulkPatchingPage">
+<kw name="Click Web Button" library="GeneralPage">
+<arguments>
+<arg>${btnEquipment}</arg>
+</arguments>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${btnName}</arg>
+</arguments>
+<assign>
+<var>${button exist}</var>
+</assign>
+<msg timestamp="20200116 14:21:55.106" level="INFO">${button exist} = 1</msg>
+<status status="PASS" starttime="20200116 14:21:55.089" endtime="20200116 14:21:55.107"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${button exist} == 1</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Run Keywords</arg>
+<arg>Click Element</arg>
+<arg>${btnName}</arg>
+<arg>AND</arg>
+<arg>Wait For Page Load</arg>
+</arguments>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Run Keywords</arg>
+<arg>Click Element</arg>
+<arg>${btnName}</arg>
+<arg>AND</arg>
+<arg>Wait For Page Load</arg>
+</arguments>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Click Element</arg>
+<arg>${btnName}</arg>
+<arg>AND</arg>
+<arg>Wait For Page Load</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btnName}</arg>
+</arguments>
+<msg timestamp="20200116 14:21:55.111" level="INFO">Clicking element '//div[@id='btn-header' and contains(@style,'visibility: visible')]'.</msg>
+<status status="PASS" starttime="20200116 14:21:55.110" endtime="20200116 14:21:55.174"></status>
+</kw>
+<kw name="Wait For Page Load" library="GeneralPage">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${PAGE LOAD TIMEOUT}</arg>
+</arguments>
+<msg timestamp="20200116 14:21:56.176" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200116 14:21:55.175" endtime="20200116 14:21:56.176"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:55.174" endtime="20200116 14:21:56.177"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:55.109" endtime="20200116 14:21:56.177"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:55.108" endtime="20200116 14:21:56.178"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:55.107" endtime="20200116 14:21:56.179"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:55.088" endtime="20200116 14:21:56.179"></status>
+</kw>
+<kw name="Wait For Page Load" library="GeneralPage">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${PAGE LOAD TIMEOUT}</arg>
+</arguments>
+<msg timestamp="20200116 14:21:57.183" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200116 14:21:56.181" endtime="20200116 14:21:57.183"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:56.180" endtime="20200116 14:21:57.184"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:55.087" endtime="20200116 14:21:57.184"></status>
+</kw>
+<kw name="When Plugin Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;3&quot;" library="VirtualPanelDefinitions">
+<kw name="Get Copper Panel Index" library="VirtualPanelDefinitions">
+<arguments>
+<arg>${rackID}</arg>
+<arg>${panelID}</arg>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${panel index}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${VPpanels}</arg>
+</arguments>
+<assign>
+<var>${panels number}</var>
+</assign>
+<msg timestamp="20200116 14:21:57.188" level="INFO">Length is 12</msg>
+<msg timestamp="20200116 14:21:57.188" level="INFO">${panels number} = 12</msg>
+<status status="PASS" starttime="20200116 14:21:57.187" endtime="20200116 14:21:57.188"></status>
+</kw>
+<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
+<kw name="${panel index} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20200116 14:21:57.193" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20200116 14:21:57.192" endtime="20200116 14:21:57.193"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:57.190" endtime="20200116 14:21:57.194"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:57.189" endtime="20200116 14:21:57.194"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:57.189" endtime="20200116 14:21:57.195"></status>
+</kw>
+<msg timestamp="20200116 14:21:57.195" level="INFO">${panel index} = 1</msg>
+<status status="PASS" starttime="20200116 14:21:57.186" endtime="20200116 14:21:57.196"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${panel index}</arg>
+</arguments>
+<msg timestamp="20200116 14:21:57.197" level="INFO">1</msg>
+<status status="PASS" starttime="20200116 14:21:57.197" endtime="20200116 14:21:57.198"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>vp_cmd_helper --plugin --rack</arg>
+<arg>${rackID}</arg>
+<arg>--panel</arg>
+<arg>${panel index}</arg>
+<arg>--port</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${completed command}</var>
+</assign>
+<msg timestamp="20200116 14:21:57.199" level="INFO">${completed command} = vp_cmd_helper --plugin --rack 1 --panel 1 --port 3</msg>
+<status status="PASS" starttime="20200116 14:21:57.198" endtime="20200116 14:21:57.199"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${completed command}</arg>
+</arguments>
+<msg timestamp="20200116 14:21:57.201" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 3</msg>
+<status status="PASS" starttime="20200116 14:21:57.200" endtime="20200116 14:21:57.201"></status>
+</kw>
+<kw name="Enter Virtual Command ${completed command}" library="SSHDefinitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20200116 14:21:57.237" level="INFO">vp_cmd_helper --plugin --rack 1 --panel 1 --port 3</msg>
+<status status="PASS" starttime="20200116 14:21:57.203" endtime="20200116 14:21:57.238"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20200116 14:21:59.240" level="INFO">${stdout} = result=success
+command=plugin
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20200116 14:21:57.239" endtime="20200116 14:21:59.241"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20200116 14:21:59.243" level="INFO">result=success
+command=plugin
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20200116 14:21:59.242" endtime="20200116 14:21:59.244"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:57.202" endtime="20200116 14:21:59.244"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:21:57.185" endtime="20200116 14:21:59.245"></status>
 </kw>
 <kw name="When Exit Screen" library="GeneralPage">
 <kw name="Click Web Button" library="GeneralPage">
@@ -261,8 +839,8 @@
 <assign>
 <var>${button exist}</var>
 </assign>
-<msg timestamp="20200107 14:25:59.859" level="INFO">${button exist} = 1</msg>
-<status status="PASS" starttime="20200107 14:25:59.851" endtime="20200107 14:25:59.859"></status>
+<msg timestamp="20200116 14:21:59.270" level="INFO">${button exist} = 1</msg>
+<status status="PASS" starttime="20200116 14:21:59.249" endtime="20200116 14:21:59.270"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -297,8 +875,8 @@
 <arguments>
 <arg>${btnName}</arg>
 </arguments>
-<msg timestamp="20200107 14:25:59.861" level="INFO">Clicking element '//div[@id='exit-footer' and @style='display: block;']/div[@id='exit-button']'.</msg>
-<status status="PASS" starttime="20200107 14:25:59.861" endtime="20200107 14:25:59.909"></status>
+<msg timestamp="20200116 14:21:59.276" level="INFO">Clicking element '//div[@id='exit-footer' and @style='display: block;']/div[@id='exit-button']'.</msg>
+<status status="PASS" starttime="20200116 14:21:59.275" endtime="20200116 14:21:59.339"></status>
 </kw>
 <kw name="Wait For Page Load" library="GeneralPage">
 <kw name="Sleep" library="BuiltIn">
@@ -306,18 +884,18 @@
 <arguments>
 <arg>${PAGE LOAD TIMEOUT}</arg>
 </arguments>
-<msg timestamp="20200107 14:26:00.912" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20200107 14:25:59.910" endtime="20200107 14:26:00.912"></status>
+<msg timestamp="20200116 14:22:00.342" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200116 14:21:59.341" endtime="20200116 14:22:00.342"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:25:59.909" endtime="20200107 14:26:00.912"></status>
+<status status="PASS" starttime="20200116 14:21:59.340" endtime="20200116 14:22:00.343"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:25:59.860" endtime="20200107 14:26:00.912"></status>
+<status status="PASS" starttime="20200116 14:21:59.274" endtime="20200116 14:22:00.344"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:25:59.860" endtime="20200107 14:26:00.912"></status>
+<status status="PASS" starttime="20200116 14:21:59.273" endtime="20200116 14:22:00.344"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:25:59.859" endtime="20200107 14:26:00.912"></status>
+<status status="PASS" starttime="20200116 14:21:59.271" endtime="20200116 14:22:00.345"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:25:59.850" endtime="20200107 14:26:00.912"></status>
+<status status="PASS" starttime="20200116 14:21:59.247" endtime="20200116 14:22:00.346"></status>
 </kw>
 <kw name="Wait For Page Load" library="GeneralPage">
 <kw name="Sleep" library="BuiltIn">
@@ -325,35 +903,2500 @@
 <arguments>
 <arg>${PAGE LOAD TIMEOUT}</arg>
 </arguments>
-<msg timestamp="20200107 14:26:01.913" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20200107 14:26:00.913" endtime="20200107 14:26:01.913"></status>
+<msg timestamp="20200116 14:22:01.348" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200116 14:22:00.347" endtime="20200116 14:22:01.348"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:26:00.912" endtime="20200107 14:26:01.913"></status>
+<status status="PASS" starttime="20200116 14:22:00.346" endtime="20200116 14:22:01.349"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:25:59.850" endtime="20200107 14:26:01.913"></status>
+<status status="PASS" starttime="20200116 14:21:59.246" endtime="20200116 14:22:01.350"></status>
 </kw>
-<kw name="Then Home Screen Should Be Opened" library="HomePage">
+<kw name="When Press Copper port at Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;2&quot; with keymode &quot;short&quot;" library="VirtualPanelDefinitions">
+<doc>This keyword is used to press on a specific Copper port regarding to type of keymode</doc>
+<kw name="Get Copper Panel Index" library="VirtualPanelDefinitions">
+<arguments>
+<arg>${rackID}</arg>
+<arg>${panelID}</arg>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${panel index}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${VPpanels}</arg>
+</arguments>
+<assign>
+<var>${panels number}</var>
+</assign>
+<msg timestamp="20200116 14:22:01.355" level="INFO">Length is 12</msg>
+<msg timestamp="20200116 14:22:01.356" level="INFO">${panels number} = 12</msg>
+<status status="PASS" starttime="20200116 14:22:01.355" endtime="20200116 14:22:01.356"></status>
+</kw>
+<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
+<kw name="${panel index} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20200116 14:22:01.363" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20200116 14:22:01.362" endtime="20200116 14:22:01.364"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:01.359" endtime="20200116 14:22:01.364"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:01.358" endtime="20200116 14:22:01.365"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:01.357" endtime="20200116 14:22:01.365"></status>
+</kw>
+<msg timestamp="20200116 14:22:01.366" level="INFO">${panel index} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:01.353" endtime="20200116 14:22:01.367"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${panel index}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:01.369" level="INFO">1</msg>
+<status status="PASS" starttime="20200116 14:22:01.368" endtime="20200116 14:22:01.369"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>vp_cmd_helper --press --rack</arg>
+<arg>${rackID}</arg>
+<arg>--panel</arg>
+<arg>${panel index}</arg>
+<arg>--port</arg>
+<arg>${portID}</arg>
+<arg>--keymode</arg>
+<arg>${keyMode}</arg>
+</arguments>
+<assign>
+<var>${completed command}</var>
+</assign>
+<msg timestamp="20200116 14:22:01.371" level="INFO">${completed command} = vp_cmd_helper --press --rack 1 --panel 1 --port 2 --keymode short</msg>
+<status status="PASS" starttime="20200116 14:22:01.370" endtime="20200116 14:22:01.372"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${completed command}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:01.374" level="INFO">vp_cmd_helper --press --rack 1 --panel 1 --port 2 --keymode short</msg>
+<status status="PASS" starttime="20200116 14:22:01.373" endtime="20200116 14:22:01.374"></status>
+</kw>
+<kw name="Enter Virtual Command ${completed command}" library="SSHDefinitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:01.407" level="INFO">vp_cmd_helper --press --rack 1 --panel 1 --port 2 --keymode short</msg>
+<status status="PASS" starttime="20200116 14:22:01.377" endtime="20200116 14:22:01.408"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.412" level="INFO">${stdout} = result=success
+command=press
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20200116 14:22:01.409" endtime="20200116 14:22:03.413"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:03.415" level="INFO">result=success
+command=press
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20200116 14:22:03.414" endtime="20200116 14:22:03.416"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:01.375" endtime="20200116 14:22:03.416"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:01.351" endtime="20200116 14:22:03.417"></status>
+</kw>
+<kw name="Then Check if Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;2&quot; &quot;appeared&quot; in Trace screen" library="TraceDefinitions">
+<doc>This keyword is used to check the information of Copper panel displaying in the same information rectangle area</doc>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>Rack</arg>
+<arg>00</arg>
+</arguments>
+<assign>
+<var>${temp rack}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.421" level="INFO">${temp rack} = Rack 00</msg>
+<status status="PASS" starttime="20200116 14:22:03.420" endtime="20200116 14:22:03.421"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${temp rack}</arg>
+<arg>${rackID}</arg>
+</arguments>
+<assign>
+<var>${input rack}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.423" level="INFO">${input rack} = Rack 001</msg>
+<status status="PASS" starttime="20200116 14:22:03.422" endtime="20200116 14:22:03.423"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>Panel</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${temp panel}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.425" level="INFO">${temp panel} = Panel 0</msg>
+<status status="PASS" starttime="20200116 14:22:03.424" endtime="20200116 14:22:03.425"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${temp panel}</arg>
+<arg>${panelID}</arg>
+</arguments>
+<assign>
+<var>${input panel}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.427" level="INFO">${input panel} = Panel 01</msg>
+<status status="PASS" starttime="20200116 14:22:03.426" endtime="20200116 14:22:03.427"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>Port</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${temp port}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.428" level="INFO">${temp port} = Port 0</msg>
+<status status="PASS" starttime="20200116 14:22:03.428" endtime="20200116 14:22:03.429"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${temp port}</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${input port}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.431" level="INFO">${input port} = Port 02</msg>
+<status status="PASS" starttime="20200116 14:22:03.430" endtime="20200116 14:22:03.431"></status>
+</kw>
+<kw name="Is Information Belong to Left Rectangle Area" library="TraceDefinitions">
+<arguments>
+<arg>${input rack}</arg>
+</arguments>
+<assign>
+<var>${temp rack 1}</var>
+</assign>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${dynamic trace port position on left rectangle}</arg>
+<arg>port information</arg>
+<arg>${infor}</arg>
+</arguments>
+<assign>
+<var>${xPath syntax}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.434" level="INFO">${xPath syntax} = //div[@id='row-left-center' and contains(@style,'visible')]/div[contains(text(),'Rack 001')]</msg>
+<status status="PASS" starttime="20200116 14:22:03.433" endtime="20200116 14:22:03.435"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${xPath syntax}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.469" level="INFO">${result} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.435" endtime="20200116 14:22:03.470"></status>
+</kw>
+<msg timestamp="20200116 14:22:03.470" level="INFO">${temp rack 1} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.432" endtime="20200116 14:22:03.471"></status>
+</kw>
+<kw name="Is Information Belong to Left Rectangle Area" library="TraceDefinitions">
+<arguments>
+<arg>${input panel}</arg>
+</arguments>
+<assign>
+<var>${temp panel 1}</var>
+</assign>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${dynamic trace port position on left rectangle}</arg>
+<arg>port information</arg>
+<arg>${infor}</arg>
+</arguments>
+<assign>
+<var>${xPath syntax}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.474" level="INFO">${xPath syntax} = //div[@id='row-left-center' and contains(@style,'visible')]/div[contains(text(),'Panel 01')]</msg>
+<status status="PASS" starttime="20200116 14:22:03.473" endtime="20200116 14:22:03.474"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${xPath syntax}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.499" level="INFO">${result} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.475" endtime="20200116 14:22:03.499"></status>
+</kw>
+<msg timestamp="20200116 14:22:03.500" level="INFO">${temp panel 1} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.472" endtime="20200116 14:22:03.500"></status>
+</kw>
+<kw name="Is Information Belong to Left Rectangle Area" library="TraceDefinitions">
+<arguments>
+<arg>${input port}</arg>
+</arguments>
+<assign>
+<var>${temp port 1}</var>
+</assign>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${dynamic trace port position on left rectangle}</arg>
+<arg>port information</arg>
+<arg>${infor}</arg>
+</arguments>
+<assign>
+<var>${xPath syntax}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.504" level="INFO">${xPath syntax} = //div[@id='row-left-center' and contains(@style,'visible')]/div[contains(text(),'Port 02')]</msg>
+<status status="PASS" starttime="20200116 14:22:03.502" endtime="20200116 14:22:03.504"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${xPath syntax}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.522" level="INFO">${result} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.505" endtime="20200116 14:22:03.522"></status>
+</kw>
+<msg timestamp="20200116 14:22:03.523" level="INFO">${temp port 1} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.501" endtime="20200116 14:22:03.523"></status>
+</kw>
+<kw name="Is Information Belong to Right Rectangle Area" library="TraceDefinitions">
+<arguments>
+<arg>${input rack}</arg>
+</arguments>
+<assign>
+<var>${temp rack 2}</var>
+</assign>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${dynamic trace port position on right rectangle}</arg>
+<arg>port information</arg>
+<arg>${infor}</arg>
+</arguments>
+<assign>
+<var>${xPath syntax}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.525" level="INFO">${xPath syntax} = //div[@id='row-right-center' and contains(@style,'visible')]/div[contains(text(),'Rack 001')]</msg>
+<status status="PASS" starttime="20200116 14:22:03.525" endtime="20200116 14:22:03.525"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${xPath syntax}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.541" level="INFO">${result} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.526" endtime="20200116 14:22:03.542"></status>
+</kw>
+<msg timestamp="20200116 14:22:03.542" level="INFO">${temp rack 2} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.524" endtime="20200116 14:22:03.542"></status>
+</kw>
+<kw name="Is Information Belong to Right Rectangle Area" library="TraceDefinitions">
+<arguments>
+<arg>${input panel}</arg>
+</arguments>
+<assign>
+<var>${temp panel 2}</var>
+</assign>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${dynamic trace port position on right rectangle}</arg>
+<arg>port information</arg>
+<arg>${infor}</arg>
+</arguments>
+<assign>
+<var>${xPath syntax}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.545" level="INFO">${xPath syntax} = //div[@id='row-right-center' and contains(@style,'visible')]/div[contains(text(),'Panel 01')]</msg>
+<status status="PASS" starttime="20200116 14:22:03.544" endtime="20200116 14:22:03.545"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${xPath syntax}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.561" level="INFO">${result} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.545" endtime="20200116 14:22:03.561"></status>
+</kw>
+<msg timestamp="20200116 14:22:03.561" level="INFO">${temp panel 2} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.543" endtime="20200116 14:22:03.562"></status>
+</kw>
+<kw name="Is Information Belong to Right Rectangle Area" library="TraceDefinitions">
+<arguments>
+<arg>${input port}</arg>
+</arguments>
+<assign>
+<var>${temp port 2}</var>
+</assign>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${dynamic trace port position on right rectangle}</arg>
+<arg>port information</arg>
+<arg>${infor}</arg>
+</arguments>
+<assign>
+<var>${xPath syntax}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.563" level="INFO">${xPath syntax} = //div[@id='row-right-center' and contains(@style,'visible')]/div[contains(text(),'Port 02')]</msg>
+<status status="PASS" starttime="20200116 14:22:03.563" endtime="20200116 14:22:03.564"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${xPath syntax}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.579" level="INFO">${result} = 0</msg>
+<status status="PASS" starttime="20200116 14:22:03.564" endtime="20200116 14:22:03.580"></status>
+</kw>
+<msg timestamp="20200116 14:22:03.580" level="INFO">${temp port 2} = 0</msg>
+<status status="PASS" starttime="20200116 14:22:03.562" endtime="20200116 14:22:03.580"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${temp rack 1} == 1 and ${temp panel 1} == 1 and ${temp port 1} == 1</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>1</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${infor belong to left rectangle}</var>
+</assign>
 <kw name="Run Keyword And Continue On Failure" library="BuiltIn">
 <doc>Runs the keyword and continues execution even if a failure occurs.</doc>
 <arguments>
-<arg>Page Should Contain Element</arg>
-<arg>${lblimVisionX}</arg>
+<arg>Set Variable</arg>
+<arg>1</arg>
 </arguments>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
 <arguments>
-<arg>${lblimVisionX}</arg>
+<arg>1</arg>
 </arguments>
-<msg timestamp="20200107 14:26:01.929" level="INFO">Current page contains element '//div[@style='display: block;']/div[@id='imvision_tab']/div[contains(text(),'imVision X')]'.</msg>
-<status status="PASS" starttime="20200107 14:26:01.915" endtime="20200107 14:26:01.929"></status>
+<status status="PASS" starttime="20200116 14:22:03.583" endtime="20200116 14:22:03.583"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:26:01.915" endtime="20200107 14:26:01.929"></status>
+<status status="PASS" starttime="20200116 14:22:03.582" endtime="20200116 14:22:03.583"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:26:01.914" endtime="20200107 14:26:01.929"></status>
+<msg timestamp="20200116 14:22:03.584" level="INFO">${infor belong to left rectangle} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.581" endtime="20200116 14:22:03.584"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:25:58.778" endtime="20200107 14:26:01.930" critical="yes"></status>
-</test>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${temp rack 2} == 1 and ${temp panel 2} == 1 and ${temp port 2} == 1</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>1</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${infor belong to right rectangle}</var>
+</assign>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>0</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:22:03.586" endtime="20200116 14:22:03.586"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:03.585" endtime="20200116 14:22:03.586"></status>
+</kw>
+<msg timestamp="20200116 14:22:03.587" level="INFO">${infor belong to right rectangle} = 0</msg>
+<status status="PASS" starttime="20200116 14:22:03.584" endtime="20200116 14:22:03.587"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${infor belong to left rectangle} == 1 or ${infor belong to right rectangle} == 1</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>1</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Set Variable</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:22:03.589" endtime="20200116 14:22:03.589"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:03.588" endtime="20200116 14:22:03.589"></status>
+</kw>
+<msg timestamp="20200116 14:22:03.590" level="INFO">${result} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.587" endtime="20200116 14:22:03.590"></status>
+</kw>
+<kw name="Convert To Lowercase" library="String">
+<doc>Converts string to lowercase.</doc>
+<arguments>
+<arg>${status}</arg>
+</arguments>
+<assign>
+<var>${temp status}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.591" level="INFO">${temp status} = appeared</msg>
+<status status="PASS" starttime="20200116 14:22:03.591" endtime="20200116 14:22:03.591"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${temp status}' == 'appeared'</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>1</arg>
+<arg>ELSE IF</arg>
+<arg>'${temp status}' == 'disappeared'</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${expected value}</var>
+</assign>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Set Variable</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:22:03.594" endtime="20200116 14:22:03.594"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:03.593" endtime="20200116 14:22:03.595"></status>
+</kw>
+<msg timestamp="20200116 14:22:03.595" level="INFO">${expected value} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.592" endtime="20200116 14:22:03.595"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Should Be Equal</arg>
+<arg>'${result}'</arg>
+<arg>'${expected value}'</arg>
+<arg>Port information is not ${status}</arg>
+</arguments>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>'${result}'</arg>
+<arg>'${expected value}'</arg>
+<arg>Port information is not ${status}</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:22:03.597" endtime="20200116 14:22:03.598"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:03.596" endtime="20200116 14:22:03.598"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:03.419" endtime="20200116 14:22:03.599"></status>
+</kw>
+<kw name="Then Check if Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;3&quot; &quot;appeared&quot; in Trace screen" library="TraceDefinitions">
+<doc>This keyword is used to check the information of Copper panel displaying in the same information rectangle area</doc>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>Rack</arg>
+<arg>00</arg>
+</arguments>
+<assign>
+<var>${temp rack}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.601" level="INFO">${temp rack} = Rack 00</msg>
+<status status="PASS" starttime="20200116 14:22:03.601" endtime="20200116 14:22:03.601"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${temp rack}</arg>
+<arg>${rackID}</arg>
+</arguments>
+<assign>
+<var>${input rack}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.603" level="INFO">${input rack} = Rack 001</msg>
+<status status="PASS" starttime="20200116 14:22:03.602" endtime="20200116 14:22:03.603"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>Panel</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${temp panel}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.604" level="INFO">${temp panel} = Panel 0</msg>
+<status status="PASS" starttime="20200116 14:22:03.604" endtime="20200116 14:22:03.604"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${temp panel}</arg>
+<arg>${panelID}</arg>
+</arguments>
+<assign>
+<var>${input panel}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.606" level="INFO">${input panel} = Panel 01</msg>
+<status status="PASS" starttime="20200116 14:22:03.605" endtime="20200116 14:22:03.606"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>Port</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${temp port}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.607" level="INFO">${temp port} = Port 0</msg>
+<status status="PASS" starttime="20200116 14:22:03.607" endtime="20200116 14:22:03.607"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${temp port}</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${input port}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.609" level="INFO">${input port} = Port 03</msg>
+<status status="PASS" starttime="20200116 14:22:03.608" endtime="20200116 14:22:03.609"></status>
+</kw>
+<kw name="Is Information Belong to Left Rectangle Area" library="TraceDefinitions">
+<arguments>
+<arg>${input rack}</arg>
+</arguments>
+<assign>
+<var>${temp rack 1}</var>
+</assign>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${dynamic trace port position on left rectangle}</arg>
+<arg>port information</arg>
+<arg>${infor}</arg>
+</arguments>
+<assign>
+<var>${xPath syntax}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.611" level="INFO">${xPath syntax} = //div[@id='row-left-center' and contains(@style,'visible')]/div[contains(text(),'Rack 001')]</msg>
+<status status="PASS" starttime="20200116 14:22:03.611" endtime="20200116 14:22:03.612"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${xPath syntax}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.628" level="INFO">${result} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.612" endtime="20200116 14:22:03.629"></status>
+</kw>
+<msg timestamp="20200116 14:22:03.630" level="INFO">${temp rack 1} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.610" endtime="20200116 14:22:03.630"></status>
+</kw>
+<kw name="Is Information Belong to Left Rectangle Area" library="TraceDefinitions">
+<arguments>
+<arg>${input panel}</arg>
+</arguments>
+<assign>
+<var>${temp panel 1}</var>
+</assign>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${dynamic trace port position on left rectangle}</arg>
+<arg>port information</arg>
+<arg>${infor}</arg>
+</arguments>
+<assign>
+<var>${xPath syntax}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.633" level="INFO">${xPath syntax} = //div[@id='row-left-center' and contains(@style,'visible')]/div[contains(text(),'Panel 01')]</msg>
+<status status="PASS" starttime="20200116 14:22:03.632" endtime="20200116 14:22:03.633"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${xPath syntax}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.644" level="INFO">${result} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.633" endtime="20200116 14:22:03.644"></status>
+</kw>
+<msg timestamp="20200116 14:22:03.645" level="INFO">${temp panel 1} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.630" endtime="20200116 14:22:03.645"></status>
+</kw>
+<kw name="Is Information Belong to Left Rectangle Area" library="TraceDefinitions">
+<arguments>
+<arg>${input port}</arg>
+</arguments>
+<assign>
+<var>${temp port 1}</var>
+</assign>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${dynamic trace port position on left rectangle}</arg>
+<arg>port information</arg>
+<arg>${infor}</arg>
+</arguments>
+<assign>
+<var>${xPath syntax}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.647" level="INFO">${xPath syntax} = //div[@id='row-left-center' and contains(@style,'visible')]/div[contains(text(),'Port 03')]</msg>
+<status status="PASS" starttime="20200116 14:22:03.646" endtime="20200116 14:22:03.647"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${xPath syntax}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.664" level="INFO">${result} = 0</msg>
+<status status="PASS" starttime="20200116 14:22:03.648" endtime="20200116 14:22:03.664"></status>
+</kw>
+<msg timestamp="20200116 14:22:03.665" level="INFO">${temp port 1} = 0</msg>
+<status status="PASS" starttime="20200116 14:22:03.646" endtime="20200116 14:22:03.665"></status>
+</kw>
+<kw name="Is Information Belong to Right Rectangle Area" library="TraceDefinitions">
+<arguments>
+<arg>${input rack}</arg>
+</arguments>
+<assign>
+<var>${temp rack 2}</var>
+</assign>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${dynamic trace port position on right rectangle}</arg>
+<arg>port information</arg>
+<arg>${infor}</arg>
+</arguments>
+<assign>
+<var>${xPath syntax}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.667" level="INFO">${xPath syntax} = //div[@id='row-right-center' and contains(@style,'visible')]/div[contains(text(),'Rack 001')]</msg>
+<status status="PASS" starttime="20200116 14:22:03.666" endtime="20200116 14:22:03.667"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${xPath syntax}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.678" level="INFO">${result} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.667" endtime="20200116 14:22:03.678"></status>
+</kw>
+<msg timestamp="20200116 14:22:03.679" level="INFO">${temp rack 2} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.665" endtime="20200116 14:22:03.679"></status>
+</kw>
+<kw name="Is Information Belong to Right Rectangle Area" library="TraceDefinitions">
+<arguments>
+<arg>${input panel}</arg>
+</arguments>
+<assign>
+<var>${temp panel 2}</var>
+</assign>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${dynamic trace port position on right rectangle}</arg>
+<arg>port information</arg>
+<arg>${infor}</arg>
+</arguments>
+<assign>
+<var>${xPath syntax}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.682" level="INFO">${xPath syntax} = //div[@id='row-right-center' and contains(@style,'visible')]/div[contains(text(),'Panel 01')]</msg>
+<status status="PASS" starttime="20200116 14:22:03.681" endtime="20200116 14:22:03.682"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${xPath syntax}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.693" level="INFO">${result} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.682" endtime="20200116 14:22:03.694"></status>
+</kw>
+<msg timestamp="20200116 14:22:03.694" level="INFO">${temp panel 2} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.680" endtime="20200116 14:22:03.694"></status>
+</kw>
+<kw name="Is Information Belong to Right Rectangle Area" library="TraceDefinitions">
+<arguments>
+<arg>${input port}</arg>
+</arguments>
+<assign>
+<var>${temp port 2}</var>
+</assign>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${dynamic trace port position on right rectangle}</arg>
+<arg>port information</arg>
+<arg>${infor}</arg>
+</arguments>
+<assign>
+<var>${xPath syntax}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.696" level="INFO">${xPath syntax} = //div[@id='row-right-center' and contains(@style,'visible')]/div[contains(text(),'Port 03')]</msg>
+<status status="PASS" starttime="20200116 14:22:03.695" endtime="20200116 14:22:03.696"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${xPath syntax}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.712" level="INFO">${result} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.697" endtime="20200116 14:22:03.712"></status>
+</kw>
+<msg timestamp="20200116 14:22:03.713" level="INFO">${temp port 2} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.695" endtime="20200116 14:22:03.713"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${temp rack 1} == 1 and ${temp panel 1} == 1 and ${temp port 1} == 1</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>1</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${infor belong to left rectangle}</var>
+</assign>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>0</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:22:03.715" endtime="20200116 14:22:03.716"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:03.715" endtime="20200116 14:22:03.716"></status>
+</kw>
+<msg timestamp="20200116 14:22:03.716" level="INFO">${infor belong to left rectangle} = 0</msg>
+<status status="PASS" starttime="20200116 14:22:03.714" endtime="20200116 14:22:03.716"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${temp rack 2} == 1 and ${temp panel 2} == 1 and ${temp port 2} == 1</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>1</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${infor belong to right rectangle}</var>
+</assign>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Set Variable</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:22:03.718" endtime="20200116 14:22:03.718"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:03.718" endtime="20200116 14:22:03.719"></status>
+</kw>
+<msg timestamp="20200116 14:22:03.719" level="INFO">${infor belong to right rectangle} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.717" endtime="20200116 14:22:03.719"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${infor belong to left rectangle} == 1 or ${infor belong to right rectangle} == 1</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>1</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Set Variable</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:22:03.721" endtime="20200116 14:22:03.721"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:03.720" endtime="20200116 14:22:03.722"></status>
+</kw>
+<msg timestamp="20200116 14:22:03.722" level="INFO">${result} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.720" endtime="20200116 14:22:03.722"></status>
+</kw>
+<kw name="Convert To Lowercase" library="String">
+<doc>Converts string to lowercase.</doc>
+<arguments>
+<arg>${status}</arg>
+</arguments>
+<assign>
+<var>${temp status}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.723" level="INFO">${temp status} = appeared</msg>
+<status status="PASS" starttime="20200116 14:22:03.722" endtime="20200116 14:22:03.723"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${temp status}' == 'appeared'</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>1</arg>
+<arg>ELSE IF</arg>
+<arg>'${temp status}' == 'disappeared'</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${expected value}</var>
+</assign>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Set Variable</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:22:03.725" endtime="20200116 14:22:03.725"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:03.724" endtime="20200116 14:22:03.726"></status>
+</kw>
+<msg timestamp="20200116 14:22:03.726" level="INFO">${expected value} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.724" endtime="20200116 14:22:03.726"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Should Be Equal</arg>
+<arg>'${result}'</arg>
+<arg>'${expected value}'</arg>
+<arg>Port information is not ${status}</arg>
+</arguments>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>'${result}'</arg>
+<arg>'${expected value}'</arg>
+<arg>Port information is not ${status}</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:22:03.727" endtime="20200116 14:22:03.727"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:03.726" endtime="20200116 14:22:03.728"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:03.600" endtime="20200116 14:22:03.728"></status>
+</kw>
+<kw name="Then Check if the &quot;full&quot; of &quot;Copper&quot; Patching Bar &quot;appeared&quot; in Trace screen" library="TraceDefinitions">
+<doc>This keyword is used to check the portion of patching bar of Copper/ LC panel appeared/ disappeared in Trace screen</doc>
+<kw name="Convert To Lowercase" library="String">
+<doc>Converts string to lowercase.</doc>
+<arguments>
+<arg>${portion}</arg>
+</arguments>
+<assign>
+<var>${temp portion}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.730" level="INFO">${temp portion} = full</msg>
+<status status="PASS" starttime="20200116 14:22:03.729" endtime="20200116 14:22:03.730"></status>
+</kw>
+<kw name="Convert To Lowercase" library="String">
+<doc>Converts string to lowercase.</doc>
+<arguments>
+<arg>${panel type}</arg>
+</arguments>
+<assign>
+<var>${temp panel type}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.731" level="INFO">${temp panel type} = copper</msg>
+<status status="PASS" starttime="20200116 14:22:03.731" endtime="20200116 14:22:03.731"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${temp portion}' == 'full' and '${temp panel type}' == 'copper'</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>${barFullCopper}</arg>
+<arg>ELSE IF</arg>
+<arg>'${temp portion}' == 'haft' and '${temp panel type}' == 'copper'</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>${barHaftCopper}</arg>
+</arguments>
+<assign>
+<var>${replace panel type}</var>
+</assign>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Set Variable</arg>
+<arg>${barFullCopper}</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${barFullCopper}</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:22:03.733" endtime="20200116 14:22:03.734"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:03.732" endtime="20200116 14:22:03.734"></status>
+</kw>
+<msg timestamp="20200116 14:22:03.734" level="INFO">${replace panel type} = patch-cord-copper</msg>
+<status status="PASS" starttime="20200116 14:22:03.732" endtime="20200116 14:22:03.734"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${dynamic patching bar}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.750" level="INFO">${result} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.735" endtime="20200116 14:22:03.750"></status>
+</kw>
+<kw name="Convert To Lowercase" library="String">
+<doc>Converts string to lowercase.</doc>
+<arguments>
+<arg>${status}</arg>
+</arguments>
+<assign>
+<var>${temp status}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.751" level="INFO">${temp status} = appeared</msg>
+<status status="PASS" starttime="20200116 14:22:03.751" endtime="20200116 14:22:03.752"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${temp status}' == 'appeared'</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>1</arg>
+<arg>ELSE IF</arg>
+<arg>'${temp status}' == 'disappeared'</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${expected value}</var>
+</assign>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Set Variable</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:22:03.753" endtime="20200116 14:22:03.754"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:03.753" endtime="20200116 14:22:03.754"></status>
+</kw>
+<msg timestamp="20200116 14:22:03.754" level="INFO">${expected value} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.752" endtime="20200116 14:22:03.755"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Should Be Equal</arg>
+<arg>'${result}'</arg>
+<arg>'${expected value}'</arg>
+<arg>The patching bar is not ${status}</arg>
+</arguments>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>'${result}'</arg>
+<arg>'${expected value}'</arg>
+<arg>The patching bar is not ${status}</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:22:03.756" endtime="20200116 14:22:03.756"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:03.755" endtime="20200116 14:22:03.757"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:03.729" endtime="20200116 14:22:03.757"></status>
+</kw>
+<kw name="When Press Copper port at Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;1&quot; with keymode &quot;short&quot;" library="VirtualPanelDefinitions">
+<doc>This keyword is used to press on a specific Copper port regarding to type of keymode</doc>
+<kw name="Get Copper Panel Index" library="VirtualPanelDefinitions">
+<arguments>
+<arg>${rackID}</arg>
+<arg>${panelID}</arg>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${panel index}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${VPpanels}</arg>
+</arguments>
+<assign>
+<var>${panels number}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.759" level="INFO">Length is 12</msg>
+<msg timestamp="20200116 14:22:03.760" level="INFO">${panels number} = 12</msg>
+<status status="PASS" starttime="20200116 14:22:03.759" endtime="20200116 14:22:03.760"></status>
+</kw>
+<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
+<kw name="${panel index} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20200116 14:22:03.763" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20200116 14:22:03.763" endtime="20200116 14:22:03.763"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:03.761" endtime="20200116 14:22:03.764"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:03.760" endtime="20200116 14:22:03.764"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:03.760" endtime="20200116 14:22:03.764"></status>
+</kw>
+<msg timestamp="20200116 14:22:03.765" level="INFO">${panel index} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:03.758" endtime="20200116 14:22:03.765"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${panel index}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:03.766" level="INFO">1</msg>
+<status status="PASS" starttime="20200116 14:22:03.765" endtime="20200116 14:22:03.766"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>vp_cmd_helper --press --rack</arg>
+<arg>${rackID}</arg>
+<arg>--panel</arg>
+<arg>${panel index}</arg>
+<arg>--port</arg>
+<arg>${portID}</arg>
+<arg>--keymode</arg>
+<arg>${keyMode}</arg>
+</arguments>
+<assign>
+<var>${completed command}</var>
+</assign>
+<msg timestamp="20200116 14:22:03.767" level="INFO">${completed command} = vp_cmd_helper --press --rack 1 --panel 1 --port 1 --keymode short</msg>
+<status status="PASS" starttime="20200116 14:22:03.766" endtime="20200116 14:22:03.767"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${completed command}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:03.768" level="INFO">vp_cmd_helper --press --rack 1 --panel 1 --port 1 --keymode short</msg>
+<status status="PASS" starttime="20200116 14:22:03.768" endtime="20200116 14:22:03.768"></status>
+</kw>
+<kw name="Enter Virtual Command ${completed command}" library="SSHDefinitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:03.813" level="INFO">vp_cmd_helper --press --rack 1 --panel 1 --port 1 --keymode short</msg>
+<status status="PASS" starttime="20200116 14:22:03.769" endtime="20200116 14:22:03.813"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.816" level="INFO">${stdout} = result=success
+command=press
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20200116 14:22:03.814" endtime="20200116 14:22:05.817"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:05.819" level="INFO">result=success
+command=press
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20200116 14:22:05.818" endtime="20200116 14:22:05.820"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:03.769" endtime="20200116 14:22:05.820"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:03.758" endtime="20200116 14:22:05.822"></status>
+</kw>
+<kw name="Then Check if Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;1&quot; &quot;appeared&quot; in Trace screen" library="TraceDefinitions">
+<doc>This keyword is used to check the information of Copper panel displaying in the same information rectangle area</doc>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>Rack</arg>
+<arg>00</arg>
+</arguments>
+<assign>
+<var>${temp rack}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.828" level="INFO">${temp rack} = Rack 00</msg>
+<status status="PASS" starttime="20200116 14:22:05.826" endtime="20200116 14:22:05.828"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${temp rack}</arg>
+<arg>${rackID}</arg>
+</arguments>
+<assign>
+<var>${input rack}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.831" level="INFO">${input rack} = Rack 001</msg>
+<status status="PASS" starttime="20200116 14:22:05.829" endtime="20200116 14:22:05.831"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>Panel</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${temp panel}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.833" level="INFO">${temp panel} = Panel 0</msg>
+<status status="PASS" starttime="20200116 14:22:05.832" endtime="20200116 14:22:05.834"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${temp panel}</arg>
+<arg>${panelID}</arg>
+</arguments>
+<assign>
+<var>${input panel}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.837" level="INFO">${input panel} = Panel 01</msg>
+<status status="PASS" starttime="20200116 14:22:05.835" endtime="20200116 14:22:05.837"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>Port</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${temp port}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.840" level="INFO">${temp port} = Port 0</msg>
+<status status="PASS" starttime="20200116 14:22:05.838" endtime="20200116 14:22:05.840"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${temp port}</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${input port}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.842" level="INFO">${input port} = Port 01</msg>
+<status status="PASS" starttime="20200116 14:22:05.841" endtime="20200116 14:22:05.843"></status>
+</kw>
+<kw name="Is Information Belong to Left Rectangle Area" library="TraceDefinitions">
+<arguments>
+<arg>${input rack}</arg>
+</arguments>
+<assign>
+<var>${temp rack 1}</var>
+</assign>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${dynamic trace port position on left rectangle}</arg>
+<arg>port information</arg>
+<arg>${infor}</arg>
+</arguments>
+<assign>
+<var>${xPath syntax}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.847" level="INFO">${xPath syntax} = //div[@id='row-left-center' and contains(@style,'visible')]/div[contains(text(),'Rack 001')]</msg>
+<status status="PASS" starttime="20200116 14:22:05.846" endtime="20200116 14:22:05.848"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${xPath syntax}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.870" level="INFO">${result} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:05.849" endtime="20200116 14:22:05.870"></status>
+</kw>
+<msg timestamp="20200116 14:22:05.871" level="INFO">${temp rack 1} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:05.844" endtime="20200116 14:22:05.871"></status>
+</kw>
+<kw name="Is Information Belong to Left Rectangle Area" library="TraceDefinitions">
+<arguments>
+<arg>${input panel}</arg>
+</arguments>
+<assign>
+<var>${temp panel 1}</var>
+</assign>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${dynamic trace port position on left rectangle}</arg>
+<arg>port information</arg>
+<arg>${infor}</arg>
+</arguments>
+<assign>
+<var>${xPath syntax}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.873" level="INFO">${xPath syntax} = //div[@id='row-left-center' and contains(@style,'visible')]/div[contains(text(),'Panel 01')]</msg>
+<status status="PASS" starttime="20200116 14:22:05.873" endtime="20200116 14:22:05.874"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${xPath syntax}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.887" level="INFO">${result} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:05.874" endtime="20200116 14:22:05.888"></status>
+</kw>
+<msg timestamp="20200116 14:22:05.888" level="INFO">${temp panel 1} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:05.872" endtime="20200116 14:22:05.888"></status>
+</kw>
+<kw name="Is Information Belong to Left Rectangle Area" library="TraceDefinitions">
+<arguments>
+<arg>${input port}</arg>
+</arguments>
+<assign>
+<var>${temp port 1}</var>
+</assign>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${dynamic trace port position on left rectangle}</arg>
+<arg>port information</arg>
+<arg>${infor}</arg>
+</arguments>
+<assign>
+<var>${xPath syntax}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.890" level="INFO">${xPath syntax} = //div[@id='row-left-center' and contains(@style,'visible')]/div[contains(text(),'Port 01')]</msg>
+<status status="PASS" starttime="20200116 14:22:05.890" endtime="20200116 14:22:05.891"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${xPath syntax}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.909" level="INFO">${result} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:05.891" endtime="20200116 14:22:05.909"></status>
+</kw>
+<msg timestamp="20200116 14:22:05.910" level="INFO">${temp port 1} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:05.889" endtime="20200116 14:22:05.910"></status>
+</kw>
+<kw name="Is Information Belong to Right Rectangle Area" library="TraceDefinitions">
+<arguments>
+<arg>${input rack}</arg>
+</arguments>
+<assign>
+<var>${temp rack 2}</var>
+</assign>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${dynamic trace port position on right rectangle}</arg>
+<arg>port information</arg>
+<arg>${infor}</arg>
+</arguments>
+<assign>
+<var>${xPath syntax}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.912" level="INFO">${xPath syntax} = //div[@id='row-right-center' and contains(@style,'visible')]/div[contains(text(),'Rack 001')]</msg>
+<status status="PASS" starttime="20200116 14:22:05.912" endtime="20200116 14:22:05.913"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${xPath syntax}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.926" level="INFO">${result} = 0</msg>
+<status status="PASS" starttime="20200116 14:22:05.914" endtime="20200116 14:22:05.926"></status>
+</kw>
+<msg timestamp="20200116 14:22:05.927" level="INFO">${temp rack 2} = 0</msg>
+<status status="PASS" starttime="20200116 14:22:05.910" endtime="20200116 14:22:05.927"></status>
+</kw>
+<kw name="Is Information Belong to Right Rectangle Area" library="TraceDefinitions">
+<arguments>
+<arg>${input panel}</arg>
+</arguments>
+<assign>
+<var>${temp panel 2}</var>
+</assign>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${dynamic trace port position on right rectangle}</arg>
+<arg>port information</arg>
+<arg>${infor}</arg>
+</arguments>
+<assign>
+<var>${xPath syntax}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.929" level="INFO">${xPath syntax} = //div[@id='row-right-center' and contains(@style,'visible')]/div[contains(text(),'Panel 01')]</msg>
+<status status="PASS" starttime="20200116 14:22:05.928" endtime="20200116 14:22:05.929"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${xPath syntax}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.941" level="INFO">${result} = 0</msg>
+<status status="PASS" starttime="20200116 14:22:05.930" endtime="20200116 14:22:05.941"></status>
+</kw>
+<msg timestamp="20200116 14:22:05.942" level="INFO">${temp panel 2} = 0</msg>
+<status status="PASS" starttime="20200116 14:22:05.928" endtime="20200116 14:22:05.942"></status>
+</kw>
+<kw name="Is Information Belong to Right Rectangle Area" library="TraceDefinitions">
+<arguments>
+<arg>${input port}</arg>
+</arguments>
+<assign>
+<var>${temp port 2}</var>
+</assign>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${dynamic trace port position on right rectangle}</arg>
+<arg>port information</arg>
+<arg>${infor}</arg>
+</arguments>
+<assign>
+<var>${xPath syntax}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.945" level="INFO">${xPath syntax} = //div[@id='row-right-center' and contains(@style,'visible')]/div[contains(text(),'Port 01')]</msg>
+<status status="PASS" starttime="20200116 14:22:05.944" endtime="20200116 14:22:05.945"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${xPath syntax}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.961" level="INFO">${result} = 0</msg>
+<status status="PASS" starttime="20200116 14:22:05.946" endtime="20200116 14:22:05.962"></status>
+</kw>
+<msg timestamp="20200116 14:22:05.962" level="INFO">${temp port 2} = 0</msg>
+<status status="PASS" starttime="20200116 14:22:05.943" endtime="20200116 14:22:05.962"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${temp rack 1} == 1 and ${temp panel 1} == 1 and ${temp port 1} == 1</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>1</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${infor belong to left rectangle}</var>
+</assign>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Set Variable</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:22:05.964" endtime="20200116 14:22:05.965"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:05.964" endtime="20200116 14:22:05.965"></status>
+</kw>
+<msg timestamp="20200116 14:22:05.965" level="INFO">${infor belong to left rectangle} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:05.963" endtime="20200116 14:22:05.965"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${temp rack 2} == 1 and ${temp panel 2} == 1 and ${temp port 2} == 1</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>1</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${infor belong to right rectangle}</var>
+</assign>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>0</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:22:05.967" endtime="20200116 14:22:05.968"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:05.967" endtime="20200116 14:22:05.968"></status>
+</kw>
+<msg timestamp="20200116 14:22:05.968" level="INFO">${infor belong to right rectangle} = 0</msg>
+<status status="PASS" starttime="20200116 14:22:05.966" endtime="20200116 14:22:05.969"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${infor belong to left rectangle} == 1 or ${infor belong to right rectangle} == 1</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>1</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Set Variable</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:22:05.971" endtime="20200116 14:22:05.971"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:05.970" endtime="20200116 14:22:05.972"></status>
+</kw>
+<msg timestamp="20200116 14:22:05.972" level="INFO">${result} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:05.969" endtime="20200116 14:22:05.972"></status>
+</kw>
+<kw name="Convert To Lowercase" library="String">
+<doc>Converts string to lowercase.</doc>
+<arguments>
+<arg>${status}</arg>
+</arguments>
+<assign>
+<var>${temp status}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.973" level="INFO">${temp status} = appeared</msg>
+<status status="PASS" starttime="20200116 14:22:05.972" endtime="20200116 14:22:05.973"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${temp status}' == 'appeared'</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>1</arg>
+<arg>ELSE IF</arg>
+<arg>'${temp status}' == 'disappeared'</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${expected value}</var>
+</assign>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Set Variable</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:22:05.975" endtime="20200116 14:22:05.975"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:05.974" endtime="20200116 14:22:05.976"></status>
+</kw>
+<msg timestamp="20200116 14:22:05.976" level="INFO">${expected value} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:05.973" endtime="20200116 14:22:05.976"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Should Be Equal</arg>
+<arg>'${result}'</arg>
+<arg>'${expected value}'</arg>
+<arg>Port information is not ${status}</arg>
+</arguments>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>'${result}'</arg>
+<arg>'${expected value}'</arg>
+<arg>Port information is not ${status}</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:22:05.977" endtime="20200116 14:22:05.978"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:05.977" endtime="20200116 14:22:05.978"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:05.824" endtime="20200116 14:22:05.978"></status>
+</kw>
+<kw name="Then Check if Equipment Connection &quot;Equipment&quot; &quot;appeared&quot; in Trace screen" library="TraceDefinitions">
+<doc>This keyword is used to check the information of Equipment Connection displaying in the same information rectangle area</doc>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${equipmentText}</arg>
+<arg>Connection</arg>
+</arguments>
+<assign>
+<var>${input equipment}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.981" level="INFO">${input equipment} = Equipment Connection</msg>
+<status status="PASS" starttime="20200116 14:22:05.980" endtime="20200116 14:22:05.981"></status>
+</kw>
+<kw name="Is Information Belong to Left Rectangle Area" library="TraceDefinitions">
+<arguments>
+<arg>${input equipment}</arg>
+</arguments>
+<assign>
+<var>${temp rack 1}</var>
+</assign>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${dynamic trace port position on left rectangle}</arg>
+<arg>port information</arg>
+<arg>${infor}</arg>
+</arguments>
+<assign>
+<var>${xPath syntax}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.983" level="INFO">${xPath syntax} = //div[@id='row-left-center' and contains(@style,'visible')]/div[contains(text(),'Equipment Connection')]</msg>
+<status status="PASS" starttime="20200116 14:22:05.982" endtime="20200116 14:22:05.983"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${xPath syntax}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200116 14:22:05.999" level="INFO">${result} = 0</msg>
+<status status="PASS" starttime="20200116 14:22:05.984" endtime="20200116 14:22:05.999"></status>
+</kw>
+<msg timestamp="20200116 14:22:05.999" level="INFO">${temp rack 1} = 0</msg>
+<status status="PASS" starttime="20200116 14:22:05.982" endtime="20200116 14:22:05.999"></status>
+</kw>
+<kw name="Is Information Belong to Right Rectangle Area" library="TraceDefinitions">
+<arguments>
+<arg>${input equipment}</arg>
+</arguments>
+<assign>
+<var>${temp rack 2}</var>
+</assign>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${dynamic trace port position on right rectangle}</arg>
+<arg>port information</arg>
+<arg>${infor}</arg>
+</arguments>
+<assign>
+<var>${xPath syntax}</var>
+</assign>
+<msg timestamp="20200116 14:22:06.001" level="INFO">${xPath syntax} = //div[@id='row-right-center' and contains(@style,'visible')]/div[contains(text(),'Equipment Connection')]</msg>
+<status status="PASS" starttime="20200116 14:22:06.001" endtime="20200116 14:22:06.001"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${xPath syntax}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20200116 14:22:06.018" level="INFO">${result} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:06.002" endtime="20200116 14:22:06.019"></status>
+</kw>
+<msg timestamp="20200116 14:22:06.019" level="INFO">${temp rack 2} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:06.000" endtime="20200116 14:22:06.019"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${temp rack 1} == 1</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>1</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${infor belong to left rectangle}</var>
+</assign>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>0</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:22:06.021" endtime="20200116 14:22:06.021"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:06.020" endtime="20200116 14:22:06.022"></status>
+</kw>
+<msg timestamp="20200116 14:22:06.022" level="INFO">${infor belong to left rectangle} = 0</msg>
+<status status="PASS" starttime="20200116 14:22:06.020" endtime="20200116 14:22:06.022"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${temp rack 2} == 1</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>1</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${infor belong to right rectangle}</var>
+</assign>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Set Variable</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:22:06.024" endtime="20200116 14:22:06.024"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:06.023" endtime="20200116 14:22:06.024"></status>
+</kw>
+<msg timestamp="20200116 14:22:06.025" level="INFO">${infor belong to right rectangle} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:06.023" endtime="20200116 14:22:06.025"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${infor belong to left rectangle} == 1 or ${infor belong to right rectangle} == 1</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>1</arg>
+<arg>ELSE</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Set Variable</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:22:06.027" endtime="20200116 14:22:06.027"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:06.026" endtime="20200116 14:22:06.027"></status>
+</kw>
+<msg timestamp="20200116 14:22:06.027" level="INFO">${result} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:06.025" endtime="20200116 14:22:06.028"></status>
+</kw>
+<kw name="Convert To Lowercase" library="String">
+<doc>Converts string to lowercase.</doc>
+<arguments>
+<arg>${status}</arg>
+</arguments>
+<assign>
+<var>${temp status}</var>
+</assign>
+<msg timestamp="20200116 14:22:06.028" level="INFO">${temp status} = appeared</msg>
+<status status="PASS" starttime="20200116 14:22:06.028" endtime="20200116 14:22:06.029"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${temp status}' == 'appeared'</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>1</arg>
+<arg>ELSE IF</arg>
+<arg>'${temp status}' == 'disappeared'</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Set Variable</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${expected value}</var>
+</assign>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Set Variable</arg>
+<arg>1</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:22:06.030" endtime="20200116 14:22:06.031"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:06.030" endtime="20200116 14:22:06.031"></status>
+</kw>
+<msg timestamp="20200116 14:22:06.031" level="INFO">${expected value} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:06.029" endtime="20200116 14:22:06.031"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Should Be Equal</arg>
+<arg>'${result}'</arg>
+<arg>'${expected value}'</arg>
+<arg>Port information is not ${status}</arg>
+</arguments>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>'${result}'</arg>
+<arg>'${expected value}'</arg>
+<arg>Port information is not ${status}</arg>
+</arguments>
+<status status="PASS" starttime="20200116 14:22:06.033" endtime="20200116 14:22:06.033"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:06.032" endtime="20200116 14:22:06.033"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:05.979" endtime="20200116 14:22:06.034"></status>
+</kw>
+<kw name="And Plugout Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;1&quot;" library="VirtualPanelDefinitions">
+<kw name="Get Copper Panel Index" library="VirtualPanelDefinitions">
+<arguments>
+<arg>${rackID}</arg>
+<arg>${panelID}</arg>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${panel index}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${VPpanels}</arg>
+</arguments>
+<assign>
+<var>${panels number}</var>
+</assign>
+<msg timestamp="20200116 14:22:06.036" level="INFO">Length is 12</msg>
+<msg timestamp="20200116 14:22:06.036" level="INFO">${panels number} = 12</msg>
+<status status="PASS" starttime="20200116 14:22:06.036" endtime="20200116 14:22:06.037"></status>
+</kw>
+<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
+<kw name="${panel index} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20200116 14:22:06.040" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20200116 14:22:06.040" endtime="20200116 14:22:06.040"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:06.038" endtime="20200116 14:22:06.041"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:06.037" endtime="20200116 14:22:06.041"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:06.037" endtime="20200116 14:22:06.041"></status>
+</kw>
+<msg timestamp="20200116 14:22:06.042" level="INFO">${panel index} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:06.035" endtime="20200116 14:22:06.042"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${panel index}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:06.043" level="INFO">1</msg>
+<status status="PASS" starttime="20200116 14:22:06.042" endtime="20200116 14:22:06.043"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>vp_cmd_helper --plugout --rack</arg>
+<arg>${rackID}</arg>
+<arg>--panel</arg>
+<arg>${panel index}</arg>
+<arg>--port</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${completed command}</var>
+</assign>
+<msg timestamp="20200116 14:22:06.044" level="INFO">${completed command} = vp_cmd_helper --plugout --rack 1 --panel 1 --port 1</msg>
+<status status="PASS" starttime="20200116 14:22:06.043" endtime="20200116 14:22:06.044"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${completed command}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:06.045" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 1</msg>
+<status status="PASS" starttime="20200116 14:22:06.044" endtime="20200116 14:22:06.045"></status>
+</kw>
+<kw name="Enter Virtual Command ${completed command}" library="SSHDefinitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:06.059" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 1</msg>
+<status status="PASS" starttime="20200116 14:22:06.046" endtime="20200116 14:22:06.060"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20200116 14:22:08.063" level="INFO">${stdout} = result=success
+command=plugout
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20200116 14:22:06.060" endtime="20200116 14:22:08.064"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:08.067" level="INFO">result=success
+command=plugout
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20200116 14:22:08.065" endtime="20200116 14:22:08.068"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:06.045" endtime="20200116 14:22:08.069"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:06.034" endtime="20200116 14:22:08.069"></status>
+</kw>
+<kw name="And Touch Equipment Button" library="BulkPatchingPage">
+<kw name="Click Web Button" library="GeneralPage">
+<arguments>
+<arg>${btnEquipment}</arg>
+</arguments>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${btnName}</arg>
+</arguments>
+<assign>
+<var>${button exist}</var>
+</assign>
+<msg timestamp="20200116 14:22:08.097" level="INFO">${button exist} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:08.073" endtime="20200116 14:22:08.098"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${button exist} == 1</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Run Keywords</arg>
+<arg>Click Element</arg>
+<arg>${btnName}</arg>
+<arg>AND</arg>
+<arg>Wait For Page Load</arg>
+</arguments>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Run Keywords</arg>
+<arg>Click Element</arg>
+<arg>${btnName}</arg>
+<arg>AND</arg>
+<arg>Wait For Page Load</arg>
+</arguments>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Click Element</arg>
+<arg>${btnName}</arg>
+<arg>AND</arg>
+<arg>Wait For Page Load</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btnName}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:08.104" level="INFO">Clicking element '//div[@id='btn-header' and contains(@style,'visibility: visible')]'.</msg>
+<status status="PASS" starttime="20200116 14:22:08.103" endtime="20200116 14:22:08.180"></status>
+</kw>
+<kw name="Wait For Page Load" library="GeneralPage">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${PAGE LOAD TIMEOUT}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:09.184" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200116 14:22:08.183" endtime="20200116 14:22:09.184"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:08.181" endtime="20200116 14:22:09.185"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:08.102" endtime="20200116 14:22:09.185"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:08.101" endtime="20200116 14:22:09.185"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:08.099" endtime="20200116 14:22:09.186"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:08.072" endtime="20200116 14:22:09.186"></status>
+</kw>
+<kw name="Wait For Page Load" library="GeneralPage">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${PAGE LOAD TIMEOUT}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:10.188" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200116 14:22:09.188" endtime="20200116 14:22:10.189"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:09.187" endtime="20200116 14:22:10.190"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:08.071" endtime="20200116 14:22:10.190"></status>
+</kw>
+<kw name="And Plugout Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;2&quot;" library="VirtualPanelDefinitions">
+<kw name="Get Copper Panel Index" library="VirtualPanelDefinitions">
+<arguments>
+<arg>${rackID}</arg>
+<arg>${panelID}</arg>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${panel index}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${VPpanels}</arg>
+</arguments>
+<assign>
+<var>${panels number}</var>
+</assign>
+<msg timestamp="20200116 14:22:10.199" level="INFO">Length is 12</msg>
+<msg timestamp="20200116 14:22:10.200" level="INFO">${panels number} = 12</msg>
+<status status="PASS" starttime="20200116 14:22:10.197" endtime="20200116 14:22:10.200"></status>
+</kw>
+<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
+<kw name="${panel index} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20200116 14:22:10.211" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20200116 14:22:10.211" endtime="20200116 14:22:10.212"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:10.204" endtime="20200116 14:22:10.213"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:10.203" endtime="20200116 14:22:10.213"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:10.201" endtime="20200116 14:22:10.214"></status>
+</kw>
+<msg timestamp="20200116 14:22:10.215" level="INFO">${panel index} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:10.195" endtime="20200116 14:22:10.216"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${panel index}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:10.217" level="INFO">1</msg>
+<status status="PASS" starttime="20200116 14:22:10.216" endtime="20200116 14:22:10.217"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>vp_cmd_helper --plugout --rack</arg>
+<arg>${rackID}</arg>
+<arg>--panel</arg>
+<arg>${panel index}</arg>
+<arg>--port</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${completed command}</var>
+</assign>
+<msg timestamp="20200116 14:22:10.218" level="INFO">${completed command} = vp_cmd_helper --plugout --rack 1 --panel 1 --port 2</msg>
+<status status="PASS" starttime="20200116 14:22:10.217" endtime="20200116 14:22:10.218"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${completed command}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:10.219" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 2</msg>
+<status status="PASS" starttime="20200116 14:22:10.218" endtime="20200116 14:22:10.219"></status>
+</kw>
+<kw name="Enter Virtual Command ${completed command}" library="SSHDefinitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:10.232" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 2</msg>
+<status status="PASS" starttime="20200116 14:22:10.221" endtime="20200116 14:22:10.233"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20200116 14:22:12.236" level="INFO">${stdout} = result=success
+command=plugout
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20200116 14:22:10.234" endtime="20200116 14:22:12.237"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:12.240" level="INFO">result=success
+command=plugout
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20200116 14:22:12.238" endtime="20200116 14:22:12.241"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:10.220" endtime="20200116 14:22:12.242"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:10.192" endtime="20200116 14:22:12.243"></status>
+</kw>
+<kw name="And Plugout Copper Tip to Rack &quot;1&quot; Panel &quot;1&quot; Row &quot;1&quot; Port &quot;3&quot;" library="VirtualPanelDefinitions">
+<kw name="Get Copper Panel Index" library="VirtualPanelDefinitions">
+<arguments>
+<arg>${rackID}</arg>
+<arg>${panelID}</arg>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${panel index}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${VPpanels}</arg>
+</arguments>
+<assign>
+<var>${panels number}</var>
+</assign>
+<msg timestamp="20200116 14:22:12.250" level="INFO">Length is 12</msg>
+<msg timestamp="20200116 14:22:12.251" level="INFO">${panels number} = 12</msg>
+<status status="PASS" starttime="20200116 14:22:12.249" endtime="20200116 14:22:12.251"></status>
+</kw>
+<kw name="${panel index} IN RANGE [ ${panels number-1} ]" type="for">
+<kw name="${panel index} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${VPpanels[${panel index+1}][&amp;{dic panels table}[panel type]]}' == '${VIRTUAL PANELS TYPE}[COPPER]' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[rackID]]}' == '${input rackID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[panelID]]}' == '${input panelID}' and '${VPpanels[${panel index+1}][&amp;{dic panels table}[row]]}' == '${input row}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20200116 14:22:12.256" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20200116 14:22:12.255" endtime="20200116 14:22:12.256"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:12.253" endtime="20200116 14:22:12.257"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:12.252" endtime="20200116 14:22:12.257"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:12.252" endtime="20200116 14:22:12.257"></status>
+</kw>
+<msg timestamp="20200116 14:22:12.258" level="INFO">${panel index} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:12.247" endtime="20200116 14:22:12.258"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${panel index}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:12.259" level="INFO">1</msg>
+<status status="PASS" starttime="20200116 14:22:12.259" endtime="20200116 14:22:12.259"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>vp_cmd_helper --plugout --rack</arg>
+<arg>${rackID}</arg>
+<arg>--panel</arg>
+<arg>${panel index}</arg>
+<arg>--port</arg>
+<arg>${portID}</arg>
+</arguments>
+<assign>
+<var>${completed command}</var>
+</assign>
+<msg timestamp="20200116 14:22:12.261" level="INFO">${completed command} = vp_cmd_helper --plugout --rack 1 --panel 1 --port 3</msg>
+<status status="PASS" starttime="20200116 14:22:12.260" endtime="20200116 14:22:12.261"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${completed command}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:12.263" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 3</msg>
+<status status="PASS" starttime="20200116 14:22:12.262" endtime="20200116 14:22:12.264"></status>
+</kw>
+<kw name="Enter Virtual Command ${completed command}" library="SSHDefinitions">
+<kw name="Write" library="SSHLibrary">
+<doc>Writes the given ``text`` on the remote machine and appends a newline.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:12.300" level="INFO">vp_cmd_helper --plugout --rack 1 --panel 1 --port 3</msg>
+<status status="PASS" starttime="20200116 14:22:12.265" endtime="20200116 14:22:12.301"></status>
+</kw>
+<kw name="Read" library="SSHLibrary">
+<doc>Consumes and returns everything available on the server output.</doc>
+<arguments>
+<arg>loglevel=Trace</arg>
+<arg>delay=1s</arg>
+</arguments>
+<assign>
+<var>${stdout}</var>
+</assign>
+<msg timestamp="20200116 14:22:14.304" level="INFO">${stdout} = result=success
+command=plugout
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20200116 14:22:12.302" endtime="20200116 14:22:14.305"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${stdout}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:14.307" level="INFO">result=success
+command=plugout
+test_setup=on
+bus_connect=on
+bus_power=on
+rack=1
+panel=1
+type=1100ps
+panel_state=RUN
+row=1
+serial=28FFFF600001
+count=11
+# </msg>
+<status status="PASS" starttime="20200116 14:22:14.306" endtime="20200116 14:22:14.308"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:12.264" endtime="20200116 14:22:14.308"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:12.245" endtime="20200116 14:22:14.309"></status>
+</kw>
 <kw name="Set Web UI to Stand By State and Close Current Browser" library="GeneralPage" type="teardown">
+<kw name="Wait For Page Update" library="GeneralPage">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${PAGE UPDATE TIMEOUT}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:14.414" level="INFO">Slept 100 milliseconds</msg>
+<status status="PASS" starttime="20200116 14:22:14.313" endtime="20200116 14:22:14.415"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:14.311" endtime="20200116 14:22:14.416"></status>
+</kw>
 <kw name="Get Element Count" library="SeleniumLibrary">
 <doc>Returns the number of elements matching ``locator``.</doc>
 <arguments>
@@ -362,8 +3405,8 @@
 <assign>
 <var>${count Exit button}</var>
 </assign>
-<msg timestamp="20200107 14:26:01.945" level="INFO">${count Exit button} = 0</msg>
-<status status="PASS" starttime="20200107 14:26:01.933" endtime="20200107 14:26:01.945"></status>
+<msg timestamp="20200116 14:22:14.453" level="INFO">${count Exit button} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:14.417" endtime="20200116 14:22:14.454"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -371,7 +3414,91 @@
 <arg>${count Exit button} &gt; 0</arg>
 <arg>Exit Screen</arg>
 </arguments>
-<status status="PASS" starttime="20200107 14:26:01.946" endtime="20200107 14:26:01.946"></status>
+<kw name="Exit Screen" library="GeneralPage">
+<kw name="Click Web Button" library="GeneralPage">
+<arguments>
+<arg>${btnExit}</arg>
+</arguments>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${btnName}</arg>
+</arguments>
+<assign>
+<var>${button exist}</var>
+</assign>
+<msg timestamp="20200116 14:22:14.468" level="INFO">${button exist} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:14.456" endtime="20200116 14:22:14.469"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${button exist} == 1</arg>
+<arg>Run Keyword And Continue On Failure</arg>
+<arg>Run Keywords</arg>
+<arg>Click Element</arg>
+<arg>${btnName}</arg>
+<arg>AND</arg>
+<arg>Wait For Page Load</arg>
+</arguments>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Run Keywords</arg>
+<arg>Click Element</arg>
+<arg>${btnName}</arg>
+<arg>AND</arg>
+<arg>Wait For Page Load</arg>
+</arguments>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Click Element</arg>
+<arg>${btnName}</arg>
+<arg>AND</arg>
+<arg>Wait For Page Load</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btnName}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:14.472" level="INFO">Clicking element '//div[@id='exit-footer' and @style='display: block;']/div[@id='exit-button']'.</msg>
+<status status="PASS" starttime="20200116 14:22:14.471" endtime="20200116 14:22:14.513"></status>
+</kw>
+<kw name="Wait For Page Load" library="GeneralPage">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${PAGE LOAD TIMEOUT}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:15.516" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200116 14:22:14.514" endtime="20200116 14:22:15.516"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:14.514" endtime="20200116 14:22:15.517"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:14.471" endtime="20200116 14:22:15.518"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:14.470" endtime="20200116 14:22:15.518"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:14.469" endtime="20200116 14:22:15.519"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:14.456" endtime="20200116 14:22:15.520"></status>
+</kw>
+<kw name="Wait For Page Load" library="GeneralPage">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${PAGE LOAD TIMEOUT}</arg>
+</arguments>
+<msg timestamp="20200116 14:22:16.523" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200116 14:22:15.522" endtime="20200116 14:22:16.524"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:15.520" endtime="20200116 14:22:16.525"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:14.455" endtime="20200116 14:22:16.525"></status>
+</kw>
+<status status="PASS" starttime="20200116 14:22:14.454" endtime="20200116 14:22:16.526"></status>
 </kw>
 <kw name="Get Element Count" library="SeleniumLibrary">
 <doc>Returns the number of elements matching ``locator``.</doc>
@@ -381,8 +3508,8 @@
 <assign>
 <var>${count Home screen}</var>
 </assign>
-<msg timestamp="20200107 14:26:01.959" level="INFO">${count Home screen} = 1</msg>
-<status status="PASS" starttime="20200107 14:26:01.947" endtime="20200107 14:26:01.959"></status>
+<msg timestamp="20200116 14:22:16.557" level="INFO">${count Home screen} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:16.527" endtime="20200116 14:22:16.557"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -414,8 +3541,8 @@
 <assign>
 <var>${button exist}</var>
 </assign>
-<msg timestamp="20200107 14:26:01.968" level="INFO">${button exist} = 1</msg>
-<status status="PASS" starttime="20200107 14:26:01.961" endtime="20200107 14:26:01.968"></status>
+<msg timestamp="20200116 14:22:16.588" level="INFO">${button exist} = 1</msg>
+<status status="PASS" starttime="20200116 14:22:16.562" endtime="20200116 14:22:16.589"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -450,8 +3577,8 @@
 <arguments>
 <arg>${btnName}</arg>
 </arguments>
-<msg timestamp="20200107 14:26:01.970" level="INFO">Clicking element '//div[@id='home-lang']'.</msg>
-<status status="PASS" starttime="20200107 14:26:01.970" endtime="20200107 14:26:02.000"></status>
+<msg timestamp="20200116 14:22:16.595" level="INFO">Clicking element '//div[@id='home-lang']'.</msg>
+<status status="PASS" starttime="20200116 14:22:16.593" endtime="20200116 14:22:16.662"></status>
 </kw>
 <kw name="Wait For Page Load" library="GeneralPage">
 <kw name="Sleep" library="BuiltIn">
@@ -459,18 +3586,18 @@
 <arguments>
 <arg>${PAGE LOAD TIMEOUT}</arg>
 </arguments>
-<msg timestamp="20200107 14:26:03.001" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20200107 14:26:02.001" endtime="20200107 14:26:03.001"></status>
+<msg timestamp="20200116 14:22:17.668" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200116 14:22:16.664" endtime="20200116 14:22:17.669"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:26:02.000" endtime="20200107 14:26:03.001"></status>
+<status status="PASS" starttime="20200116 14:22:16.663" endtime="20200116 14:22:17.670"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:26:01.969" endtime="20200107 14:26:03.001"></status>
+<status status="PASS" starttime="20200116 14:22:16.592" endtime="20200116 14:22:17.670"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:26:01.969" endtime="20200107 14:26:03.001"></status>
+<status status="PASS" starttime="20200116 14:22:16.591" endtime="20200116 14:22:17.671"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:26:01.969" endtime="20200107 14:26:03.001"></status>
+<status status="PASS" starttime="20200116 14:22:16.590" endtime="20200116 14:22:17.671"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:26:01.960" endtime="20200107 14:26:03.001"></status>
+<status status="PASS" starttime="20200116 14:22:16.561" endtime="20200116 14:22:17.672"></status>
 </kw>
 <kw name="Wait For Page Load" library="GeneralPage">
 <kw name="Sleep" library="BuiltIn">
@@ -478,22 +3605,32 @@
 <arguments>
 <arg>${PAGE LOAD TIMEOUT}</arg>
 </arguments>
-<msg timestamp="20200107 14:26:04.004" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20200107 14:26:03.002" endtime="20200107 14:26:04.004"></status>
+<msg timestamp="20200116 14:22:18.675" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200116 14:22:17.674" endtime="20200116 14:22:18.675"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:26:03.001" endtime="20200107 14:26:04.004"></status>
+<status status="PASS" starttime="20200116 14:22:17.673" endtime="20200116 14:22:18.676"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:26:01.960" endtime="20200107 14:26:04.004"></status>
+<status status="PASS" starttime="20200116 14:22:16.560" endtime="20200116 14:22:18.677"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:26:01.959" endtime="20200107 14:26:04.004"></status>
+<status status="PASS" starttime="20200116 14:22:16.558" endtime="20200116 14:22:18.677"></status>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200107 14:26:04.005" endtime="20200107 14:26:06.562"></status>
+<status status="PASS" starttime="20200116 14:22:18.678" endtime="20200116 14:22:20.920"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:26:01.932" endtime="20200107 14:26:06.563"></status>
+<status status="PASS" starttime="20200116 14:22:14.310" endtime="20200116 14:22:20.921"></status>
 </kw>
-<status status="PASS" starttime="20200107 14:25:46.527" endtime="20200107 14:26:06.563"></status>
+<status status="PASS" starttime="20200116 14:21:39.954" endtime="20200116 14:22:20.922" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200116 14:21:39.150" endtime="20200116 14:22:20.924"></status>
+</suite>
+<status status="PASS" starttime="20200116 14:21:39.146" endtime="20200116 14:22:20.930"></status>
+</suite>
+<status status="PASS" starttime="20200116 14:21:39.141" endtime="20200116 14:22:20.934"></status>
+</suite>
+<status status="PASS" starttime="20200116 14:21:39.136" endtime="20200116 14:22:20.938"></status>
+</suite>
+<status status="PASS" starttime="20200116 14:21:39.095" endtime="20200116 14:22:20.942"></status>
 </suite>
 <statistics>
 <total>
@@ -503,11 +3640,13 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" id="s1" name="1.CheckBulkPatchingbutton">1.CheckBulkPatchingbutton</stat>
+<stat pass="1" fail="0" id="s1" name="BulkPatching Robot">BulkPatching Robot</stat>
+<stat pass="1" fail="0" id="s1-s1" name="Test Resources">BulkPatching Robot.Test Resources</stat>
+<stat pass="1" fail="0" id="s1-s1-s1" name="Test Suites">BulkPatching Robot.Test Resources.Test Suites</stat>
+<stat pass="1" fail="0" id="s1-s1-s1-s1" name="5.Create Equipment">BulkPatching Robot.Test Resources.Test Suites.5.Create Equipment</stat>
+<stat pass="1" fail="0" id="s1-s1-s1-s1-s1" name="5.3.1.2.CheckEquipmentConnectionWithTheSamePatchesAfterTouchingExitButton">BulkPatching Robot.Test Resources.Test Suites.5.Create Equipment.5.3.1.2.CheckEquipmentConnectionWithTheSamePatchesAfterTouchingExitButton</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20200107 14:25:46.732" level="ERROR">Error in file 'D:\RobotFW_program\BulkPatching_Robot\BulkPatching_Robot\Test_Definitions\Test_Pages\HomePage.robot': Resource file '..\..\Test Resources\Profiles\Constant.robot' does not exist.</msg>
-<msg timestamp="20200107 14:25:46.733" level="ERROR">Error in file 'D:\RobotFW_program\BulkPatching_Robot\BulkPatching_Robot\Test_Definitions\Test_Pages\HomePage.robot': Resource file 'General Page.robot' does not exist.</msg>
 </errors>
 </robot>
