@@ -3,6 +3,9 @@ Resource    ../../../Test_Definitions/Cucumber_Definitions/HomeDefinitions.robot
 Resource    ../../../Test_Definitions/Cucumber_Definitions/BulkPatchingDefinitions.robot
 Resource    ../../../Test_Definitions/Cucumber_Definitions/ConfirmDefinitions.robot
 Resource    ../../../Test_Definitions/Cucumber_Definitions/TraceDefinitions.robot
+Resource    ../../../Test_Definitions/Cucumber_Definitions/SSHDefinitions.robot
+Resource    ../../../Test_Definitions/Cucumber_Definitions/VirtualPanelDefinitions.robot
+Resource    ../../../Test_Definitions/Test_Pages/BulkPatchingPage.robot
                        
 #Help text.py is to store help text for checking
 Variables    ../../Test_Data/HelpText.py

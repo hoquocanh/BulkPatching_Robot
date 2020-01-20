@@ -6,7 +6,7 @@ Library    SSHLibrary
 #Suite Teardown  Close All Connections
 
 
-Resource    Test Definitions/Cucumber Definitions/SSH definitions.robot
+Resource    Test_Definitions/Cucumber_Definitions/SSHDefinitions.robot
 
 *** Variables ***
 ${HOST}      192.168.171.201

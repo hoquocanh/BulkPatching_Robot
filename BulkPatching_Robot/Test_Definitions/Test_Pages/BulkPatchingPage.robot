@@ -24,9 +24,6 @@ ${attribute tab active}    background: black;
 ${attribute tab inactive}    background: gray;
 
 *** Keywords ***
-
-   
-    
 Select Tab End "${end position}"
     ${temp end position}=    Convert To Lowercase    ${end position}    
     

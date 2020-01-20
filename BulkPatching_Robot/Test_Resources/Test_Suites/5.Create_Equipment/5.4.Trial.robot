@@ -5,12 +5,12 @@ Resource    ../../../Test_Definitions/Cucumber_Definitions/ConfirmDefinitions.ro
 Resource    ../../../Test_Definitions/Cucumber_Definitions/TraceDefinitions.robot
 Resource    ../../../Test_Definitions/Cucumber_Definitions/SelectLanguageDefinitions.robot
 Resource    ../../../Test_Definitions/Cucumber_Definitions/GeneralDefinitions.robot
+Resource    ../../../Test_Definitions/Cucumber_Definitions/BulkPatchingDefinitions.robot
 Resource    ../../../Test_Definitions/Test_Pages/HomePage.robot
 Resource    ../../../Test_Definitions/Test_Pages/SettingsPage.robot
 Resource    ../../../Test_Definitions/Test_Pages/SelectLanguagePage.robot
 Resource    ../../../Test_Definitions/Test_Pages/GeneralPage.robot
 Resource    ../../../Test_Definitions/Test_Pages/BulkPatchingPage.robot
-Resource    ../../../Test_Definitions/Cucumber_Definitions/BulkPatchingDefinitions.robot
                        
 #Help text.py is to store help text for checking
 Variables    ../../Test_Data/HelpText.py
@@ -25,28 +25,27 @@ Test Teardown    Set Web UI to Stand By State and Close Current Browser
 *** Test Cases ***
 Create_Equip-02_01_Verify that "Equipment" should use the same translation as the text in the "Equipment" button if changing to Danish
     #Pre-condition:
-    Given Go To Select Language "danish" 
-    Given Go To Home Screen
-    Given Go To Bulk Patching Screen
-    When Plugin Copper Tip to Rack "1" Panel "1" Row "1" Port "1"
+   # Given Go To Select Language "german" 
+   # Given Go To Home Screen
+   # Given Go To Bulk Patching Screen
+   # When Plugin Copper Tip to Rack "1" Panel "1" Row "1" Port "1"
     
      #Step 1:  
-    When Select Tab End "B"
+   # When Select Tab End "B"
     
     #VP:Equipment button displays
-   Then Equipment Button Should Be "appeared"
+   # Then Equipment Button Should Be "appeared"
     
      #Step 2 :  Touch Equipment
-    When Touch Equipment Button
+  #  When Touch Equipment Button
     
     #VP: The text "Equipment" appeared in End B
-    Then Check Equipment in List "1" "appeared"
+    Then Check Equipment Text in Language "german" "appeared"
     
     #Clean Environment
-    And Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "1"
-    And Exit Screen
-    And Go To Select Language "english" 
-
+   # And Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "1"
+  #  And Exit Screen
+  #  And Go To Select Language "english" 
 
     
     

@@ -1,6 +1,6 @@
 *** Settings ***
 Library    Collections    
-Resource    Test Definitions/Cucumber Definitions/Virtual Panel definitions.robot
+Resource    Test_Definitions/Cucumber_Definitions/VirtualPanelDefinitions.robot
 
 
 *** Test Cases ***

@@ -9,6 +9,7 @@ Resource    ../../../Test_Definitions/Test_Pages/HomePage.robot
 Resource    ../../../Test_Definitions/Test_Pages/SettingsPage.robot
 Resource    ../../../Test_Definitions/Test_Pages/SelectLanguagePage.robot
 Resource    ../../../Test_Definitions/Test_Pages/GeneralPage.robot
+Resource    ../../../Test_Definitions/Test_Pages/BulkPatchingPage.robot
                        
 #Help text.py is to store help text for checking
 Variables    ../../Test_Data/HelpText.py
