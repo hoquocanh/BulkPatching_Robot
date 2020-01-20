@@ -20,4 +20,11 @@
 		<nature>org.robotframework.ide.eclipse.main.plugin.robotNature</nature>
 		<nature>org.python.pydev.pythonNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>libspecs/MyHaiLib.py</name>
+			<type>1</type>
+			<location>C:/Users/quocanh.ho/git/BulkPatching_Robot/BulkPatching_Robot/MyHaiLib.py</location>
+		</link>
+	</linkedResources>
 </projectDescription>

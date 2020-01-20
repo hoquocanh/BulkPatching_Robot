@@ -9,6 +9,7 @@ ${lblimVisionX}    //div[@style='display: block;']/div[@id='imvision_tab']/div[c
 ${lblBulk Patching Home Page}    //div[@id='bulkpatch-lang']
 
 ${btnBulk Patching}    //input[@id='bulk-patch-btn']
+${btnSettings}    //div[@id='settings']/div/input[@type='submit']
 
 
 *** Keywords ***
@@ -17,4 +18,8 @@ Home Screen Should Be Opened
     
 Go To Bulk Patching Screen
     Click Element    ${btnBulk Patching} 
+    Wait For Page Load 
+    
+Go To Settings Screen
+    Click Element    ${btnSettings} 
     Wait For Page Load 
