@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary    
 Library    String  
-Library    MyHaiLib.py  
+Library    ../../Test_Resources/Test_Data/MyOwnLib.py    
 
 #Definition files
 Resource    ../../Test_Resources/Profiles/Constant.robot
@@ -20,8 +20,9 @@ ${txtEquipmentLanguage}    //div[@style='float:left' and contains(text(),'Equipm
 #${languageList}=    ['english', 'danish', 'german']
 #${languageList}    ['english','danish','german','spainish','french','italian','polish','portuguese','russian','chinese','korean']
 #${EquipmentList}    ['Equipment','Udstyr','Komponente','Equipo','Equipements','Apparecchiatura','Equipamento']
-${i}
-${text}
+#${i}
+#${text}
+#${textList}
 
 *** Keywords ***
 #Key work for Behavior Data Driven used in Test Cases
@@ -491,25 +492,31 @@ Check Equipment Text in Language "${languageID}" "${status}"
        
     #Step 1: Convert the listId
     ${input language}=    Convert To Lowercase    ${languageID}
+    ${input language1}=    Convert To String    ${input language}
 
-      # ${get language}=    Get Matches    ${languageList}    ${input language}
-     # ${languageList}=     Create List   english    danish    german
-     # ${EquipmentList}=    Create List   Equipment    Udstyr    Komponente
-      
-          #${index}=   Run Keyword If   '${get language}' == '${input language}'       Get Index From List    ${languageList}  ${input language}
-         # ${index}=    Get Index From List    ${languageList}  ${input language}
-                                            
-          # ${text}=    Get From List    ${EquipmentList}    ${index}
-                                        
-       # Log      ${index}
+      #Get Path location
        ${path1}=    Catenate    SEPARATOR=    E:\\    EquipmentTranslate.xlsx
        Log  ${path1}
       
-       ${langList}=    MyHaiLib.createList   ${path1}     0    
-    Log    ${langList}       
-
-     #   ${text}=    getEquipmentText   E:EquipmentTranslate.xlsx    ${input language}
-        Log      ${text}
+    #Get all the language from the Excel file to be a List
+       ${langList}=    MyOwnLib.createList     ${path1}    0 
+        Log    ${langList}   
+       
+    #Get all the language Text from the Excel file to be a List 
+        ${textList}=    MyOwnLib.createList     ${path1}    1 
+        Log    ${textList}    
+        
+      
+        # ${index}=    Get Index From List    ${langList}  ${input language1}
+       
+        #  ${text}=    Get From List    ${textList}    ${index}
+                
+      ${index}=    MyOwnLib.getIndexList    ${langList}    ${input language1}
+      Log      ${index}
+      
+       ${text}=    MyOwnLib.getEquipmentText    ${textList}    ${index}    
+       Log      ${text}
+       
     #Step 2: Change the listid by ${input list}
     ${xPath syntax}=    Replace String    ${txtEquipmentLanguage}   Equipment    ${text}               
      
@@ -542,6 +549,72 @@ Check Equipment Text in Language "${languageID}" "${status}"
     #Step 5.2: compare the status to the value checking from list of lines in Bulk Patching screen
     Run Keyword And Continue On Failure    Should Be Equal    '${count}'    '${expected value}'  
 
+Check Equipment Text at Path Location "${path}" in Language "${languageID}" "${status}"
+    
+    [Documentation]    This keyword is used to check the language of text"Equipment" displayed in End B list on Bulk Patching screen
+    ...      
+    ...                Argument: languageID, status[appeared/disappeared]  
+    #//li[@id='list1']/div/div/div[@style='float:left']
+    
+       
+    #Step 1: Convert the listId
+    ${input language}=    Convert To Lowercase    ${languageID}
+    ${input language1}=    Convert To String    ${input language}
+
+      #Get Path location
+       ${path1}=    Catenate    ${path}
+       Log  ${path1}
+      
+    #Get all the language from the Excel file to be a List
+       ${langList}=    MyOwnLib.createList     ${path1}    0 
+        Log    ${langList}   
+       
+    #Get all the language Text from the Excel file to be a List 
+        ${textList}=    MyOwnLib.createList     ${path1}    1 
+        Log    ${textList}    
+        
+      
+        # ${index}=    Get Index From List    ${langList}  ${input language1}
+       
+        #  ${text}=    Get From List    ${textList}    ${index}
+                
+      ${index}=    MyOwnLib.getIndexList    ${langList}    ${input language1}
+      Log      ${index}
+      
+       ${text}=    MyOwnLib.getEquipmentText    ${textList}    ${index}    
+       Log      ${text}
+       
+    #Step 2: Change the listid by ${input list}
+    ${xPath syntax}=    Replace String    ${txtEquipmentLanguage}   Equipment    ${text}               
+     
+    Log    ${xPath syntax}
+    
+    #Step 3: Find the desired element in the list of lines in Bulk Patching screen
+    # ${count}= 0 [not found], 1 [found]
+    ${number of lines}=    Number of Lines in Bulk Patching Screen    
+    
+    ${count}=    Set Variable    0
+    FOR    ${index}    IN RANGE    ${number of lines+1}
+            
+        ${index temp}=    Evaluate        ${index} + 1
+             
+
+        #${index string}=    Convert To String    ${index temp}
+        ${index string}=    Convert To String    ${index+1}
+        # ${xPath syntax}=    Replace String    ${xPath syntax}    Line Position    ${index string}
+           
+        ${count}=    Get Element Count    ${xPath syntax}
+        Exit For Loop If    ${count} == 1
+    END
+    
+    #Step 5: Check if the element appeared/ disappeared
+    #Step 5.1: Change the input status to 1 [if appeared] or 0 [if disappeared]
+    ${temp status}=    Convert To Lowercase    ${status}
+    ${expected value}=    Run Keyword If    '${temp status}' == 'appeared'    Set Variable    1
+    ...    ELSE IF        '${temp status}' == 'disappeared'    Set Variable    0
+    
+    #Step 5.2: compare the status to the value checking from list of lines in Bulk Patching screen
+    Run Keyword And Continue On Failure    Should Be Equal    '${count}'    '${expected value}'  
 
 ##########################################################################################################################
 #####------------ Xpath keyworks ------------#####    

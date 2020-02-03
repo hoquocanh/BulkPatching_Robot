@@ -1,6 +1,6 @@
 *** Settings ***
 Library    String
-Library    SeleniumLibrary    
+Library    SeleniumLibrary   
 Resource    ../../Test_Resources/Profiles/Constant.robot
 Resource    ../Test_Pages/HomePage.robot
 Resource    ../Test_Pages/GeneralPage.robot
@@ -29,7 +29,10 @@ ${btnKorean}    //div[@id='language-list']/div[@id='10010']
 Touch Save Language
     Click Element    ${btnSave} 
     Wait For Page Load 
-    
+Move down and click element "${element}" 
+       Mouse Down    ${element}
+       Click Element  ${element}
+         
 Select Language "${language}"
     Go To Settings Screen
     Go To Select Language Screen
@@ -40,10 +43,11 @@ Select Language "${language}"
     ...    ELSE IF    '${temp language}' == 'spainish'    Run Keyword And Continue On Failure    Click Element    ${btnSpainish}  
     ...    ELSE IF    '${temp language}' == 'french'    Run Keyword And Continue On Failure    Click Element     ${btnFrench}
     ...    ELSE IF    '${temp language}' == 'italian'    Run Keyword And Continue On Failure    Click Element    ${btnItalian}  
-    ...    ELSE IF    '${temp language}' == 'polish'    Run Keyword And Continue On Failure    Click Element     ${btnPolish}
-    ...    ELSE IF    '${temp language}' == 'portuguese'    Run Keyword And Continue On Failure    Click Element    ${btnPortuguese} 
-    ...    ELSE IF    '${temp language}' == 'russian'    Run Keyword And Continue On Failure    Click Element     ${btnRussian}
-    ...    ELSE IF    '${temp language}' == 'chinese'    Run Keyword And Continue On Failure    Click Element    ${btnChinese} 
-    ...    ELSE IF    '${temp language}' == 'korean'    Run Keyword And Continue On Failure    Click Element     ${btnKorean}
+    ...    ELSE IF    '${temp language}' == 'polish'    Run Keyword And Continue On Failure     Move down and click element "${btnPolish}"         
+                      # Click Element     ${btnPolish}
+    ...    ELSE IF    '${temp language}' == 'portuguese'    Run Keyword And Continue On Failure    Move down and click element "${btnPortuguese}" 
+    ...    ELSE IF    '${temp language}' == 'russian'    Run Keyword And Continue On Failure    Move down and click element "${btnRussian}"
+    ...    ELSE IF    '${temp language}' == 'chinese'    Run Keyword And Continue On Failure    Move down and click element "${btnChinese}" 
+    ...    ELSE IF    '${temp language}' == 'korean'    Run Keyword And Continue On Failure    Move down and click element "${btnKorean}"
     ...    ELSE     Run Keyword And Continue On Failure     Log    ${temp language}
     Touch Save Language
