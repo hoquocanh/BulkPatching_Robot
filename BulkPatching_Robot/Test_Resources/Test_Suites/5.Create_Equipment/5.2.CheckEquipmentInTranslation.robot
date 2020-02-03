@@ -11,6 +11,7 @@ Resource    ../../../Test_Definitions/Test_Pages/SelectLanguagePage.robot
 Resource    ../../../Test_Definitions/Test_Pages/GeneralPage.robot
 Resource    ../../../Test_Definitions/Test_Pages/BulkPatchingPage.robot
 Resource    ../../../Test_Definitions/Cucumber_Definitions/BulkPatchingDefinitions.robot
+
                        
 #Help text.py is to store help text for checking
 Variables    ../../Test_Data/HelpText.py
@@ -41,7 +42,7 @@ Create_Equip-02_01_Verify that "Equipment" should use the same translation as th
     When Touch Equipment Button
     
     #VP: The text "Equipment" appeared in End B
-    Then Check Equipment Text at Path Location "E:\EquipmentTranslate.xlsx" in Language "danish" "appeared"
+    Then Check Equipment Text at Path Location "Test_Resources\\Test_Data\\EquipmentTranslation.xlsx" in Language "danish" "appeared"
     
     #Clean Environment
     And Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "1"
@@ -66,7 +67,7 @@ Create_Equip-02_02_Verify that "Equipment" should use the same translation as th
     When Touch Equipment Button
     
     #VP: The text "Equipment" appeared in End B
-    Then Check Equipment Text at Path Location "E:\EquipmentTranslate.xlsx" in Language "german" "appeared"
+    Then Check Equipment Text at Path Location "Test_Resources\\Test_Data\\EquipmentTranslation.xlsx" in Language "german" "appeared"
     
     #Clean Environment
     And Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "1"
@@ -91,7 +92,7 @@ Create_Equip-02_03_Verify that "Equipment" should use the same translation as th
     When Touch Equipment Button
     
     #VP: The text "Equipment" appeared in End B
-    Then Check Equipment Text at Path Location "E:\EquipmentTranslate.xlsx" in Language "english" "appeared"
+    Then Check Equipment Text at Path Location "Test_Resources\\Test_Data\\EquipmentTranslation.xlsx" in Language "english" "appeared"
     
     #Clean Environment
     And Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "1"
@@ -116,7 +117,7 @@ Create_Equip-02_04_Verify that "Equipment" should use the same translation as th
     When Touch Equipment Button
     
     #VP: The text "Equipment" appeared in End B
-    Then Check Equipment Text at Path Location "E:\EquipmentTranslate.xlsx" in Language "spainish" "appeared"
+    Then Check Equipment Text at Path Location "Test_Resources\\Test_Data\\EquipmentTranslation.xlsx" in Language "spainish" "appeared"
     
     #Clean Environment
     And Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "1"
@@ -141,7 +142,7 @@ Create_Equip-02_05_Verify that "Equipment" should use the same translation as th
     When Touch Equipment Button
     
     #VP: The text "Equipment" appeared in End B
-    Then Check Equipment Text at Path Location "E:\EquipmentTranslate.xlsx" in Language "french" "appeared"
+    Then Check Equipment Text at Path Location "Test_Resources\\Test_Data\\EquipmentTranslation.xlsx" in Language "french" "appeared"
     
     #Clean Environment
     And Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "1"
@@ -166,7 +167,7 @@ Create_Equip-02_06_Verify that "Equipment" should use the same translation as th
     When Touch Equipment Button
     
     #VP: The text "Equipment" appeared in End B
-    Then Check Equipment Text at Path Location "E:\EquipmentTranslate.xlsx" in Language "italian" "appeared"
+    Then Check Equipment Text at Path Location "Test_Resources\\Test_Data\\EquipmentTranslation.xlsx" in Language "italian" "appeared"
     
     #Clean Environment
     And Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "1"
@@ -191,7 +192,7 @@ Create_Equip-02_07_Verify that "Equipment" should use the same translation as th
     When Touch Equipment Button
     
     #VP: The text "Equipment" appeared in End B
-    Then Check Equipment Text at Path Location "E:\EquipmentTranslate.xlsx" in Language "Polish" "appeared"
+    Then Check Equipment Text at Path Location "Test_Resources\\Test_Data\\EquipmentTranslation.xlsx" in Language "Polish" "appeared"
     
     #Clean Environment
     And Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "1"
@@ -216,7 +217,7 @@ Create_Equip-02_08_Verify that "Equipment" should use the same translation as th
     When Touch Equipment Button
     
     #VP: The text "Equipment" appeared in End B
-    Then Check Equipment Text at Path Location "E:\EquipmentTranslate.xlsx" in Language "Portuguese" "appeared"
+    Then Check Equipment Text at Path Location "Test_Resources\\Test_Data\\EquipmentTranslation.xlsx" in Language "Portuguese" "appeared"
     
     #Clean Environment
     And Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "1"
@@ -241,7 +242,7 @@ Create_Equip-02_09_Verify that "Equipment" should use the same translation as th
     When Touch Equipment Button
     
     #VP: The text "Equipment" appeared in End B
-    Then Check Equipment Text at Path Location "E:\EquipmentTranslate.xlsx" in Language "Russian" "appeared"
+    Then Check Equipment Text at Path Location "Test_Resources\\Test_Data\\EquipmentTranslation.xlsx" in Language "Russian" "appeared"
     
     #Clean Environment
     And Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "1"
@@ -266,7 +267,7 @@ Create_Equip-02_10_Verify that "Equipment" should use the same translation as th
     When Touch Equipment Button
     
     #VP: The text "Equipment" appeared in End B
-    Then Check Equipment Text at Path Location "E:\EquipmentTranslate.xlsx" in Language "Chinese" "appeared"
+    Then Check Equipment Text at Path Location "Test_Resources\\Test_Data\\EquipmentTranslation.xlsx" in Language "Chinese" "appeared"
     
     #Clean Environment
     And Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "1"
@@ -291,7 +292,7 @@ Create_Equip-02_11_Verify that "Equipment" should use the same translation as th
     When Touch Equipment Button
     
     #VP: The text "Equipment" appeared in End B
-    Then Check Equipment Text at Path Location "E:\EquipmentTranslate.xlsx" in Language "Korean" "appeared"
+    Then Check Equipment Text at Path Location "Test_Resources\\Test_Data\\EquipmentTranslation.xlsx" in Language "Korean" "appeared"
     
     #Clean Environment
     And Plugout Copper Tip to Rack "1" Panel "1" Row "1" Port "1"
